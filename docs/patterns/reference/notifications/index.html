@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/tags/accordion-menu-toggle-expand/">
+    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-72x72.png">
@@ -30,8 +30,8 @@
     </style>
     <title>
       
-  Patterns tagged accordion, menu, toggle, expand | Cupper
-
+        Notifications | Cupper
+      
     </title>
     
   </head>
@@ -209,7 +209,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/" >
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -231,26 +231,112 @@
           
   <main id="main">
     <h1>
-      <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-        <use xlink:href="#tag"></use>
-      </svg>
-      Tagged &#x201c;accordion, menu, toggle, expand&#x201d;
-    </h1>
-    <ul class="patterns-list">
-      
-          <li>
-  <h2>
-    <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/expandable-sections/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Expandable sections
-    </a>
-  </h2>
-</li>
-
+      Notifications
+    </h1>
+    
+    
       
-    </ul>
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#aria-roles">
+            Aria Roles
+          </a>
+        </li>
+      
+        <li>
+          <a href="#html">
+            HTML 
+          </a>
+        </li>
+      
+        <li>
+          <a href="#types-of-live-regions">
+            Types of live regions
+          </a>
+        </li>
+      
+        <li>
+          <a href="#adding-live-region-to-page">
+            Adding live region to page
+          </a>
+        </li>
+      
+        <li>
+          <a href="#resources">
+            Resources
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    <h1 id="notifications--alerts">Notifications / Alerts</h1>
+<ul>
+<li>Live Regions
+<ul>
+<li>Accessiblity Talks <a href="https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be">https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be</a></li>
+<li>Live Region Codepen <a href="https://codepen.io/iankonlineada/pen/eYJwQBY">https://codepen.io/iankonlineada/pen/eYJwQBY</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="aria-roles">Aria Roles</h2>
+<ol>
+<li>alert</li>
+<li>status</li>
+</ol>
+<h3 id="poor-support">Poor support</h3>
+<ol>
+<li>aria-atomic : what is read?</li>
+<li>aria-relevant : when it is read</li>
+<li>aria-busy : maybe don&rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.</li>
+</ol>
+<h3 id="no-support">No support</h3>
+<ol>
+<li>role=&quot;marquee&rdquo;</li>
+<li>role=&quot;timer&rdquo;</li>
+</ol>
+<h2 id="html-output">HTML <!-- raw HTML omitted --></h2>
+<ul>
+<li>Scott O&rsquo;Hara <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">https://www.scottohara.me/blog/2019/07/10/the-output-element.html</a></li>
+</ul>
+<h2 id="types-of-live-regions">Types of live regions</h2>
+<ol>
+<li>
+<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&quot;polite&rdquo;</p>
+<ol>
+<li>Solution: create live region that reads off numer of results after user has stopped typing for a few seconds</li>
+</ol>
+</li>
+<li>
+<p>Toasts - High risk of going wrong for many users &ndash; not just SR. Bad for zoom text users also.</p>
+<ol>
+<li>Toast should not time out / disappear unless there is an alternative way</li>
+</ol>
+</li>
+<li>
+<p>Feed and chat messages - role=&quot;log&rdquo; plus aria-live=&quot;assertive/polite&rdquo; aria-atomic=&quot;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
+</li>
+</ol>
+<h2 id="adding-live-region-to-page">Adding live region to page</h2>
+<ol>
+<li>Adding to DOM with role=&quot;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
+<li>If updating, have the empty element in page, and push the updates into the region</li>
+<li>Create a notification center where user can check notifications &ndash; apps mostly</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>Notification tests <a href="https://codepen.io/smhigley/pen/abOwGro">https://codepen.io/smhigley/pen/abOwGro</a></li>
+</ul>
+
   </main>
 
           <footer role="contentinfo">
