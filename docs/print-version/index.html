@@ -134,7 +134,7 @@
                 <img src="https://kerseyi.github.io/cupper-2/images/logo.svg" alt="">
               </a>
               <p class="library-desc">
-                Documentation for the <strong>Cupper</strong> documentation builder, built with <strong>Cupper</strong> itself.
+                A repository of accessible component code patterns, references, and educational materials.
                 
                </a>
               </p>
@@ -222,151 +222,7 @@
 <li>Forms with multiple sections</li>
 <li>Polka</li>
 </ul>
-<h2 id="code-patterns">Code patterns</h2>
-<p>There are a number of ways to construct an accordion menu. Below, we provide some common accordion menu patterns with accessibility friendly features.</p>
-<h2 id="html-details-element">HTML Details Element</h2>
-<p>What&rsquo;s that? An HTML accordion you say? Yup! It&rsquo;s called the <!-- raw HTML omitted -->HTML Details Element.<!-- raw HTML omitted -->
-
-<div class="demo-container">
-  
-  <figure role="group" aria-labelledby="caption-8c27ab9ddd1646d6f76b02ff18bf7b8c">
-  
-      <div class="demo-inner" >
-        <div class="demo" id="js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c"></div>
-        <button data-launch="js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c">Launch <span aria-hidden="true">↗</span></button>
-      </div>
-      
-          <figcaption id="caption-8c27ab9ddd1646d6f76b02ff18bf7b8c">Basic HTML Details Element</figcaption>
-      
-  
-  </figure>
-  
-  <template id="template-8c27ab9ddd1646d6f76b02ff18bf7b8c">
-      
-<details>
-  <summary>OOOH, WHAT'S IN THERE?</summary>
-  <p>IT'S A PUPPY!</p>
-  <img src="https://kerseyi.github.io/cupper-2/static/images" alt="dog sits in burning house drinking coffee saying, this is fine"/>
-</details>
-
-  </template>
-  <script>
-    (function() {
-      var root = document.getElementById('js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c');
-      var template = document.getElementById('template-8c27ab9ddd1646d6f76b02ff18bf7b8c');
-
-      
-      var demoDiv = document.createElement('div');
-      demoDiv.innerHTML = template.innerHTML;
-      var standaloneScript = demoDiv.querySelector('script');
-      if (standaloneScript) {
-        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
-      }
-
-      if (document.head.attachShadow) {
-        var templateScript = template.content.querySelector('script');
-        if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c\').shadowRoot;' + templateScript.textContent + '})();';
-          templateScript.textContent = wrappedScript;
-        }
-        root.attachShadow({mode: 'open'});
-        root.shadowRoot.appendChild(document.importNode(template.content, true));
-      } else {
-        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
-      }
-
-      var launchButton = document.querySelector('[data-launch="js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c"]');
-      launchButton.addEventListener('click', function () {
-        var standalone = window.open();
-        standalone.document.body.innerHTML = demoDiv.innerHTML;
-
-        
-        var newScript = standalone.document.createElement('script');
-        var oldScript = standalone.document.querySelector('script');
-        if (oldScript) {
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.removeChild(oldScript);
-          standalone.document.body.appendChild(newScript);
-        }
-        
-
-        standalone.document.title = 'demo ' + "8c27ab9ddd1646d6f76b02ff18bf7b8c";
-      });
-    })();
-  </script>
-</div>
-</p>
-<div class="expandable-section">
-  
-    <h1>
-  
-    <button aria-expanded="false" data-expands="js-expandable-d20eada5ba8b404b6c2f32659b5e8eeb">
-      <span class="expandable-label">HTML</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h1>
-  
-  <div id="js-expandable-d20eada5ba8b404b6c2f32659b5e8eeb" hidden>
-    
-
-
-
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">details</span>&gt;
-  &lt;<span style="color:#f92672">summary</span>&gt;OOOH, WHAT&#39;S IN THERE?&lt;/<span style="color:#f92672">summary</span>&gt;
-  &lt;<span style="color:#f92672">p</span>&gt;IT&#39;S A PUPPY!&lt;/<span style="color:#f92672">p</span>&gt;
-  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ images/thisisfine.gif | absURL }}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog sits in burning house drinking coffee saying, this is fine&#34;</span>/&gt;
-&lt;/<span style="color:#f92672">details</span>&gt;
-</code></pre></div>
-
-
-  </div>
-</div>
-
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    
-As of July 2020, it's accessible out of the box -- although I did notice in my testing that the "expanded" and "collapsed" states are not toggled when there is no SUMMARY element nested in the DETIALS element.
-
-  </div>
-</aside>
-
-<p>The DETAILS element supports the TOGGLE event, so adding more functionality to it is pretty straightforward.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JS" data-lang="JS"><span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;toggle&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">open</span>) {
-    <span style="color:#75715e">/* the element was toggled open */</span>
-    <span style="color:#75715e">//do awesome thing!
-</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#75715e">/* the element was toggled closed */</span>
-      <span style="color:#75715e">// undo awesome thing
-</span><span style="color:#75715e"></span>    }
-  });
-</code></pre></div>
-
-
-<!-- raw HTML omitted -->
-<p>The <code>visually-hidden</code> utility class uses a set of special properties to hide content visually without making it unavailable to screen readers and other non-visual user agents. The class is defined like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">.<span style="color:#a6e22e">visually-hidden</span> {
-  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span> <span style="color:#75715e">!important</span>;
-  <span style="color:#66d9ef">clip</span>: rect(<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>) <span style="color:#75715e">!important</span>;
-  <span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">0</span> <span style="color:#75715e">!important</span>;
-  <span style="color:#66d9ef">border</span>:<span style="color:#ae81ff">0</span> <span style="color:#75715e">!important</span>;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#75715e">!important</span>;
-  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#75715e">!important</span>;
-  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span> <span style="color:#75715e">!important</span>;
-}
-</code></pre></div><p>Use it sparingly since, in most cases, what is identified non-visually should also be presented visually. Bear in mind that not all screen reader users are blind users.</p>
-
-
+<h2 id="applicable-wcag-21-success-criteria">Applicable WCAG 2.1 Success Criteria</h2>
 
 
 
@@ -375,16 +231,6 @@ As of July 2020, it's accessible out of the box -- although I did notice in my t
   
     
   
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          1.2.1 Audio-only and Video-only (Prerecorded</a> (level A)
-        </strong>
-        
-      </li>
     
   
     
@@ -527,6 +373,221 @@ As of July 2020, it's accessible out of the box -- although I did notice in my t
   
 </ul>
 
+<h2 id="html-details-element">HTML Details Element</h2>
+<p>What&rsquo;s that? An HTML accordion you say? Yup! It&rsquo;s called the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">HTML Details Element</a>.</p>
+<h3 id="demo">Demo</h3>
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-251b11155e4059c182dd0b19581aee74">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-251b11155e4059c182dd0b19581aee74"></div>
+        <button data-launch="js-demo-251b11155e4059c182dd0b19581aee74">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-251b11155e4059c182dd0b19581aee74">Basic HTML Details Element</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-251b11155e4059c182dd0b19581aee74">
+      
+<style>
+  details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+</style>
+<details>
+  <summary>OOOH, WHAT'S IN THERE?</summary>
+  <p>IT'S A PUPPY!</p>
+  <img src="https://kerseyi.github.io/cupper-2/docs/static/images" alt="dog sits in burning house drinking coffee saying, this is fine"/>
+</details>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-251b11155e4059c182dd0b19581aee74');
+      var template = document.getElementById('template-251b11155e4059c182dd0b19581aee74');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-251b11155e4059c182dd0b19581aee74\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-251b11155e4059c182dd0b19581aee74"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "251b11155e4059c182dd0b19581aee74";
+      });
+    })();
+  </script>
+</div>
+
+<h3 id="code">Code</h3>
+<div class="expandable-section">
+  
+    <h1>
+  
+    <button aria-expanded="false" data-expands="js-expandable-d20eada5ba8b404b6c2f32659b5e8eeb">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h1>
+  
+  <div id="js-expandable-d20eada5ba8b404b6c2f32659b5e8eeb" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">details</span>&gt;
+  &lt;<span style="color:#f92672">summary</span>&gt;OOOH, WHAT&#39;S IN THERE?&lt;/<span style="color:#f92672">summary</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;IT&#39;S A PUPPY!&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ images/thisisfine.gif | absURL }}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog sits in burning house drinking coffee saying, this is fine&#34;</span>/&gt;
+&lt;/<span style="color:#f92672">details</span>&gt;
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h2>
+  
+    <button aria-expanded="false" data-expands="js-expandable-8cf11c97439369d450e939f9d99be058">
+      <span class="expandable-label">CSS</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h2>
+  
+  <div id="js-expandable-8cf11c97439369d450e939f9d99be058" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">details</span> {
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#aaa</span>;
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#f92672">summary</span> {
+    <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">-.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">-.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span>;
+}
+
+<span style="color:#f92672">details</span><span style="color:#f92672">[</span><span style="color:#f92672">open</span><span style="color:#f92672">]</span> {
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span>;
+}
+
+<span style="color:#f92672">details</span><span style="color:#f92672">[</span><span style="color:#f92672">open</span><span style="color:#f92672">]</span> <span style="color:#f92672">summary</span> {
+    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#aaa</span>;
+    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span>;
+}
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-368519f7cf9f70d92d7495e1d50e45ea">
+      <span class="expandable-label">JavaScript</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-368519f7cf9f70d92d7495e1d50e45ea" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<p>The DETAILS element supports the TOGGLE event, so adding more functionality to it is pretty straightforward.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JS" data-lang="JS"><span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;toggle&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">open</span>) {
+    <span style="color:#75715e">/* the element was toggled open */</span>
+    <span style="color:#75715e">//do awesome thing!
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#75715e">/* the element was toggled closed */</span>
+      <span style="color:#75715e">// undo awesome thing
+</span><span style="color:#75715e"></span>    }
+  });
+</code></pre></div>
+
+
+  </div>
+</div>
+
 
 
 
@@ -589,6 +650,1102 @@ As of July 2020, it's accessible out of the box -- although I did notice in my t
     
   </tr>
 </table>
+
+<h2 id="accordion---one-panel-at-a-time">Accordion - One Panel at a Time</h2>
+<p>In this implementation, one panel of the accordion is always expanded, and only one panel may be expanded at a time.
+Adapted from <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html">WAI Aria Code Patterns</a></p>
+<h3 id="demo-1">Demo</h3>
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-a76e26080990347500509fb09c015dca">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-a76e26080990347500509fb09c015dca"></div>
+        <button data-launch="js-demo-a76e26080990347500509fb09c015dca">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-a76e26080990347500509fb09c015dca">Accordion Pattern - One Panel at a Time</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-a76e26080990347500509fb09c015dca">
+      
+ <div class="demo-block">
+  <!-- Accordion Configuration Options
+  
+  data-allow-toggle
+    Allow for each toggle to both open and close its section. Makes it possible for all sections to be closed. Assumes only one section may be open.
+  
+  data-allow-multiple
+    Allow for multiple accordion sections to be expanded at the same time. Assumes data-allow-toggle otherwise the toggle on open sections would be disabled.
+  __________
+  
+  Ex:
+    <div id="accordionGroup" class="Accordion" data-allow-multiple>
+  
+    <div id="accordionGroup" class="Accordion" data-allow-toggle>
+  -->
+  <div id="accordionGroup" class="Accordion">
+    <h3>
+      <button aria-expanded="true"
+              class="Accordion-trigger"
+              aria-controls="sect1"
+              id="accordion1id">
+        <span class="Accordion-title">
+          Personal Information
+          <span class="Accordion-icon"></span>
+        </span>
+      </button>
+    </h3>
+    <div id="sect1"
+         role="region"
+         aria-labelledby="accordion1id"
+         class="Accordion-panel">
+      <div>
+        <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+        <fieldset>
+          <p>
+            <label for="cufc1">
+              Name
+              <span aria-hidden="true">
+                *
+              </span>
+              :
+            </label>
+            <input type="text"
+                   value=""
+                   name="Name"
+                   id="cufc1"
+                   class="required"
+                   aria-required="true">
+          </p>
+          <p>
+            <label for="cufc2">
+              Email
+              <span aria-hidden="true">
+                *
+              </span>
+              :
+            </label>
+            <input type="text"
+                   value=""
+                   name="Email"
+                   id="cufc2"
+                   aria-required="true">
+          </p>
+          <p>
+            <label for="cufc3">
+              Phone:
+            </label>
+            <input type="text"
+                   value=""
+                   name="Phone"
+                   id="cufc3">
+          </p>
+          <p>
+            <label for="cufc4">
+              Extension:
+            </label>
+            <input type="text"
+                   value=""
+                   name="Ext"
+                   id="cufc4">
+          </p>
+          <p>
+            <label for="cufc5">
+              Country:
+            </label>
+            <input type="text"
+                   value=""
+                   name="Country"
+                   id="cufc5">
+          </p>
+          <p>
+            <label for="cufc6">
+              City/Province:
+            </label>
+            <input type="text"
+                   value=""
+                   name="City_Province"
+                   id="cufc6">
+          </p>
+        </fieldset>
+      </div>
+    </div>
+    <h3>
+      <button aria-expanded="false"
+              class="Accordion-trigger"
+              aria-controls="sect2"
+              id="accordion2id">
+        <span class="Accordion-title">
+          Billing Address
+          <span class="Accordion-icon"></span>
+        </span>
+      </button>
+    </h3>
+    <div id="sect2"
+         role="region"
+         aria-labelledby="accordion2id"
+         class="Accordion-panel"
+         hidden="">
+      <div>
+        <fieldset>
+          <p>
+            <label for="b-add1">
+              Address 1:
+            </label>
+            <input type="text"
+                   name="b-add1"
+                   id="b-add1">
+          </p>
+          <p>
+            <label for="b-add2">
+              Address 2:
+            </label>
+            <input type="text"
+                   name="b-add2"
+                   id="b-add2">
+          </p>
+          <p>
+            <label for="b-city">
+              City:
+            </label>
+            <input type="text"
+                   name="b-city"
+                   id="b-city">
+          </p>
+          <p>
+            <label for="b-state">
+              State:
+            </label>
+            <input type="text"
+                   name="b-state"
+                   id="b-state">
+          </p>
+          <p>
+            <label for="b-zip">
+              Zip Code:
+            </label>
+            <input type="text"
+                   name="b-zip"
+                   id="b-zip">
+          </p>
+        </fieldset>
+      </div>
+    </div>
+    <h3>
+      <button aria-expanded="false"
+              class="Accordion-trigger"
+              aria-controls="sect3"
+              id="accordion3id">
+        <span class="Accordion-title">
+          Shipping Address
+          <span class="Accordion-icon"></span>
+        </span>
+      </button>
+    </h3>
+    <div id="sect3"
+         role="region"
+         aria-labelledby="accordion3id"
+         class="Accordion-panel"
+         hidden="">
+      <div>
+        <fieldset>
+          <p>
+            <label for="m-add1">
+              Address 1:
+            </label>
+            <input type="text"
+                   name="m-add1"
+                   id="m-add1">
+          </p>
+          <p>
+            <label for="m-add2">
+              Address 2:
+            </label>
+            <input type="text"
+                   name="m-add2"
+                   id="m-add2">
+          </p>
+          <p>
+            <label for="m-city">
+              City:
+            </label>
+            <input type="text"
+                   name="m-city"
+                   id="m-city">
+          </p>
+          <p>
+            <label for="m-state">
+              State:
+            </label>
+            <input type="text"
+                   name="m-state"
+                   id="m-state">
+          </p>
+          <p>
+            <label for="m-zip">
+              Zip Code:
+            </label>
+            <input type="text"
+                   name="m-zip"
+                   id="m-zip">
+          </p>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  'use strict';
+
+Array.prototype.slice.call(demo.querySelectorAll('.Accordion')).forEach(function (accordion) {
+
+  // Allow for multiple accordion sections to be expanded at the same time
+  var allowMultiple = accordion.hasAttribute('data-allow-multiple');
+  // Allow for each toggle to both open and close individually
+  var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
+
+  // Create the array of toggle elements for the accordion group
+  var triggers = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-trigger'));
+  var panels = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-panel'));
+
+
+  accordion.addEventListener('click', function (event) {
+    var target = event.target;
+
+    if (target.classList.contains('Accordion-trigger')) {
+      // Check if the current toggle is expanded.
+      var isExpanded = target.getAttribute('aria-expanded') == 'true';
+      var active = accordion.querySelector('[aria-expanded="true"]');
+
+      // without allowMultiple, close the open accordion
+      if (!allowMultiple && active && active !== target) {
+        // Set the expanded state on the triggering element
+        active.setAttribute('aria-expanded', 'false');
+        // Hide the accordion sections, using aria-controls to specify the desired section
+        demo.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
+
+        // When toggling is not allowed, clean up disabled state
+        if (!allowToggle) {
+          active.removeAttribute('aria-disabled');
+        }
+      }
+
+      if (!isExpanded) {
+        // Set the expanded state on the triggering element
+        target.setAttribute('aria-expanded', 'true');
+        // Hide the accordion sections, using aria-controls to specify the desired section
+        demo.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
+
+        // If toggling is not allowed, set disabled state on trigger
+        if (!allowToggle) {
+          target.setAttribute('aria-disabled', 'true');
+        }
+      }
+      else if (allowToggle && isExpanded) {
+        // Set the expanded state on the triggering element
+        target.setAttribute('aria-expanded', 'false');
+        // Hide the accordion sections, using aria-controls to specify the desired section
+        demo.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
+      }
+
+      event.preventDefault();
+    }
+  });
+
+  // Bind keyboard behaviors on the main accordion container
+  accordion.addEventListener('keydown', function (event) {
+    var target = event.target;
+    var key = event.which.toString();
+
+    var isExpanded = target.getAttribute('aria-expanded') == 'true';
+    var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
+
+    // 33 = Page Up, 34 = Page Down
+    var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
+
+    // Is this coming from an accordion header?
+    if (target.classList.contains('Accordion-trigger')) {
+      // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+      // 38 = Up, 40 = Down
+      if (key.match(/38|40/) || ctrlModifier) {
+        var index = triggers.indexOf(target);
+        var direction = (key.match(/34|40/)) ? 1 : -1;
+        var length = triggers.length;
+        var newIndex = (index + length + direction) % length;
+
+        triggers[newIndex].focus();
+
+        event.preventDefault();
+      }
+      else if (key.match(/35|36/)) {
+        // 35 = End, 36 = Home keyboard operations
+        switch (key) {
+          // Go to first accordion
+          case '36':
+            triggers[0].focus();
+            break;
+            // Go to last accordion
+          case '35':
+            triggers[triggers.length - 1].focus();
+            break;
+        }
+        event.preventDefault();
+
+      }
+
+    }
+  });
+
+  // These are used to style the accordion when one of the buttons has focus
+  accordion.querySelectorAll('.Accordion-trigger').forEach(function (trigger) {
+
+    trigger.addEventListener('focus', function (event) {
+      accordion.classList.add('focus');
+    });
+
+    trigger.addEventListener('blur', function (event) {
+      accordion.classList.remove('focus');
+    });
+
+  });
+
+  // Minor setup: will set disabled state, via aria-disabled, to an
+  // expanded/ active accordion which is not allowed to be toggled close
+  if (!allowToggle) {
+    // Get the first expanded/ active accordion
+    var expanded = accordion.querySelector('[aria-expanded="true"]');
+
+    // If an expanded/ active accordion is found, disable
+    if (expanded) {
+      expanded.setAttribute('aria-disabled', 'true');
+    }
+  }
+
+});
+</script>
+<style type="text/css">
+  .Accordion {
+  margin: 0;
+  padding: 0;
+  border: 2px solid hsl(0, 0%, 82%);
+  border-radius: 7px;
+  width: 20em;
+}
+
+.Accordion h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.Accordion.focus {
+  border-color: hsl(216, 94%, 73%);
+}
+
+.Accordion.focus h3 {
+  background-color: hsl(0, 0%, 97%);
+}
+
+.Accordion > * + * {
+  border-top: 1px solid hsl(0, 0%, 82%);
+}
+
+.Accordion-trigger {
+  background: none;
+  color: hsl(0, 0%, 13%);
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 1em 1.5em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  outline: none;
+}
+
+.Accordion-trigger:focus,
+.Accordion-trigger:hover {
+  background: hsl(216, 94%, 94%);
+}
+
+.Accordion *:first-child .Accordion-trigger {
+  border-radius: 5px 5px 0 0;
+}
+
+button {
+  border-style: none;
+}
+
+.Accordion button::-moz-focus-inner {
+  border: 0;
+}
+
+.Accordion-title {
+  display: block;
+  pointer-events: none;
+  border: transparent 2px solid;
+  border-radius: 5px;
+  padding: 0.25em;
+  outline: none;
+}
+
+.Accordion-trigger:focus .Accordion-title {
+  border-color: hsl(216, 94%, 73%);
+}
+
+.Accordion-icon {
+  border: solid hsl(0, 0%, 62%);
+  border-width: 0 2px 2px 0;
+  height: 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  transform: translateY(-60%) rotate(45deg);
+  width: 0.5rem;
+}
+
+.Accordion-trigger:focus .Accordion-icon,
+.Accordion-trigger:hover .Accordion-icon {
+  border-color: hsl(216, 94%, 73%);
+}
+
+.Accordion-trigger[aria-expanded="true"] .Accordion-icon {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.Accordion-panel {
+  margin: 0;
+  padding: 1em 1.5em;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.Accordion-panel[hidden] {
+  display: none;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: 1px solid hsl(0, 0%, 62%);
+  border-radius: 0.3em;
+  display: block;
+  font-size: inherit;
+  padding: 0.3em 0.5em;}
+</style>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-a76e26080990347500509fb09c015dca');
+      var template = document.getElementById('template-a76e26080990347500509fb09c015dca');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-a76e26080990347500509fb09c015dca\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-a76e26080990347500509fb09c015dca"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "a76e26080990347500509fb09c015dca";
+      });
+    })();
+  </script>
+</div>
+
+<h3 id="code-1">Code</h3>
+<div class="expandable-section">
+  
+    <h4>
+  
+    <button aria-expanded="false" data-expands="js-expandable-96110f3d39e34618a37cd7b208e57b9f">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h4>
+  
+  <div id="js-expandable-96110f3d39e34618a37cd7b208e57b9f" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo-block&#34;</span>&gt;
+  <span style="color:#75715e">&lt;!-- Accordion Configuration Options
+</span><span style="color:#75715e">  
+</span><span style="color:#75715e">  data-allow-toggle
+</span><span style="color:#75715e">    Allow for each toggle to both open and close its section. Makes it possible for all sections to be closed. Assumes only one section may be open.
+</span><span style="color:#75715e">  
+</span><span style="color:#75715e">  data-allow-multiple
+</span><span style="color:#75715e">    Allow for multiple accordion sections to be expanded at the same time. Assumes data-allow-toggle otherwise the toggle on open sections would be disabled.
+</span><span style="color:#75715e">  __________
+</span><span style="color:#75715e">  
+</span><span style="color:#75715e">  Ex:
+</span><span style="color:#75715e">    &lt;div id=&#34;accordionGroup&#34; class=&#34;Accordion&#34; data-allow-multiple&gt;
+</span><span style="color:#75715e">  
+</span><span style="color:#75715e">    &lt;div id=&#34;accordionGroup&#34; class=&#34;Accordion&#34; data-allow-toggle&gt;
+</span><span style="color:#75715e">  --&gt;</span>
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordionGroup&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion&#34;</span>&gt;
+    &lt;<span style="color:#f92672">h3</span>&gt;
+      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>
+              <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-trigger&#34;</span>
+              <span style="color:#a6e22e">aria-controls</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sect1&#34;</span>
+              <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordion1id&#34;</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-title&#34;</span>&gt;
+          Personal Information
+          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">span</span>&gt;
+      &lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">h3</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sect1&#34;</span>
+         <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;region&#34;</span>
+         <span style="color:#a6e22e">aria-labelledby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordion1id&#34;</span>
+         <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-panel&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span>&gt;
+        <span style="color:#75715e">&lt;!-- Variable content within section, may include any type of markup or interactive widgets. --&gt;</span>
+        &lt;<span style="color:#f92672">fieldset</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc1&#34;</span>&gt;
+              Name
+              &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
+                *
+              &lt;/<span style="color:#f92672">span</span>&gt;
+              :
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc1&#34;</span>
+                   <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;required&#34;</span>
+                   <span style="color:#a6e22e">aria-required</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc2&#34;</span>&gt;
+              Email
+              &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
+                *
+              &lt;/<span style="color:#f92672">span</span>&gt;
+              :
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Email&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc2&#34;</span>
+                   <span style="color:#a6e22e">aria-required</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc3&#34;</span>&gt;
+              Phone:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Phone&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc3&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc4&#34;</span>&gt;
+              Extension:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Ext&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc4&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc5&#34;</span>&gt;
+              Country:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Country&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc5&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc6&#34;</span>&gt;
+              City/Province:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;City_Province&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cufc6&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;/<span style="color:#f92672">fieldset</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">h3</span>&gt;
+      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
+              <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-trigger&#34;</span>
+              <span style="color:#a6e22e">aria-controls</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sect2&#34;</span>
+              <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordion2id&#34;</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-title&#34;</span>&gt;
+          Billing Address
+          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">span</span>&gt;
+      &lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">h3</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sect2&#34;</span>
+         <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;region&#34;</span>
+         <span style="color:#a6e22e">aria-labelledby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordion2id&#34;</span>
+         <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-panel&#34;</span>
+         <span style="color:#a6e22e">hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">fieldset</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-add1&#34;</span>&gt;
+              Address 1:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-add1&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-add1&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-add2&#34;</span>&gt;
+              Address 2:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-add2&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-add2&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-city&#34;</span>&gt;
+              City:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-city&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-city&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-state&#34;</span>&gt;
+              State:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-state&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-state&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-zip&#34;</span>&gt;
+              Zip Code:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-zip&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;b-zip&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;/<span style="color:#f92672">fieldset</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">h3</span>&gt;
+      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
+              <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-trigger&#34;</span>
+              <span style="color:#a6e22e">aria-controls</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sect3&#34;</span>
+              <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordion3id&#34;</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-title&#34;</span>&gt;
+          Shipping Address
+          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">span</span>&gt;
+      &lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">h3</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sect3&#34;</span>
+         <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;region&#34;</span>
+         <span style="color:#a6e22e">aria-labelledby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;accordion3id&#34;</span>
+         <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Accordion-panel&#34;</span>
+         <span style="color:#a6e22e">hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">fieldset</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-add1&#34;</span>&gt;
+              Address 1:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-add1&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-add1&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-add2&#34;</span>&gt;
+              Address 2:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-add2&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-add2&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-city&#34;</span>&gt;
+              City:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-city&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-city&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-state&#34;</span>&gt;
+              State:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-state&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-state&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-zip&#34;</span>&gt;
+              Zip Code:
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-zip&#34;</span>
+                   <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;m-zip&#34;</span>&gt;
+          &lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;/<span style="color:#f92672">fieldset</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h5>
+  
+    <button aria-expanded="false" data-expands="js-expandable-8739bae95a4ca0ef75095d4eb1dddaa7">
+      <span class="expandable-label">CSS</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h5>
+  
+  <div id="js-expandable-8739bae95a4ca0ef75095d4eb1dddaa7" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">.<span style="color:#a6e22e">Accordion</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">82</span><span style="color:#66d9ef">%</span>);
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">em</span>;
+}
+
+.<span style="color:#a6e22e">Accordion</span> <span style="color:#f92672">h3</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+}
+
+.<span style="color:#a6e22e">Accordion</span>.<span style="color:#a6e22e">focus</span> {
+  <span style="color:#66d9ef">border-color</span>: hsl(<span style="color:#ae81ff">216</span>, <span style="color:#ae81ff">94</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">73</span><span style="color:#66d9ef">%</span>);
+}
+
+.<span style="color:#a6e22e">Accordion</span>.<span style="color:#a6e22e">focus</span> <span style="color:#f92672">h3</span> {
+  <span style="color:#66d9ef">background-color</span>: hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">97</span><span style="color:#66d9ef">%</span>);
+}
+
+.<span style="color:#a6e22e">Accordion</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">*</span> <span style="color:#f92672">+</span> <span style="color:#f92672">*</span> {
+  <span style="color:#66d9ef">border-top</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">82</span><span style="color:#66d9ef">%</span>);
+}
+
+.<span style="color:#a6e22e">Accordion-trigger</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">color</span>: hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">13</span><span style="color:#66d9ef">%</span>);
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">normal</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">left</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">outline</span>: <span style="color:#66d9ef">none</span>;
+}
+
+.<span style="color:#a6e22e">Accordion-trigger</span>:<span style="color:#a6e22e">focus</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">Accordion-trigger</span>:<span style="color:#a6e22e">hover</span> {
+  <span style="color:#66d9ef">background</span>: hsl(<span style="color:#ae81ff">216</span>, <span style="color:#ae81ff">94</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">94</span><span style="color:#66d9ef">%</span>);
+}
+
+.<span style="color:#a6e22e">Accordion</span> <span style="color:#f92672">*</span>:<span style="color:#a6e22e">first-child</span> .<span style="color:#a6e22e">Accordion-trigger</span> {
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#f92672">button</span> {
+  <span style="color:#66d9ef">border-style</span>: <span style="color:#66d9ef">none</span>;
+}
+
+.<span style="color:#a6e22e">Accordion</span> <span style="color:#f92672">button</span>::<span style="color:#a6e22e">-moz-focus-inner</span> {
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span>;
+}
+
+.<span style="color:#a6e22e">Accordion-title</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  pointer-events: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.25</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">outline</span>: <span style="color:#66d9ef">none</span>;
+}
+
+.<span style="color:#a6e22e">Accordion-trigger</span>:<span style="color:#a6e22e">focus</span> .<span style="color:#a6e22e">Accordion-title</span> {
+  <span style="color:#66d9ef">border-color</span>: hsl(<span style="color:#ae81ff">216</span>, <span style="color:#ae81ff">94</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">73</span><span style="color:#66d9ef">%</span>);
+}
+
+.<span style="color:#a6e22e">Accordion-icon</span> {
+  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">62</span><span style="color:#66d9ef">%</span>);
+  <span style="color:#66d9ef">border-width</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+  pointer-events: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-60</span><span style="color:#66d9ef">%</span>) rotate(<span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span>);
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+}
+
+.<span style="color:#a6e22e">Accordion-trigger</span>:<span style="color:#a6e22e">focus</span> .<span style="color:#a6e22e">Accordion-icon</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">Accordion-trigger</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">Accordion-icon</span> {
+  <span style="color:#66d9ef">border-color</span>: hsl(<span style="color:#ae81ff">216</span>, <span style="color:#ae81ff">94</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">73</span><span style="color:#66d9ef">%</span>);
+}
+
+.<span style="color:#a6e22e">Accordion-trigger</span><span style="color:#f92672">[</span><span style="color:#f92672">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">]</span> .<span style="color:#a6e22e">Accordion-icon</span> {
+  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-50</span><span style="color:#66d9ef">%</span>) rotate(<span style="color:#ae81ff">-135</span><span style="color:#66d9ef">deg</span>);
+}
+
+.<span style="color:#a6e22e">Accordion-panel</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">em</span>;
+}
+
+<span style="color:#75715e">/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */</span>
+.<span style="color:#a6e22e">Accordion-panel</span><span style="color:#f92672">[</span><span style="color:#f92672">hidden</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+}
+
+<span style="color:#f92672">fieldset</span> {
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#f92672">input</span> {
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">62</span><span style="color:#66d9ef">%</span>);
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#66d9ef">inherit</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">em</span>;
+}
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h6>
+  
+    <button aria-expanded="false" data-expands="js-expandable-53498b5c7e105e55077f66e2a23a2e0f">
+      <span class="expandable-label">JavaScript</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h6>
+  
+  <div id="js-expandable-53498b5c7e105e55077f66e2a23a2e0f" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#75715e">/*
+</span><span style="color:#75715e">*   This content is licensed according to the W3C Software License at
+</span><span style="color:#75715e">*   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+</span><span style="color:#75715e">*
+</span><span style="color:#75715e">*   Simple accordion pattern example
+</span><span style="color:#75715e">*/</span>
+
+<span style="color:#e6db74">&#39;use strict&#39;</span>;
+
+Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">slice</span>.<span style="color:#a6e22e">call</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.Accordion&#39;</span>)).<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">accordion</span>) {
+
+  <span style="color:#75715e">// Allow for multiple accordion sections to be expanded at the same time
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allowMultiple</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#39;data-allow-multiple&#39;</span>);
+  <span style="color:#75715e">// Allow for each toggle to both open and close individually
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allowToggle</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">allowMultiple</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">allowMultiple</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#39;data-allow-toggle&#39;</span>);
+
+  <span style="color:#75715e">// Create the array of toggle elements for the accordion group
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">triggers</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">slice</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.Accordion-trigger&#39;</span>));
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">panels</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">slice</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.Accordion-panel&#39;</span>));
+
+
+  <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;Accordion-trigger&#39;</span>)) {
+      <span style="color:#75715e">// Check if the current toggle is expanded.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isExpanded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;true&#39;</span>;
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">active</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[aria-expanded=&#34;true&#34;]&#39;</span>);
+
+      <span style="color:#75715e">// without allowMultiple, close the open accordion
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">allowMultiple</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">active</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">active</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">target</span>) {
+        <span style="color:#75715e">// Set the expanded state on the triggering element
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">active</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>, <span style="color:#e6db74">&#39;false&#39;</span>);
+        <span style="color:#75715e">// Hide the accordion sections, using aria-controls to specify the desired section
+</span><span style="color:#75715e"></span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">active</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-controls&#39;</span>)).<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;hidden&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+
+        <span style="color:#75715e">// When toggling is not allowed, clean up disabled state
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">allowToggle</span>) {
+          <span style="color:#a6e22e">active</span>.<span style="color:#a6e22e">removeAttribute</span>(<span style="color:#e6db74">&#39;aria-disabled&#39;</span>);
+        }
+      }
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">isExpanded</span>) {
+        <span style="color:#75715e">// Set the expanded state on the triggering element
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>, <span style="color:#e6db74">&#39;true&#39;</span>);
+        <span style="color:#75715e">// Hide the accordion sections, using aria-controls to specify the desired section
+</span><span style="color:#75715e"></span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-controls&#39;</span>)).<span style="color:#a6e22e">removeAttribute</span>(<span style="color:#e6db74">&#39;hidden&#39;</span>);
+
+        <span style="color:#75715e">// If toggling is not allowed, set disabled state on trigger
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">allowToggle</span>) {
+          <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;aria-disabled&#39;</span>, <span style="color:#e6db74">&#39;true&#39;</span>);
+        }
+      }
+      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">allowToggle</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isExpanded</span>) {
+        <span style="color:#75715e">// Set the expanded state on the triggering element
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>, <span style="color:#e6db74">&#39;false&#39;</span>);
+        <span style="color:#75715e">// Hide the accordion sections, using aria-controls to specify the desired section
+</span><span style="color:#75715e"></span>        document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-controls&#39;</span>)).<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;hidden&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+      }
+
+      <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+    }
+  });
+
+  <span style="color:#75715e">// Bind keyboard behaviors on the main accordion container
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keydown&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">which</span>.<span style="color:#a6e22e">toString</span>();
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isExpanded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;true&#39;</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">allowToggle</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">allowMultiple</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">allowMultiple</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#39;data-allow-toggle&#39;</span>);
+
+    <span style="color:#75715e">// 33 = Page Up, 34 = Page Down
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ctrlModifier</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">ctrlKey</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/33|34/</span>));
+
+    <span style="color:#75715e">// Is this coming from an accordion header?
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;Accordion-trigger&#39;</span>)) {
+      <span style="color:#75715e">// Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// 38 = Up, 40 = Down
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/38|40/</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">ctrlModifier</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">triggers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">target</span>);
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">direction</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/34|40/</span>)) <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">triggers</span>.<span style="color:#a6e22e">length</span>;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newIndex</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">direction</span>) <span style="color:#f92672">%</span> <span style="color:#a6e22e">length</span>;
+
+        <span style="color:#a6e22e">triggers</span>[<span style="color:#a6e22e">newIndex</span>].<span style="color:#a6e22e">focus</span>();
+
+        <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+      }
+      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/35|36/</span>)) {
+        <span style="color:#75715e">// 35 = End, 36 = Home keyboard operations
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">key</span>) {
+          <span style="color:#75715e">// Go to first accordion
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;36&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#a6e22e">triggers</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">focus</span>();
+            <span style="color:#66d9ef">break</span>;
+            <span style="color:#75715e">// Go to last accordion
+</span><span style="color:#75715e"></span>          <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;35&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#a6e22e">triggers</span>[<span style="color:#a6e22e">triggers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">focus</span>();
+            <span style="color:#66d9ef">break</span>;
+        }
+        <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+
+      }
+
+    }
+  });
+
+  <span style="color:#75715e">// These are used to style the accordion when one of the buttons has focus
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.Accordion-trigger&#39;</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">trigger</span>) {
+
+    <span style="color:#a6e22e">trigger</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;focus&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+      <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;focus&#39;</span>);
+    });
+
+    <span style="color:#a6e22e">trigger</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;blur&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+      <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;focus&#39;</span>);
+    });
+
+  });
+
+  <span style="color:#75715e">// Minor setup: will set disabled state, via aria-disabled, to an
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// expanded/ active accordion which is not allowed to be toggled close
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">allowToggle</span>) {
+    <span style="color:#75715e">// Get the first expanded/ active accordion
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">expanded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">accordion</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[aria-expanded=&#34;true&#34;]&#39;</span>);
+
+    <span style="color:#75715e">// If an expanded/ active accordion is found, disable
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">expanded</span>) {
+      <span style="color:#a6e22e">expanded</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;aria-disabled&#39;</span>, <span style="color:#e6db74">&#39;true&#39;</span>);
+    }
+  }
+
+});
+</code></pre></div>
+
+
+  </div>
+</div>
 
 
           </div>
