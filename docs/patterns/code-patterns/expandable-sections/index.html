@@ -322,9 +322,17 @@
   &lt;<span style="color:#f92672">p</span>&gt;IT&#39;S A PUPPY!&lt;/<span style="color:#f92672">p</span>&gt;
   &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ images/thisisfine.gif | absURL }}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog sits in burning house drinking coffee saying, this is fine&#34;</span>/&gt;
 &lt;/<span style="color:#f92672">details</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
-<p>As of July 2020, it&rsquo;s accessible out of the box &ndash; although I did notice in my testing that the &ldquo;expanded&rdquo; and &ldquo;collapsed&rdquo; states are not toggled when there is no SUMMARY element nested in the DETIALS element.</p>
-<!-- raw HTML omitted -->
+</code></pre></div><aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    
+As of July 2020, it's accessible out of the box -- although I did notice in my testing that the "expanded" and "collapsed" states are not toggled when there is no SUMMARY element nested in the DETIALS element.
+
+  </div>
+</aside>
+
 <p>The DETAILS element supports the TOGGLE event, so adding more functionality to it is pretty straightforward.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JS" data-lang="JS"><span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;toggle&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">open</span>) {
@@ -335,206 +343,229 @@
       <span style="color:#75715e">// undo awesome thing
 </span><span style="color:#75715e"></span>    }
   });
-</code></pre></div><!-- raw HTML omitted -->
-<pre><code>  &lt;li&gt;
-    &lt;strong&gt;&lt;a href=&quot;https://www.w3.org/TR/WCAG20/&quot;&gt;
-      &lt;svg class=&quot;wcag-icon&quot; viewBox=&quot;0 0 127.09899 67.763&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
-        &lt;use xlink:href=&quot;#w3c&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-      1.2.1 Audio-only and Video-only (Prerecorded&lt;/a&gt; (level A)
-    &lt;/strong&gt;
+</code></pre></div>
+
+
+
+<ul class="wcag ">
+  
     
-  &lt;/li&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  &lt;li&gt;
-    &lt;strong&gt;&lt;a href=&quot;https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic&quot;&gt;
-      &lt;svg class=&quot;wcag-icon&quot; viewBox=&quot;0 0 127.09899 67.763&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
-        &lt;use xlink:href=&quot;#w3c&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-      1.3.1 Info and Relationships&lt;/a&gt; (level A)
-    &lt;/strong&gt;
+  
     
-  &lt;/li&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  &lt;li&gt;
-    &lt;strong&gt;&lt;a href=&quot;https://www.w3.org/TR/WCAG20/#ensure-compat-rsv&quot;&gt;
-      &lt;svg class=&quot;wcag-icon&quot; viewBox=&quot;0 0 127.09899 67.763&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
-        &lt;use xlink:href=&quot;#w3c&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-      4.1.2 Name, Role, Value&lt;/a&gt; (level A)
-    &lt;/strong&gt;
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.2.1 Audio-only and Video-only (Prerecorded</a> (level A)
+        </strong>
+        
+      </li>
     
-  &lt;/li&gt;
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>  &lt;td&gt;
+  
     
+  
     
+  
     
+  
     
-    &lt;img src=&quot;https://kerseyi.github.io/cupper-2/images/browser-firefox.svg&quot; alt=&quot;&quot;&gt;
-    &lt;span&gt;&lt;strong&gt;Firefox &lt;/strong&gt;&lt;/span&gt;
+  
     
-      
-      
-      &lt;span class=&quot;additional&quot;&gt;with &lt;strong&gt;JAWS&lt;/strong&gt;&lt;/span&gt;
+  
     
-  &lt;/td&gt;
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.3.1 Info and Relationships</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
 
-  &lt;td&gt;
-    
-    
-    
-    
-    &lt;img src=&quot;https://kerseyi.github.io/cupper-2/images/browser-chrome.svg&quot; alt=&quot;&quot;&gt;
-    &lt;span&gt;&lt;strong&gt;Chrome &lt;/strong&gt;&lt;/span&gt;
-    
-  &lt;/td&gt;
 
-  &lt;td&gt;
-    
-    
-    
-    
-    &lt;img src=&quot;https://kerseyi.github.io/cupper-2/images/browser-safari-ios.svg&quot; alt=&quot;&quot;&gt;
-    &lt;span&gt;&lt;strong&gt;Safari iOS &lt;/strong&gt;&lt;/span&gt;
-    
-      
-      
-      &lt;span class=&quot;additional&quot;&gt;with &lt;strong&gt;Voiceover&lt;/strong&gt;&lt;/span&gt;
-    
-  &lt;/td&gt;
 
-  &lt;td&gt;
+
+<table class="tested">
+  <tr>
+    <th scope="row">
+      <svg viewBox="0 0 177.16535 177.16535" focusable="false" aria-hidden="true">
+        <use xlink:href="#tick"></use>
+      </svg>
+      Tested using
+    </th>
     
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-firefox.svg" alt="">
+        <span><strong>Firefox </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>JAWS</strong></span>
+        
+      </td>
     
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-chrome.svg" alt="">
+        <span><strong>Chrome </strong></span>
+        
+      </td>
     
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-safari-ios.svg" alt="">
+        <span><strong>Safari iOS </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>Voiceover</strong></span>
+        
+      </td>
     
-    &lt;img src=&quot;https://kerseyi.github.io/cupper-2/images/browser-edge.svg&quot; alt=&quot;&quot;&gt;
-    &lt;span&gt;&lt;strong&gt;Edge &lt;/strong&gt;&lt;/span&gt;
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-edge.svg" alt="">
+        <span><strong>Edge </strong></span>
+        
+      </td>
     
-  &lt;/td&gt;
-</code></pre>
-<!-- raw HTML omitted -->
+  </tr>
+</table>
+
 
   </main>
 

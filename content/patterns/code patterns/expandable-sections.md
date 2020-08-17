@@ -40,9 +40,9 @@ What's that? An HTML accordion you say? Yup! It's called the <a href="https://de
 </details>
 ```
 
-{{% note %}}
+{{< note >}}
 As of July 2020, it's accessible out of the box -- although I did notice in my testing that the "expanded" and "collapsed" states are not toggled when there is no SUMMARY element nested in the DETIALS element.
-{{% /note %}}
+{{< /note >}}
 
 The DETAILS element supports the TOGGLE event, so adding more functionality to it is pretty straightforward.
 
@@ -60,8 +60,8 @@ details.addEventListener("toggle", event => {
 
 
 
-{{% wcag include="1.2.1, 1.3.1, 4.1.2" %}}
+{{< wcag include="1.2.1, 1.3.1, 4.1.2" >}}
 
-{{% tested using="Firefox + JAWS, Chrome, Safari iOS + Voiceover, Edge" %}}
+{{< tested using="Firefox + JAWS, Chrome, Safari iOS + Voiceover, Edge" >}}
 
 
