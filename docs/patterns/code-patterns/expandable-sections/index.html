@@ -346,6 +346,23 @@ As of July 2020, it's accessible out of the box -- although I did notice in my t
 </code></pre></div>
 
 
+<!-- raw HTML omitted -->
+<p>The <code>visually-hidden</code> utility class uses a set of special properties to hide content visually without making it unavailable to screen readers and other non-visual user agents. The class is defined like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">.<span style="color:#a6e22e">visually-hidden</span> {
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span> <span style="color:#75715e">!important</span>;
+  <span style="color:#66d9ef">clip</span>: rect(<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>, <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>) <span style="color:#75715e">!important</span>;
+  <span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">0</span> <span style="color:#75715e">!important</span>;
+  <span style="color:#66d9ef">border</span>:<span style="color:#ae81ff">0</span> <span style="color:#75715e">!important</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#75715e">!important</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#75715e">!important</span>;
+  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span> <span style="color:#75715e">!important</span>;
+}
+</code></pre></div><p>Use it sparingly since, in most cases, what is identified non-visually should also be presented visually. Bear in mind that not all screen reader users are blind users.</p>
+
+
+
+
+
 
 <ul class="wcag ">
   
