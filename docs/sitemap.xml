@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://thepaciellogroup.github.io/cupper/patterns/coding/code-blocks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://thepaciellogroup.github.io/cupper/patterns/code-patterns/expandable-sections/</loc>
   </url>
   
   <url>
@@ -66,7 +70,10 @@
   
   <url>
     <loc>https://thepaciellogroup.github.io/cupper/categories/</loc>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thepaciellogroup.github.io/cupper/patterns/code-patterns/</loc>
   </url>
   
   <url>
@@ -95,12 +102,10 @@
   
   <url>
     <loc>https://thepaciellogroup.github.io/cupper/tags/markdown/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thepaciellogroup.github.io/cupper/tags/metadata/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -109,7 +114,6 @@
   
   <url>
     <loc>https://thepaciellogroup.github.io/cupper/patterns/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -126,7 +130,6 @@
   
   <url>
     <loc>https://thepaciellogroup.github.io/cupper/tags/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
