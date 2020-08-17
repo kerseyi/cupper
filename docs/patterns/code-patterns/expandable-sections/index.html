@@ -246,7 +246,132 @@
 <h2 id="code-patterns">Code patterns</h2>
 <p>There are a number of ways to construct an accordion menu. Below, we provide some common accordion menu patterns with accessibility friendly features.</p>
 <h2 id="html-details-element">HTML Details Element</h2>
+<p>What&rsquo;s that? An HTML accordion you say? Yup! It&rsquo;s called the <!-- raw HTML omitted -->HTML Details Element.<!-- raw HTML omitted -->
 
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-8c27ab9ddd1646d6f76b02ff18bf7b8c">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c"></div>
+        <button data-launch="js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-8c27ab9ddd1646d6f76b02ff18bf7b8c">Basic HTML Details Element</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-8c27ab9ddd1646d6f76b02ff18bf7b8c">
+      
+<details>
+  <summary>OOOH, WHAT'S IN THERE?</summary>
+  <p>IT'S A PUPPY!</p>
+  <img src="https://kerseyi.github.io/cupper-2/static/images" alt="dog sits in burning house drinking coffee saying, this is fine"/>
+</details>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c');
+      var template = document.getElementById('template-8c27ab9ddd1646d6f76b02ff18bf7b8c');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-8c27ab9ddd1646d6f76b02ff18bf7b8c"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "8c27ab9ddd1646d6f76b02ff18bf7b8c";
+      });
+    })();
+  </script>
+</div>
+</p>
+<div class="expandable-section">
+  
+    <h1>
+  
+    <button aria-expanded="false" data-expands="js-expandable-d20eada5ba8b404b6c2f32659b5e8eeb">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h1>
+  
+  <div id="js-expandable-d20eada5ba8b404b6c2f32659b5e8eeb" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">details</span>&gt;
+  &lt;<span style="color:#f92672">summary</span>&gt;OOOH, WHAT&#39;S IN THERE?&lt;/<span style="color:#f92672">summary</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;IT&#39;S A PUPPY!&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ images/thisisfine.gif | absURL }}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog sits in burning house drinking coffee saying, this is fine&#34;</span>/&gt;
+&lt;/<span style="color:#f92672">details</span>&gt;
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    
+As of July 2020, it's accessible out of the box -- although I did notice in my testing that the "expanded" and "collapsed" states are not toggled when there is no SUMMARY element nested in the DETIALS element.
+
+  </div>
+</aside>
+
+<p>The DETAILS element supports the TOGGLE event, so adding more functionality to it is pretty straightforward.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JS" data-lang="JS"><span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;toggle&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">open</span>) {
+    <span style="color:#75715e">/* the element was toggled open */</span>
+    <span style="color:#75715e">//do awesome thing!
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#75715e">/* the element was toggled closed */</span>
+      <span style="color:#75715e">// undo awesome thing
+</span><span style="color:#75715e"></span>    }
+  });
+</code></pre></div>
 
 
 <!-- raw HTML omitted -->
@@ -262,6 +387,229 @@
 }
 </code></pre></div><p>Use it sparingly since, in most cases, what is identified non-visually should also be presented visually. Bear in mind that not all screen reader users are blind users.</p>
 
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.2.1 Audio-only and Video-only (Prerecorded</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.3.1 Info and Relationships</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+
+
+<table class="tested">
+  <tr>
+    <th scope="row">
+      <svg viewBox="0 0 177.16535 177.16535" focusable="false" aria-hidden="true">
+        <use xlink:href="#tick"></use>
+      </svg>
+      Tested using
+    </th>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-firefox.svg" alt="">
+        <span><strong>Firefox </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>JAWS</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-chrome.svg" alt="">
+        <span><strong>Chrome </strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-safari-ios.svg" alt="">
+        <span><strong>Safari iOS </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>Voiceover</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-edge.svg" alt="">
+        <span><strong>Edge </strong></span>
+        
+      </td>
+    
+  </tr>
+</table>
 
 
   </main>
