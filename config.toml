@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Cupper"
-baseURL = "https://thepaciellogroup.github.io/cupper/"
+baseURL = "https://kerseyi.github.io/cupper-2/"
 canonifyURLs = true
 theme = "cupper"
 publishDir = "docs"
