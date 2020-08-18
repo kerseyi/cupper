@@ -7,6 +7,14 @@
   </url>
   
   <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/w3c/wcagquickref/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/w3c/atag2/</loc>
+  </url>
+  
+  <url>
     <loc>https://kerseyi.github.io/cupper-2/print-version/</loc>
     <lastmod>2017-07-29T22:48:43+01:00</lastmod>
   </url>
@@ -40,10 +48,6 @@
   </url>
   
   <url>
-    <loc>https://kerseyi.github.io/cupper-2/patterns/wcag/wcagquickref/</loc>
-  </url>
-  
-  <url>
     <loc>https://kerseyi.github.io/cupper-2/patterns/reference/</loc>
   </url>
   
@@ -52,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://kerseyi.github.io/cupper-2/patterns/wcag/</loc>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/w3c/</loc>
   </url>
   
 </urlset>

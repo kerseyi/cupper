@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>W3C Tools on Cupper</title>
+    <link>https://kerseyi.github.io/cupper-2/patterns/w3c/</link>
+    <description>Recent content in W3C Tools on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://kerseyi.github.io/cupper-2/patterns/w3c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WCAG 2.1</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/w3c/wcagquickref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/w3c/wcagquickref/</guid>
+      <description>WCAG 2.1 Quick Reference  WCAG Quick Ref - A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques.  WCAG 2.1 Tutorials  WCAG Tutorials  Page Structure Menus Images Tables Forms Carousels    WCAG Report Tools  WCAG-EM Report Tool  </description>
+    </item>
+    
+    <item>
+      <title>ATAG 2.0</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/w3c/atag2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/w3c/atag2/</guid>
+      <description>Authoring tools are software and services that “authors” (web developers, designers, writers, etc.) use to produce web content (static web pages, dynamic web applications, etc.).
+ATAG Overview  ATAG Overview  ATAG Quick Guide  ATAG Quick Guide  ATAG Report Tool  ATAG Quick Guide  </description>
+    </item>
+    
+  </channel>
+</rss>
