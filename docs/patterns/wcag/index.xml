@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WCAG Tools on Cupper</title>
+    <link>https://kerseyi.github.io/cupper-2/patterns/wcag/</link>
+    <description>Recent content in WCAG Tools on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://kerseyi.github.io/cupper-2/patterns/wcag/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick Reference</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/wcag/wcagquickref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/wcag/wcagquickref/</guid>
+      <description>WCAG 2.1 Quick Reference  WCAG Quick Ref - A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques.  WCAG 2.1 Tutorials  WCAG Tutorials  Page Structure Menus Images Tables Forms Carousels    WCAG Report Tools  WCAG-EM Report Tool WCAG-EM Report Tool  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -46,5 +46,14 @@
       <description>Notifications / Alerts  Live Regions  Accessiblity Talks https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;amp;feature=youtu.be Live Region Codepen https://codepen.io/iankonlineada/pen/eYJwQBY    Aria Roles  alert status  Poor support  aria-atomic : what is read? aria-relevant : when it is read aria-busy : maybe don&amp;rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.  No support  role=&amp;quot;marquee&amp;rdquo; role=&amp;quot;timer&amp;rdquo;  HTML   Scott O&amp;rsquo;Hara https://www.scottohara.me/blog/2019/07/10/the-output-element.html  Types of live regions   Dynamic search bar - Don&amp;rsquo;t want it to update to frequently.</description>
     </item>
     
+    <item>
+      <title>Quick Reference</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/wcag/wcagquickref/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/wcag/wcagquickref/</guid>
+      <description>WCAG 2.1 Quick Reference  WCAG Quick Ref - A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques.  WCAG 2.1 Tutorials  WCAG Tutorials  Page Structure Menus Images Tables Forms Carousels    WCAG Report Tools  WCAG-EM Report Tool WCAG-EM Report Tool  </description>
+    </item>
+    
   </channel>
 </rss>

@@ -40,11 +40,19 @@
   </url>
   
   <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/wcag/wcagquickref/</loc>
+  </url>
+  
+  <url>
     <loc>https://kerseyi.github.io/cupper-2/patterns/reference/</loc>
   </url>
   
   <url>
     <loc>https://kerseyi.github.io/cupper-2/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/wcag/</loc>
   </url>
   
 </urlset>
