@@ -15,6 +15,7 @@ toc = true
 
 ## SVG
 
+-	[Deque - creating Accessible SVGs](https://www.deque.com/blog/creating-accessible-svgs/) - Create Accessible SVGs 
 
 
 

@@ -224,6 +224,15 @@
                     </a>
                   </li>
                 
+                  <li class="pattern">
+                    <a href="#menus" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Menus</span>
+                    </a>
+                  </li>
+                
               </ul>
             </li>
           
@@ -241,11 +250,11 @@
                   </li>
                 
                   <li class="pattern">
-                    <a href="#notifications" >
+                    <a href="#notifications-%2f-alerts" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
                       </svg>
-                      <span class="text">Notifications</span>
+                      <span class="text">Notifications / Alerts</span>
                     </a>
                   </li>
                 
@@ -2271,249 +2280,6 @@ Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">s
   </iframe>
 
 
-
-<div class="demo-container">
-  
-  <figure role="group" aria-labelledby="caption-28a3004af1e38994ca541bb9bd2f4efc">
-  
-      <div class="demo-inner" >
-        <div class="demo" id="js-demo-28a3004af1e38994ca541bb9bd2f4efc"></div>
-        <button data-launch="js-demo-28a3004af1e38994ca541bb9bd2f4efc">Launch <span aria-hidden="true">↗</span></button>
-      </div>
-      
-          <figcaption id="caption-28a3004af1e38994ca541bb9bd2f4efc">User Input Modal</figcaption>
-      
-  
-  </figure>
-  
-  <template id="template-28a3004af1e38994ca541bb9bd2f4efc">
-      
-	<script>
-		// Will hold previously focused element before modal was opened
-let beforeModalOpenedFocus;
-
-// Find the modal and its overlay
-let modal = demo.querySelector(".modal");
-let modalOverlay = demo.querySelector(".modal-overlay");
-
-let openModalBtn = demo.querySelector("#launchModal");
-openModalBtn.addEventListener("click", openModal);
-
-function openModal() {
-  // Save current focus
-  beforeModalOpenedFocus = demo.activeElement;
-
-  // Listen for and trap the keyboard
-  modal.addEventListener("keydown", trapTabKey);
-  // change aria-hidden state
-  modal.setAttribute("aria-hidden", "false");
-
-  // Listen for indicators to close the modal
-  modalOverlay.addEventListener("click", closeModal);
-  // Sign-Up button
-  const closeModalBtn = modal.querySelector(".closeModal");
-  closeModalBtn.addEventListener("click", closeModal);
-
-  // Find all of the focusable children / elements
-  let focusableElementsString =
-    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-  let focusableElements = modal.querySelectorAll(focusableElementsString);
-  // Convert NodeList to Array
-  focusableElements = Array.prototype.slice.call(focusableElements);
-
-  const firstTabStop = focusableElements[0];
-  const lastTabStop = focusableElements[focusableElements.length - 1];
-
-  // Show the modal and overlay
-  modal.style.display = "block";
-  modalOverlay.style.display = "block";
-
-  // Focus first child
-  firstTabStop.focus();
-
-  function trapTabKey(e) {
-    // Check for TAB key press
-    if (e.keyCode === 9) {
-      // SHIFT + TAB
-      if (e.shiftKey) {
-        if (demo.activeElement === firstTabStop) {
-          e.preventDefault();
-          lastTabStop.focus();
-        }
-
-        // TAB
-      } else {
-        if (demo.activeElement === lastTabStop) {
-          e.preventDefault();
-          firstTabStop.focus();
-        }
-      }
-    }
-
-    // ESCAPE
-    if (e.keyCode === 27) {
-      closeModal();
-    }
-  }
-}
-
-function closeModal() {
-  // Hide the modal and overlay
-  modal.style.display = "none";
-  modalOverlay.style.display = "none";
-  // change aria-hidden state
-  modal.setAttribute("aria-hidden", "true");
-
-  // Set focus back to element that had it before the modal was opened
-  beforeModalOpenedFocus.focus();
-}
-	</script>
-	<style>
-		
-		body {
-  background: rgb(59, 45, 63);
-  background: radial-gradient(
-    circle,
-    rgba(59, 45, 63, 0.5186449579831933) 0%,
-    rgba(76, 64, 77, 1) 100%
-  );
-}
-
-#launchModal {
-  margin-top: 150px;
-}
-
-.modal-overlay {
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* places the modalOverlay between the main page and the modal dialog */
-  background-color: #000;
-  opacity: 0.5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-content {
-  height: 60vh;
-}
-	</style>
-	<!--NOTE: Example using Bootstrap 4.4.1 -->
-<!-- Button trigger modal -->
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<div class="container-fluid">
-  <div class="row main-content">
-    <div class="col-md-6 offset-md-3">
-      <button id="launchModal" type="button" class="btn btn-light btn-lg btn-block">
-        Launch Modal
-      </button>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Accessible Modal Example</h5>
-        <button type="button" class="close closeModal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p tabindex="0">Set a tabindex on this P element to make sure first element in modal gets focus. Normally non-focusable elements that are the first element in a modal need to recieve focus.</p>
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" title="Please enter your email." required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity" title="Please enter your city." required>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>OR</option>
-                <option>CA</option>
-                <option>NY</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip" title="Please enter your zip code." required>
-            </div>
-          </div>
-          <div>
-          </div>
-          <p>Make sure that error messages have been added to all inputs.</p>
-      </div>
-      <div class="modal-footer">
-        <input role="button" type="submit" class="btn btn-primary closeModal" value="Submit">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal-overlay"></div>
-
-
-  </template>
-  <script>
-    (function() {
-      var root = document.getElementById('js-demo-28a3004af1e38994ca541bb9bd2f4efc');
-      var template = document.getElementById('template-28a3004af1e38994ca541bb9bd2f4efc');
-
-      
-      var demoDiv = document.createElement('div');
-      demoDiv.innerHTML = template.innerHTML;
-      var standaloneScript = demoDiv.querySelector('script');
-      if (standaloneScript) {
-        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
-      }
-
-      if (document.head.attachShadow) {
-        var templateScript = template.content.querySelector('script');
-        if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-28a3004af1e38994ca541bb9bd2f4efc\').shadowRoot;' + templateScript.textContent + '})();';
-          templateScript.textContent = wrappedScript;
-        }
-        root.attachShadow({mode: 'open'});
-        root.shadowRoot.appendChild(document.importNode(template.content, true));
-      } else {
-        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
-      }
-
-      var launchButton = document.querySelector('[data-launch="js-demo-28a3004af1e38994ca541bb9bd2f4efc"]');
-      launchButton.addEventListener('click', function () {
-        var standalone = window.open();
-        standalone.document.body.innerHTML = demoDiv.innerHTML;
-
-        
-        var newScript = standalone.document.createElement('script');
-        var oldScript = standalone.document.querySelector('script');
-        if (oldScript) {
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.removeChild(oldScript);
-          standalone.document.body.appendChild(newScript);
-        }
-        
-
-        standalone.document.title = 'demo ' + "28a3004af1e38994ca541bb9bd2f4efc";
-      });
-    })();
-  </script>
-</div>
-
 <h3 id="code">Code</h3>
 <p><div class="expandable-section">
   
@@ -2775,6 +2541,201 @@ function closeModal() {
 
           </div>
         
+          <div class="pattern-section">
+            <h1 id="menus" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Menus
+            </h1>
+            <h2 id="menu-buttons">Menu Buttons</h2>
+<p>Here is an example of the menu button being activated on the click event.</p>
+<h2 id="demo">Demo</h2>
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-7e6fcb8d28e90b4c05d4c089361537b1">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-7e6fcb8d28e90b4c05d4c089361537b1"></div>
+        <button data-launch="js-demo-7e6fcb8d28e90b4c05d4c089361537b1">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-7e6fcb8d28e90b4c05d4c089361537b1">Menu Button</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-7e6fcb8d28e90b4c05d4c089361537b1">
+      
+	<script type="text/javascript">
+		const menuButton = demo.getElementById('menu-btn-example1');
+
+	menuButton.addEventListener('click', function(){
+	let expanded = this.getAttribute('aria-expanded') === 'true';
+	this.setAttribute('aria-expanded', !expanded);
+	let exampleMenu = this.nextElementSibling;
+	exampleMenu.hidden = !exampleMenu.hidden;
+});
+	</script>
+	<style>
+		button {
+    		font-size: 1.25rem;
+    		border-radius: 0.33em;
+    		font-family: inherit;
+    		background: #111;
+    		color: #fefefe;
+    		padding: 0.75rem;
+    		border: 0;
+		}
+		ul {
+			list-style: none;
+			width: 150px;
+			margin-top: 0px;
+			padding-left: 0px;
+			border-bottom-left-radius: 0.33em;
+    		border-bottom-right-radius: 0.33em;
+    		border-top-right-radius: 0.33em;
+    		border: 1px solid black;
+		}
+		ul > li {
+    		font-size: 1.25rem;
+    		font-family: inherit;
+    		background: #fff;
+    		color: #000;
+    		padding: 0.75rem;
+    		border: 1px solid black;
+
+		}
+		ul > li a {
+			width: 100%;
+		}
+		ul > li:hover {
+			background-color: aliceblue;
+		}
+		ul > li a:focus {
+			background-color: aliceblue;
+		}
+	</style>
+<nav>
+	<button id="menu-btn-example1" aria-expanded="false" aria-haspopup="true">Press me!</button>
+		<ul role="menu" class="menu-btn-example-ul" hidden>
+		<li>
+			<a href="#" role="menuitem">Option 1</a>
+		</li>
+		<li>
+			<a href="#" role="menuitem">Option 2</a>
+		</li>
+		<li>
+			<a href="#" role="menuitem">Option 3</a>
+		</li>
+	</ul>
+</nav>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-7e6fcb8d28e90b4c05d4c089361537b1');
+      var template = document.getElementById('template-7e6fcb8d28e90b4c05d4c089361537b1');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-7e6fcb8d28e90b4c05d4c089361537b1\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-7e6fcb8d28e90b4c05d4c089361537b1"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "7e6fcb8d28e90b4c05d4c089361537b1";
+      });
+    })();
+  </script>
+</div>
+
+<h2 id="code-pattern">Code Pattern</h2>
+<h3 id="html">HTML</h3>
+<!-- raw HTML omitted -->
+<h3 id="javascript">JavaScript</h3>
+<div class="expandable-section">
+  
+    <h1>
+  
+    <button aria-expanded="false" data-expands="js-expandable-51305b1c2982456d3478bb2c3a0a7a81">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h1>
+  
+  <div id="js-expandable-51305b1c2982456d3478bb2c3a0a7a81" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav</span>&gt;
+	&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu-btn-example1&#34;</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">aria-haspopup</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;Press me!&lt;/<span style="color:#f92672">button</span>&gt;
+		&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu-btn-example-ul&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+			&lt;<span style="color:#f92672">li</span>&gt;
+			&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menuitem&#34;</span>&gt;Option 1&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;
+			&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menuitem&#34;</span>&gt;Option 2&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;
+			&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menuitem&#34;</span>&gt;Option 3&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;/<span style="color:#f92672">li</span>&gt;
+	&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">nav</span>&gt;
+
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<p>const menuButton = document.getElementById(&lsquo;menu-btn-example&rsquo;);</p>
+<p>menuButton.addEventListener(&lsquo;click&rsquo;, function(){
+let expanded = this.getAttribute(&lsquo;aria-expanded&rsquo;) === &lsquo;true&rsquo;;
+this.setAttribute(&lsquo;aria-expanded&rsquo;, !expanded);
+let exampleMenu = this.nextElementSibling;
+exampleMenu.hidden = !exampleMenu.hidden;
+})</p>
+
+          </div>
+        
       
         
           <div class="pattern-section">
@@ -2795,18 +2756,20 @@ function closeModal() {
 <li><a href="https://fizz.studio/">Fizz Studio Software</a> - Create Accessible Data Visualizations</li>
 </ul>
 <h2 id="svg">SVG</h2>
+<ul>
+<li><a href="https://www.deque.com/blog/creating-accessible-svgs/">Deque - creating Accessible SVGs</a> - Create Accessible SVGs</li>
+</ul>
 
           </div>
         
           <div class="pattern-section">
-            <h1 id="notifications" tabindex="-1">
+            <h1 id="notifications-/-alerts" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
               </svg>
-              Notifications
+              Notifications / Alerts
             </h1>
-            <h1 id="notifications--alerts">Notifications / Alerts</h1>
-<ul>
+            <ul>
 <li>Live Regions
 <ul>
 <li>Accessiblity Talks <a href="https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be">https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be</a></li>
@@ -2939,7 +2902,7 @@ function closeModal() {
       </div>
     </div>
     <script src="https://kerseyi.github.io/cupper-2/js/jquery.slim.min.js"></script>
-    <script src="https://kerseyi.github.io/cupper-2/js/bootstrap.bundle.min.js"></script>
+    
     <script src="https://kerseyi.github.io/cupper-2/js/prism.js"></script>
     <script src="https://kerseyi.github.io/cupper-2/js/dom-scripts.js"></script>
     

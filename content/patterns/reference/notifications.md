@@ -1,9 +1,7 @@
 +++
-title = "Notifications"
+title = "Notifications / Alerts"
 toc = true
 +++
-
-# Notifications / Alerts
 
 - Live Regions 
 	- Accessiblity Talks <https://www.youtube.com/watch?v=W5YAaLLBKhQ&feature=youtu.be>

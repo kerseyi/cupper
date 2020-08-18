@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> menu, toggle, expand on Cupper</title>
+    <link>https://kerseyi.github.io/cupper-2/tags/menu-toggle-expand/</link>
+    <description>Recent content in  menu, toggle, expand on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://kerseyi.github.io/cupper-2/tags/menu-toggle-expand/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Menus</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/menus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/menus/</guid>
+      <description>Menu Buttons Here is an example of the menu button being activated on the click event.
+Demo Launch ↗Menu Buttonconst menuButton = demo.getElementById(&#39;menu-btn-example1&#39;);menuButton.addEventListener(&#39;click&#39;, function(){let expanded = this.getAttribute(&#39;aria-expanded&#39;) === &#39;true&#39;;this.setAttribute(&#39;aria-expanded&#39;, !expanded);let exampleMenu = this.nextElementSibling;exampleMenu.hidden = !exampleMenu.hidden;});button {font-size: 1.25rem;border-radius: 0.33em;font-family: inherit;background: #111;color: #fefefe;padding: 0.75rem;border: 0;}ul {list-style: none;width: 150px;margin-top: 0px;padding-left: 0px;border-bottom-left-radius: 0.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/">
+    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/menus/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Notifications / Alerts | Cupper
+        Menus | Cupper
       
     </title>
     
@@ -224,7 +224,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/menus/" >
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/menus/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -249,7 +249,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/" aria-current="page">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -299,8 +299,22 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Notifications / Alerts
+      Menus
     </h1>
+    
+      <div class="tags">
+        <strong aria-hidden="true">Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              <a href="https://kerseyi.github.io/cupper-2/tags/menu-toggle-expand"> menu, toggle, expand</a>
+            </li>
+          
+        </ul>
+      </div>
     
     
       
@@ -310,32 +324,20 @@
     <ol>
       
         <li>
-          <a href="#aria-roles">
-            Aria Roles
+          <a href="#menu-buttons">
+            Menu Buttons
           </a>
         </li>
       
         <li>
-          <a href="#html">
-            HTML 
+          <a href="#demo">
+            Demo
           </a>
         </li>
       
         <li>
-          <a href="#types-of-live-regions">
-            Types of live regions
-          </a>
-        </li>
-      
-        <li>
-          <a href="#adding-live-region-to-page">
-            Adding live region to page
-          </a>
-        </li>
-      
-        <li>
-          <a href="#resources">
-            Resources
+          <a href="#code-pattern">
+            Code Pattern
           </a>
         </li>
       
@@ -344,62 +346,191 @@
 
 
     
-    <ul>
-<li>Live Regions
-<ul>
-<li>Accessiblity Talks <a href="https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be">https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be</a></li>
-<li>Live Region Codepen <a href="https://codepen.io/iankonlineada/pen/eYJwQBY">https://codepen.io/iankonlineada/pen/eYJwQBY</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="aria-roles">Aria Roles</h2>
-<ol>
-<li>alert</li>
-<li>status</li>
-</ol>
-<h3 id="poor-support">Poor support</h3>
-<ol>
-<li>aria-atomic : what is read?</li>
-<li>aria-relevant : when it is read</li>
-<li>aria-busy : maybe don&rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.</li>
-</ol>
-<h3 id="no-support">No support</h3>
-<ol>
-<li>role=&quot;marquee&rdquo;</li>
-<li>role=&quot;timer&rdquo;</li>
-</ol>
-<h2 id="html-output">HTML <!-- raw HTML omitted --></h2>
-<ul>
-<li>Scott O&rsquo;Hara <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">https://www.scottohara.me/blog/2019/07/10/the-output-element.html</a></li>
-</ul>
-<h2 id="types-of-live-regions">Types of live regions</h2>
-<ol>
-<li>
-<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&quot;polite&rdquo;</p>
-<ol>
-<li>Solution: create live region that reads off numer of results after user has stopped typing for a few seconds</li>
-</ol>
-</li>
-<li>
-<p>Toasts - High risk of going wrong for many users &ndash; not just SR. Bad for zoom text users also.</p>
-<ol>
-<li>Toast should not time out / disappear unless there is an alternative way</li>
-</ol>
-</li>
-<li>
-<p>Feed and chat messages - role=&quot;log&rdquo; plus aria-live=&quot;assertive/polite&rdquo; aria-atomic=&quot;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
-</li>
-</ol>
-<h2 id="adding-live-region-to-page">Adding live region to page</h2>
-<ol>
-<li>Adding to DOM with role=&quot;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
-<li>If updating, have the empty element in page, and push the updates into the region</li>
-<li>Create a notification center where user can check notifications &ndash; apps mostly</li>
-</ol>
-<h2 id="resources">Resources</h2>
-<ul>
-<li>Notification tests <a href="https://codepen.io/smhigley/pen/abOwGro">https://codepen.io/smhigley/pen/abOwGro</a></li>
-</ul>
+    <h2 id="menu-buttons">Menu Buttons</h2>
+<p>Here is an example of the menu button being activated on the click event.</p>
+<h2 id="demo">Demo</h2>
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-7e6fcb8d28e90b4c05d4c089361537b1">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-7e6fcb8d28e90b4c05d4c089361537b1"></div>
+        <button data-launch="js-demo-7e6fcb8d28e90b4c05d4c089361537b1">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-7e6fcb8d28e90b4c05d4c089361537b1">Menu Button</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-7e6fcb8d28e90b4c05d4c089361537b1">
+      
+	<script type="text/javascript">
+		const menuButton = demo.getElementById('menu-btn-example1');
+
+	menuButton.addEventListener('click', function(){
+	let expanded = this.getAttribute('aria-expanded') === 'true';
+	this.setAttribute('aria-expanded', !expanded);
+	let exampleMenu = this.nextElementSibling;
+	exampleMenu.hidden = !exampleMenu.hidden;
+});
+	</script>
+	<style>
+		button {
+    		font-size: 1.25rem;
+    		border-radius: 0.33em;
+    		font-family: inherit;
+    		background: #111;
+    		color: #fefefe;
+    		padding: 0.75rem;
+    		border: 0;
+		}
+		ul {
+			list-style: none;
+			width: 150px;
+			margin-top: 0px;
+			padding-left: 0px;
+			border-bottom-left-radius: 0.33em;
+    		border-bottom-right-radius: 0.33em;
+    		border-top-right-radius: 0.33em;
+    		border: 1px solid black;
+		}
+		ul > li {
+    		font-size: 1.25rem;
+    		font-family: inherit;
+    		background: #fff;
+    		color: #000;
+    		padding: 0.75rem;
+    		border: 1px solid black;
+
+		}
+		ul > li a {
+			width: 100%;
+		}
+		ul > li:hover {
+			background-color: aliceblue;
+		}
+		ul > li a:focus {
+			background-color: aliceblue;
+		}
+	</style>
+<nav>
+	<button id="menu-btn-example1" aria-expanded="false" aria-haspopup="true">Press me!</button>
+		<ul role="menu" class="menu-btn-example-ul" hidden>
+		<li>
+			<a href="#" role="menuitem">Option 1</a>
+		</li>
+		<li>
+			<a href="#" role="menuitem">Option 2</a>
+		</li>
+		<li>
+			<a href="#" role="menuitem">Option 3</a>
+		</li>
+	</ul>
+</nav>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-7e6fcb8d28e90b4c05d4c089361537b1');
+      var template = document.getElementById('template-7e6fcb8d28e90b4c05d4c089361537b1');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-7e6fcb8d28e90b4c05d4c089361537b1\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-7e6fcb8d28e90b4c05d4c089361537b1"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "7e6fcb8d28e90b4c05d4c089361537b1";
+      });
+    })();
+  </script>
+</div>
+
+<h2 id="code-pattern">Code Pattern</h2>
+<h3 id="html">HTML</h3>
+<!-- raw HTML omitted -->
+<h3 id="javascript">JavaScript</h3>
+<div class="expandable-section">
+  
+    <h1>
+  
+    <button aria-expanded="false" data-expands="js-expandable-51305b1c2982456d3478bb2c3a0a7a81">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h1>
+  
+  <div id="js-expandable-51305b1c2982456d3478bb2c3a0a7a81" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav</span>&gt;
+	&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu-btn-example1&#34;</span> <span style="color:#a6e22e">aria-expanded</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">aria-haspopup</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;Press me!&lt;/<span style="color:#f92672">button</span>&gt;
+		&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu-btn-example-ul&#34;</span> <span style="color:#a6e22e">hidden</span>&gt;
+			&lt;<span style="color:#f92672">li</span>&gt;
+			&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menuitem&#34;</span>&gt;Option 1&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;
+			&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menuitem&#34;</span>&gt;Option 2&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;
+			&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menuitem&#34;</span>&gt;Option 3&lt;/<span style="color:#f92672">a</span>&gt;
+		&lt;/<span style="color:#f92672">li</span>&gt;
+	&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">nav</span>&gt;
+
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<p>const menuButton = document.getElementById(&lsquo;menu-btn-example&rsquo;);</p>
+<p>menuButton.addEventListener(&lsquo;click&rsquo;, function(){
+let expanded = this.getAttribute(&lsquo;aria-expanded&rsquo;) === &lsquo;true&rsquo;;
+this.setAttribute(&lsquo;aria-expanded&rsquo;, !expanded);
+let exampleMenu = this.nextElementSibling;
+exampleMenu.hidden = !exampleMenu.hidden;
+})</p>
 
   </main>
 

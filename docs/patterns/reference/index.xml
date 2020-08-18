@@ -16,16 +16,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/reference/color/</guid>
-      <description>Color  Color Safe - Accessible color palettes based on WCAG Guidelines of text and background contrast ratios Contrast Grid - Test BG and FG colors  Charts  Designing Accessible Data Visualizations - An intro to designing accessible data visualizations Fizz Studio Software - Create Accessible Data Visualizations  SVG </description>
+      <description>Color  Color Safe - Accessible color palettes based on WCAG Guidelines of text and background contrast ratios Contrast Grid - Test BG and FG colors  Charts  Designing Accessible Data Visualizations - An intro to designing accessible data visualizations Fizz Studio Software - Create Accessible Data Visualizations  SVG  Deque - creating Accessible SVGs - Create Accessible SVGs  </description>
     </item>
     
     <item>
-      <title>Notifications</title>
+      <title>Notifications / Alerts</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/reference/notifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/reference/notifications/</guid>
-      <description>Notifications / Alerts  Live Regions  Accessiblity Talks https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;amp;feature=youtu.be Live Region Codepen https://codepen.io/iankonlineada/pen/eYJwQBY    Aria Roles  alert status  Poor support  aria-atomic : what is read? aria-relevant : when it is read aria-busy : maybe don&amp;rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.  No support  role=&amp;quot;marquee&amp;rdquo; role=&amp;quot;timer&amp;rdquo;  HTML   Scott O&amp;rsquo;Hara https://www.scottohara.me/blog/2019/07/10/the-output-element.html  Types of live regions   Dynamic search bar - Don&amp;rsquo;t want it to update to frequently.</description>
+      <description>Live Regions  Accessiblity Talks https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;amp;feature=youtu.be Live Region Codepen https://codepen.io/iankonlineada/pen/eYJwQBY    Aria Roles  alert status  Poor support  aria-atomic : what is read? aria-relevant : when it is read aria-busy : maybe don&amp;rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.  No support  role=&amp;quot;marquee&amp;rdquo; role=&amp;quot;timer&amp;rdquo;  HTML   Scott O&amp;rsquo;Hara https://www.scottohara.me/blog/2019/07/10/the-output-element.html  Types of live regions   Dynamic search bar - Don&amp;rsquo;t want it to update to frequently.</description>
     </item>
     
   </channel>
