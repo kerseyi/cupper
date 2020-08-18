@@ -19,7 +19,7 @@ Accordion menus and collapsible regions are great ways to conserve screen space 
 
 ## Applicable WCAG 2.1 Success Criteria
 
-{{< wcag include="1.3.1, 4.1.2" >}}
+{{< wcag include="1.3.1, 4.1.2" descriptions="true" >}}
 
 ## HTML Details Element
 
