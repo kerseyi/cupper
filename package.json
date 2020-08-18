@@ -27,5 +27,9 @@
   "devDependencies": {
     "pre-commit": "^1.2.2",
     "sw-precache": "^5.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1"
   }
 }
