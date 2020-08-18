@@ -25,15 +25,15 @@ Modals are intended to be used as a quick and simple way to capture an interacti
 let beforeModalOpenedFocus;
 
 // Find the modal and its overlay
-let modal = document.querySelector(".modal");
-let modalOverlay = document.querySelector(".modal-overlay");
+let modal = demo.querySelector(".modal");
+let modalOverlay = demo.querySelector(".modal-overlay");
 
-let openModalBtn = document.querySelector("#launchModal");
+let openModalBtn = demo.querySelector("#launchModal");
 openModalBtn.addEventListener("click", openModal);
 
 function openModal() {
   // Save current focus
-  beforeModalOpenedFocus = document.activeElement;
+  beforeModalOpenedFocus = demo.activeElement;
 
   // Listen for and trap the keyboard
   modal.addEventListener("keydown", trapTabKey);
@@ -68,14 +68,14 @@ function openModal() {
     if (e.keyCode === 9) {
       // SHIFT + TAB
       if (e.shiftKey) {
-        if (document.activeElement === firstTabStop) {
+        if (demo.activeElement === firstTabStop) {
           e.preventDefault();
           lastTabStop.focus();
         }
 
         // TAB
       } else {
-        if (document.activeElement === lastTabStop) {
+        if (demo.activeElement === lastTabStop) {
           e.preventDefault();
           firstTabStop.focus();
         }
@@ -136,7 +136,7 @@ function closeModal() {
 	<!--NOTE: Example using Bootstrap 4.4.1 -->
 <!-- Button trigger modal -->
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <div class="container-fluid">
   <div class="row main-content">
