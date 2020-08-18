@@ -19,7 +19,7 @@ Accordion menus and collapsible regions are great ways to conserve screen space 
 
 ## Applicable WCAG 2.1 Success Criteria
 
-{{< wcag include="1.3.1, 4.1.2" descriptions="true" >}}
+{{< wcag include="1.3.1, 4.1.2, 2.1.1, 4.1.1" descriptions="true" >}}
 
 ## HTML Details Element
 
@@ -567,6 +567,12 @@ input {
 {{< expandable label="JavaScript" level="6" >}}
 {{< snippet file="accordion1_js.md" >}}
 {{< /expandable >}}
+
+## View More: Moving Focus 
+
+### Demo
+
+{{< codePen yLeOrqe >}}
 
 
 
