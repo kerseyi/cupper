@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/print-version/">
+    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/accordion/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-72x72.png">
@@ -31,8 +31,8 @@
     </style>
     <title>
       
-  Cupper
-
+        Accordion Menus | Cupper
+      
     </title>
     
     <script
@@ -44,6 +44,8 @@
 
   </head>
   <body>
+    
+      <a href="#main">skip to content</a>
     
     <svg style="display: none">
   <symbol id="bookmark" viewBox="0 0 40 50">
@@ -134,7 +136,7 @@
  </symbol>
 </svg>
 
-    <div class="wrapper print-version">
+    <div class="wrapper ">
         <header class="intro-and-nav" role="banner">
           <div>
             <div class="intro">
@@ -144,671 +146,202 @@
               <p class="library-desc">
                 A repository of accessible component code patterns, references, and educational materials.
                 
+                  <a class="print" href="https://kerseyi.github.io/cupper-2/print-version">
+                    <svg viewBox="0 0 35 45" aria-hidden="true" focusable="false">
+                      <use xlink:href="#doc"></use>
+                    </svg>Print version
+                 
                </a>
               </p>
               
-                <p class="toc-link">
-                  <span aria-hidden="true">&#x2193;</span>
-                  <a href="#toc">Table of contents</a>
-                  <span aria-hidden="true">&#x2193;</span>
-                </p>
-              
             </div>
             
-
-
+              <nav id="patterns-nav" class="patterns" role="navigation">
+                <h2 class="vh">Main navigation</h2>
+                <button id="menu-button" aria-expanded="false">
+                  <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+                    <use xlink:href="#menu"></use>
+                  </svg>
+                  Menu
+                </button>
+                
+                
+                  <ul id="patterns-list">
+                    
+                      <li class="pattern">
+                        <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/" >
+                          <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+                            <use xlink:href="#bookmark"></use>
+                          </svg>
+                          <span class="text">Code Patterns</span>
+                        </a>
+                      </li>
+                    
+                      <li class="pattern">
+                        <a href="https://kerseyi.github.io/cupper-2/patterns/reference/" >
+                          <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+                            <use xlink:href="#bookmark"></use>
+                          </svg>
+                          <span class="text">References</span>
+                        </a>
+                      </li>
+                    
+                      <li class="pattern">
+                        <a href="https://kerseyi.github.io/cupper-2/patterns/w3c/" >
+                          <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
+                            <use xlink:href="#bookmark"></use>
+                          </svg>
+                          <span class="text">W3C Tools</span>
+                        </a>
+                      </li>
+                    
+                    
+                      <li>
+                        <h3>Code Patterns</h3>
+                        <ul>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/expandable-sections/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Expandable Sections</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/accordion/" aria-current="page">
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Accordion Menus</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/modal/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Pop ups and Modals</span>
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </li>
+                    
+                      <li>
+                        <h3>References</h3>
+                        <ul>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/reference/color/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Graphics and Design</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/reference/notifications/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Notifications</span>
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </li>
+                    
+                      <li>
+                        <h3>W3C Tools</h3>
+                        <ul>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/w3c/wcagquickref/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">WCAG 2.1</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/w3c/atag2/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">ATAG 2.0</span>
+                              </a>
+                            </li>
+                          
+                        </ul>
+                      </li>
+                    
+                  </ul>
+                
+              </nav>
+            
           </div>
         </header>
       <div class="main-and-footer">
         <div>
           
   <main id="main">
-    <nav id="toc" class="toc patterns" aria-labelledby="toc-heading">
-      <h2 id="toc-heading">Table of contents</h2>
-      
-      
-        <ul id="patterns-list">
-          
-            <li class="pattern">
-              <a href="#code-patterns" >
-                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                  <use xlink:href="#bookmark"></use>
-                </svg>
-                <span class="text">Code Patterns</span>
-              </a>
-            </li>
-          
-            <li class="pattern">
-              <a href="#references" >
-                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                  <use xlink:href="#bookmark"></use>
-                </svg>
-                <span class="text">References</span>
-              </a>
-            </li>
-          
-            <li class="pattern">
-              <a href="#w3c-tools" >
-                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                  <use xlink:href="#bookmark"></use>
-                </svg>
-                <span class="text">W3C Tools</span>
-              </a>
-            </li>
-          
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Accordion Menus
+    </h1>
+    
+      <div class="tags">
+        <strong aria-hidden="true">Tags: </strong>
+        <ul aria-label="tags">
           
             <li>
-              <h3>Code Patterns</h3>
-              <ul>
-                
-                  <li class="pattern">
-                    <a href="#expandable-sections" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">Expandable Sections</span>
-                    </a>
-                  </li>
-                
-                  <li class="pattern">
-                    <a href="#accordion-menus" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">Accordion Menus</span>
-                    </a>
-                  </li>
-                
-                  <li class="pattern">
-                    <a href="#pop-ups-and-modals" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">Pop ups and Modals</span>
-                    </a>
-                  </li>
-                
-              </ul>
-            </li>
-          
-            <li>
-              <h3>References</h3>
-              <ul>
-                
-                  <li class="pattern">
-                    <a href="#graphics-and-design" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">Graphics and Design</span>
-                    </a>
-                  </li>
-                
-                  <li class="pattern">
-                    <a href="#notifications" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">Notifications</span>
-                    </a>
-                  </li>
-                
-              </ul>
-            </li>
-          
-            <li>
-              <h3>W3C Tools</h3>
-              <ul>
-                
-                  <li class="pattern">
-                    <a href="#wcag-2.1" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">WCAG 2.1</span>
-                    </a>
-                  </li>
-                
-                  <li class="pattern">
-                    <a href="#atag-2.0" >
-                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                        <use xlink:href="#bookmark"></use>
-                      </svg>
-                      <span class="text">ATAG 2.0</span>
-                    </a>
-                  </li>
-                
-              </ul>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              <a href="https://kerseyi.github.io/cupper-2/tags/accordion-menu-toggle-expand">accordion, menu, toggle, expand</a>
             </li>
           
         </ul>
-      
-    </nav>
-    
-    
-      
-        <div class="pattern-section">
-          <h1 id="code-patterns" tabindex="-1">
-            <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            Code Patterns
-          </h1>
-          
-        </div>
-      
-        <div class="pattern-section">
-          <h1 id="references" tabindex="-1">
-            <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            References
-          </h1>
-          
-        </div>
-      
-        <div class="pattern-section">
-          <h1 id="w3c-tools" tabindex="-1">
-            <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-              <use xlink:href="#bookmark"></use>
-            </svg>
-            W3C Tools
-          </h1>
-          
-        </div>
-      
-      
-        
-          <div class="pattern-section">
-            <h1 id="expandable-sections" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              Expandable Sections
-            </h1>
-            <h2 id="applicable-wcag-21-success-criteria">Applicable WCAG 2.1 Success Criteria</h2>
-
-
-
-
-<ul class="wcag with-desc">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          1.3.1 Info and Relationships</a> (level A):
-        </strong>
-        
-          Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.
-          
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          2.1.1 Keyboard</a> (level A):
-        </strong>
-        
-          All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user&#39;s movement and not just the endpoints
-          
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-parses">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          4.1.1 Parsing</a> (level A):
-        </strong>
-        
-          In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features
-          
-        
-      </li>
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          4.1.2 Name, Role, Value</a> (level A):
-        </strong>
-        
-          For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.
-          
-        
-      </li>
-    
-  
-</ul>
-
-<h2 id="html-details-element">HTML Details Element</h2>
-<p>What&rsquo;s that? An HTML accordion you say? Yup! It&rsquo;s called the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">HTML Details Element</a>.</p>
-<h3 id="demo">Demo</h3>
-
-<div class="demo-container">
-  
-  <figure role="group" aria-labelledby="caption-828f72d26d8bb9818ebecaf9d9405554">
-  
-      <div class="demo-inner" >
-        <div class="demo" id="js-demo-828f72d26d8bb9818ebecaf9d9405554"></div>
-        <button data-launch="js-demo-828f72d26d8bb9818ebecaf9d9405554">Launch <span aria-hidden="true">↗</span></button>
       </div>
+    
+    
       
-          <figcaption id="caption-828f72d26d8bb9818ebecaf9d9405554">Basic HTML Details Element</figcaption>
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
       
-  
-  </figure>
-  
-  <template id="template-828f72d26d8bb9818ebecaf9d9405554">
+        <li>
+          <a href="#use-case-why-an-accordion">
+            Use Case: Why an accordion?
+          </a>
+        </li>
       
-<style>
-  details {
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    padding: .5em .5em 0;
-}
-
-summary {
-    font-weight: bold;
-    margin: -.5em -.5em 0;
-    padding: 1.5em;
-}
-
-details[open] {
-    padding: .5em;
-}
-
-details[open] summary {
-    border-bottom: 1px solid #aaa;
-    margin-bottom: .5em;
-}
-</style>
-<details>
-  <summary>OOOH, WHAT'S IN THERE?</summary>
-  <p>IT'S A PUPPY!</p>
-  <img style="width: 100%;" src="https://cdn.vox-cdn.com/thumbor/zL48ecvX2NkW1cU0FEfgrCc7Rgo=/0x0:900x500/920x613/filters:focal(378x178:522x322):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/49493993/this-is-fine.0.jpg" alt="dog sits in burning house drinking coffee saying, this is fine"/>
-  
-</details>
-
-  </template>
-  <script>
-    (function() {
-      var root = document.getElementById('js-demo-828f72d26d8bb9818ebecaf9d9405554');
-      var template = document.getElementById('template-828f72d26d8bb9818ebecaf9d9405554');
-
+        <li>
+          <a href="#applicable-wcag-2.1-success-criteria">
+            Applicable WCAG 2.1 Success Criteria
+          </a>
+        </li>
       
-      var demoDiv = document.createElement('div');
-      demoDiv.innerHTML = template.innerHTML;
-      var standaloneScript = demoDiv.querySelector('script');
-      if (standaloneScript) {
-        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
-      }
+        <li>
+          <a href="#accordion-one-panel-at-a-time">
+            Accordion - One Panel at a Time
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
 
-      if (document.head.attachShadow) {
-        var templateScript = template.content.querySelector('script');
-        if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-828f72d26d8bb9818ebecaf9d9405554\').shadowRoot;' + templateScript.textContent + '})();';
-          templateScript.textContent = wrappedScript;
-        }
-        root.attachShadow({mode: 'open'});
-        root.shadowRoot.appendChild(document.importNode(template.content, true));
-      } else {
-        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
-      }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-828f72d26d8bb9818ebecaf9d9405554"]');
-      launchButton.addEventListener('click', function () {
-        var standalone = window.open();
-        standalone.document.body.innerHTML = demoDiv.innerHTML;
-
-        
-        var newScript = standalone.document.createElement('script');
-        var oldScript = standalone.document.querySelector('script');
-        if (oldScript) {
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.removeChild(oldScript);
-          standalone.document.body.appendChild(newScript);
-        }
-        
-
-        standalone.document.title = 'demo ' + "828f72d26d8bb9818ebecaf9d9405554";
-      });
-    })();
-  </script>
-</div>
-
-<h3 id="code">Code</h3>
-<div class="expandable-section">
-  
-    <h1>
-  
-    <button aria-expanded="false" data-expands="js-expandable-17f01a70670b0af9c860774beb8b6ed1">
-      <span class="expandable-label">HTML</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h1>
-  
-  <div id="js-expandable-17f01a70670b0af9c860774beb8b6ed1" hidden>
     
-
-
-
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">details</span>&gt;
-  &lt;<span style="color:#f92672">summary</span>&gt;OOOH, WHAT&#39;S IN THERE?&lt;/<span style="color:#f92672">summary</span>&gt;
-  &lt;<span style="color:#f92672">p</span>&gt;Lots of stuff and things.&lt;/<span style="color:#f92672">p</span>&gt;
-&lt;/<span style="color:#f92672">details</span>&gt;
-</code></pre></div>
-
-
-  </div>
-</div>
-
-<div class="expandable-section">
-  
-    <h2>
-  
-    <button aria-expanded="false" data-expands="js-expandable-8cf11c97439369d450e939f9d99be058">
-      <span class="expandable-label">CSS</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h2>
-  
-  <div id="js-expandable-8cf11c97439369d450e939f9d99be058" hidden>
-    
-
-
-
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">details</span> {
-    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#aaa</span>;
-    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0</span>;
-}
-
-<span style="color:#f92672">summary</span> {
-    <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
-    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">-.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">-.5</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span>;
-}
-
-<span style="color:#f92672">details</span><span style="color:#f92672">[</span><span style="color:#f92672">open</span><span style="color:#f92672">]</span> {
-    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span>;
-}
-
-<span style="color:#f92672">details</span><span style="color:#f92672">[</span><span style="color:#f92672">open</span><span style="color:#f92672">]</span> <span style="color:#f92672">summary</span> {
-    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#aaa</span>;
-    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">em</span>;
-}
-</code></pre></div>
-
-
-  </div>
-</div>
-
-<div class="expandable-section">
-  
-    <h3>
-  
-    <button aria-expanded="false" data-expands="js-expandable-368519f7cf9f70d92d7495e1d50e45ea">
-      <span class="expandable-label">JavaScript</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h3>
-  
-  <div id="js-expandable-368519f7cf9f70d92d7495e1d50e45ea" hidden>
-    
-
-
-
-<!-- raw HTML omitted -->
-<p>The DETAILS element supports the TOGGLE event, so adding more functionality to it is pretty straightforward.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JS" data-lang="JS"><span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;toggle&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">details</span>.<span style="color:#a6e22e">open</span>) {
-    <span style="color:#75715e">/* the element was toggled open */</span>
-    <span style="color:#75715e">//do awesome thing!
-</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#75715e">/* the element was toggled closed */</span>
-      <span style="color:#75715e">// undo awesome thing
-</span><span style="color:#75715e"></span>    }
-  });
-</code></pre></div>
-
-
-  </div>
-</div>
-
-
-
-
-<table class="tested">
-  <tr>
-    <th scope="row">
-      <svg viewBox="0 0 177.16535 177.16535" focusable="false" aria-hidden="true">
-        <use xlink:href="#tick"></use>
-      </svg>
-      Tested using
-    </th>
-    
-      <td>
-        
-        
-        
-        
-        <img src="https://kerseyi.github.io/cupper-2/images/browser-firefox.svg" alt="">
-        <span><strong>Firefox </strong></span>
-        
-          
-          
-          <span class="additional">with <strong>JAWS</strong></span>
-        
-      </td>
-    
-      <td>
-        
-        
-        
-        
-        <img src="https://kerseyi.github.io/cupper-2/images/browser-chrome.svg" alt="">
-        <span><strong>Chrome </strong></span>
-        
-      </td>
-    
-      <td>
-        
-        
-        
-        
-        <img src="https://kerseyi.github.io/cupper-2/images/browser-safari-ios.svg" alt="">
-        <span><strong>Safari iOS </strong></span>
-        
-          
-          
-          <span class="additional">with <strong>Voiceover</strong></span>
-        
-      </td>
-    
-      <td>
-        
-        
-        
-        
-        <img src="https://kerseyi.github.io/cupper-2/images/browser-edge.svg" alt="">
-        <span><strong>Edge </strong></span>
-        
-      </td>
-    
-  </tr>
-</table>
-
-<h2 id="read-more-expandable-section">&ldquo;Read More&rdquo; Expandable Section</h2>
-<h3 id="demo-1">Demo</h3>
-
-  <iframe height="700" scrolling="no" title="code demonstration with codePen" src="//codepen.io/iankonlineada/embed/yLeOrqe/?height=265&theme-id=dark&default-tab=result,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">
-    <div>
-      <a href="//codepen.io/iankonlineada/pen/yLeOrqe">See the demo on codePen</a>
-    </div>
-  </iframe>
-
-
-<h3 id="code-1">Code</h3>
-
-          </div>
-        
-          <div class="pattern-section">
-            <h1 id="accordion-menus" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              Accordion Menus
-            </h1>
-            <p>Accordion menus are everywhere we look on the web. With such ubiquity, you&rsquo;d expect that there would be a pretty well defined standard for constructing these components. Well, there&rsquo;s not. So when it comes to making accordion menus accessible, things can get tricky. While the functionality and HTML markup for accordions is pretty straightforward, some implementations are overly complex. Let&rsquo;s take a look at the intended functionality of an accordion menu before we look under the hood.</p>
+    <p>Accordion menus are everywhere we look on the web. With such ubiquity, you&rsquo;d expect that there would be a pretty well defined standard for constructing these components. Well, there&rsquo;s not. So when it comes to making accordion menus accessible, things can get tricky. While the functionality and HTML markup for accordions is pretty straightforward, some implementations are overly complex. Let&rsquo;s take a look at the intended functionality of an accordion menu before we look under the hood.</p>
 <h2 id="use-case-why-an-accordion">Use Case: Why an accordion?</h2>
 <p>Accordion menus and collapsible regions are great ways to conserve screen space on your website. It is a design element that expands in place to reveal hidden information. They allow the user to get a quick overview of the content on the page. This is especially helpful on mobile devices, where screen size is limited. Accordion menus can become unwieldy very fast, as they can push other content out of view as they expand.</p>
 <h3 id="accordions-are-great-for">Accordions are great for:</h3>
@@ -2097,836 +1630,6 @@ Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">s
 </div>
 
 
-          </div>
-        
-          <div class="pattern-section">
-            <h1 id="pop-ups-and-modals" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              Pop ups and Modals
-            </h1>
-            <h1 id="popups-and-modals">Popups and Modals</h1>
-<p>Modals are intended to be used as a quick and simple way to capture an interaction from a user. They trap the user’s focus (visual and navigational) in a window that is separated from the rest of the page content, blocking access to the contents on the main page until the modal is closed by the user. These modal windows are overlaid over the main page content, trapping keyboard focus in their windows, and blurring out or dimming the main page content.</p>
-<h2 id="applicable-wcag-21-success-criteria">Applicable WCAG 2.1 Success Criteria</h2>
-
-
-
-
-<ul class="wcag with-desc">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          1.3.1 Info and Relationships</a> (level A):
-        </strong>
-        
-          Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.
-          
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          2.1.1 Keyboard</a> (level A):
-        </strong>
-        
-          All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user&#39;s movement and not just the endpoints
-          
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</ul>
-
-<h2 id="user-input-modal">User Input Modal</h2>
-<h3 id="demo">Demo</h3>
-
-  <iframe height="700" scrolling="no" title="code demonstration with codePen" src="//codepen.io/iankonlineada/embed/poJOmwQ/?height=265&theme-id=dark&default-tab=result,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">
-    <div>
-      <a href="//codepen.io/iankonlineada/pen/poJOmwQ">See the demo on codePen</a>
-    </div>
-  </iframe>
-
-
-
-<div class="demo-container">
-  
-  <figure role="group" aria-labelledby="caption-0398be456b838e7af0d26f48a38aacde">
-  
-      <div class="demo-inner" >
-        <div class="demo" id="js-demo-0398be456b838e7af0d26f48a38aacde"></div>
-        <button data-launch="js-demo-0398be456b838e7af0d26f48a38aacde">Launch <span aria-hidden="true">↗</span></button>
-      </div>
-      
-          <figcaption id="caption-0398be456b838e7af0d26f48a38aacde">User Input Modal</figcaption>
-      
-  
-  </figure>
-  
-  <template id="template-0398be456b838e7af0d26f48a38aacde">
-      
-	<script>
-		// Will hold previously focused element before modal was opened
-let beforeModalOpenedFocus;
-
-// Find the modal and its overlay
-let modal = document.querySelector(".modal");
-let modalOverlay = document.querySelector(".modal-overlay");
-
-let openModalBtn = document.querySelector("#launchModal");
-openModalBtn.addEventListener("click", openModal);
-
-function openModal() {
-  // Save current focus
-  beforeModalOpenedFocus = document.activeElement;
-
-  // Listen for and trap the keyboard
-  modal.addEventListener("keydown", trapTabKey);
-  // change aria-hidden state
-  modal.setAttribute("aria-hidden", "false");
-
-  // Listen for indicators to close the modal
-  modalOverlay.addEventListener("click", closeModal);
-  // Sign-Up button
-  const closeModalBtn = modal.querySelector(".closeModal");
-  closeModalBtn.addEventListener("click", closeModal);
-
-  // Find all of the focusable children / elements
-  let focusableElementsString =
-    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-  let focusableElements = modal.querySelectorAll(focusableElementsString);
-  // Convert NodeList to Array
-  focusableElements = Array.prototype.slice.call(focusableElements);
-
-  const firstTabStop = focusableElements[0];
-  const lastTabStop = focusableElements[focusableElements.length - 1];
-
-  // Show the modal and overlay
-  modal.style.display = "block";
-  modalOverlay.style.display = "block";
-
-  // Focus first child
-  firstTabStop.focus();
-
-  function trapTabKey(e) {
-    // Check for TAB key press
-    if (e.keyCode === 9) {
-      // SHIFT + TAB
-      if (e.shiftKey) {
-        if (document.activeElement === firstTabStop) {
-          e.preventDefault();
-          lastTabStop.focus();
-        }
-
-        // TAB
-      } else {
-        if (document.activeElement === lastTabStop) {
-          e.preventDefault();
-          firstTabStop.focus();
-        }
-      }
-    }
-
-    // ESCAPE
-    if (e.keyCode === 27) {
-      closeModal();
-    }
-  }
-}
-
-function closeModal() {
-  // Hide the modal and overlay
-  modal.style.display = "none";
-  modalOverlay.style.display = "none";
-  // change aria-hidden state
-  modal.setAttribute("aria-hidden", "true");
-
-  // Set focus back to element that had it before the modal was opened
-  beforeModalOpenedFocus.focus();
-}
-	</script>
-	<style>
-		
-		body {
-  background: rgb(59, 45, 63);
-  background: radial-gradient(
-    circle,
-    rgba(59, 45, 63, 0.5186449579831933) 0%,
-    rgba(76, 64, 77, 1) 100%
-  );
-}
-
-#launchModal {
-  margin-top: 150px;
-}
-
-.modal-overlay {
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* places the modalOverlay between the main page and the modal dialog */
-  background-color: #000;
-  opacity: 0.5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-content {
-  height: 60vh;
-}
-	</style>
-	<!--NOTE: Example using Bootstrap 4.4.1 -->
-<!-- Button trigger modal -->
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-<div class="container-fluid">
-  <div class="row main-content">
-    <div class="col-md-6 offset-md-3">
-      <button id="launchModal" type="button" class="btn btn-light btn-lg btn-block">
-        Launch Modal
-      </button>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Accessible Modal Example</h5>
-        <button type="button" class="close closeModal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p tabindex="0">Set a tabindex on this P element to make sure first element in modal gets focus. Normally non-focusable elements that are the first element in a modal need to recieve focus.</p>
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" title="Please enter your email." required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity" title="Please enter your city." required>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>OR</option>
-                <option>CA</option>
-                <option>NY</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="inputZip" title="Please enter your zip code." required>
-            </div>
-          </div>
-          <div>
-          </div>
-          <p>Make sure that error messages have been added to all inputs.</p>
-      </div>
-      <div class="modal-footer">
-        <input role="button" type="submit" class="btn btn-primary closeModal" value="Submit">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal-overlay"></div>
-
-
-  </template>
-  <script>
-    (function() {
-      var root = document.getElementById('js-demo-0398be456b838e7af0d26f48a38aacde');
-      var template = document.getElementById('template-0398be456b838e7af0d26f48a38aacde');
-
-      
-      var demoDiv = document.createElement('div');
-      demoDiv.innerHTML = template.innerHTML;
-      var standaloneScript = demoDiv.querySelector('script');
-      if (standaloneScript) {
-        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
-      }
-
-      if (document.head.attachShadow) {
-        var templateScript = template.content.querySelector('script');
-        if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-0398be456b838e7af0d26f48a38aacde\').shadowRoot;' + templateScript.textContent + '})();';
-          templateScript.textContent = wrappedScript;
-        }
-        root.attachShadow({mode: 'open'});
-        root.shadowRoot.appendChild(document.importNode(template.content, true));
-      } else {
-        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
-      }
-
-      var launchButton = document.querySelector('[data-launch="js-demo-0398be456b838e7af0d26f48a38aacde"]');
-      launchButton.addEventListener('click', function () {
-        var standalone = window.open();
-        standalone.document.body.innerHTML = demoDiv.innerHTML;
-
-        
-        var newScript = standalone.document.createElement('script');
-        var oldScript = standalone.document.querySelector('script');
-        if (oldScript) {
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.removeChild(oldScript);
-          standalone.document.body.appendChild(newScript);
-        }
-        
-
-        standalone.document.title = 'demo ' + "0398be456b838e7af0d26f48a38aacde";
-      });
-    })();
-  </script>
-</div>
-
-<h3 id="code">Code</h3>
-<p><div class="expandable-section">
-  
-    <h1>
-  
-    <button aria-expanded="false" data-expands="js-expandable-d09c4485c61d5a7430a0cc30d26825c3">
-      <span class="expandable-label">HTML</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h1>
-  
-  <div id="js-expandable-d09c4485c61d5a7430a0cc30d26825c3" hidden>
-    
-
-
-
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!--NOTE: Example using Bootstrap 4.4.1 --&gt;</span>
-<span style="color:#75715e">&lt;!-- Button trigger modal --&gt;</span>
-&lt;<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css&#34;</span> <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container-fluid&#34;</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row main-content&#34;</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-6 offset-md-3&#34;</span>&gt;
-      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;launchModal&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-light btn-lg btn-block&#34;</span>&gt;
-        Launch Modal
-      &lt;/<span style="color:#f92672">button</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-<span style="color:#75715e">&lt;!-- Modal --&gt;</span>
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleModal&#34;</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-1&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dialog&#34;</span> <span style="color:#a6e22e">aria-labelledby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleModalLabel&#34;</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-dialog&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;document&#34;</span>&gt;
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-content&#34;</span>&gt;
-      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-header&#34;</span>&gt;
-        &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-title&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleModalLabel&#34;</span>&gt;Accessible Modal Example&lt;/<span style="color:#f92672">h5</span>&gt;
-        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;close closeModal&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Close&#34;</span>&gt;
-          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;&amp;times;&lt;/<span style="color:#f92672">span</span>&gt;
-        &lt;/<span style="color:#f92672">button</span>&gt;
-      &lt;/<span style="color:#f92672">div</span>&gt;
-      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-body&#34;</span>&gt;
-        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;Set a tabindex on this P element to make sure first element in modal gets focus. Normally non-focusable elements that are the first element in a modal need to recieve focus.&lt;/<span style="color:#f92672">p</span>&gt;
-        &lt;<span style="color:#f92672">form</span>&gt;
-          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-row&#34;</span>&gt;
-            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group col-md-6&#34;</span>&gt;
-              &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputEmail4&#34;</span>&gt;Email&lt;/<span style="color:#f92672">label</span>&gt;
-              &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputEmail4&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Email&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Please enter your email.&#34;</span> <span style="color:#a6e22e">required</span>&gt;
-            &lt;/<span style="color:#f92672">div</span>&gt;
-          &lt;/<span style="color:#f92672">div</span>&gt;
-          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-row&#34;</span>&gt;
-            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group col-md-6&#34;</span>&gt;
-              &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputCity&#34;</span>&gt;City&lt;/<span style="color:#f92672">label</span>&gt;
-              &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputCity&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Please enter your city.&#34;</span> <span style="color:#a6e22e">required</span>&gt;
-            &lt;/<span style="color:#f92672">div</span>&gt;
-            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group col-md-4&#34;</span>&gt;
-              &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputState&#34;</span>&gt;State&lt;/<span style="color:#f92672">label</span>&gt;
-              &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputState&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span>&gt;
-                &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">selected</span>&gt;Choose...&lt;/<span style="color:#f92672">option</span>&gt;
-                &lt;<span style="color:#f92672">option</span>&gt;OR&lt;/<span style="color:#f92672">option</span>&gt;
-                &lt;<span style="color:#f92672">option</span>&gt;CA&lt;/<span style="color:#f92672">option</span>&gt;
-                &lt;<span style="color:#f92672">option</span>&gt;NY&lt;/<span style="color:#f92672">option</span>&gt;
-              &lt;/<span style="color:#f92672">select</span>&gt;
-            &lt;/<span style="color:#f92672">div</span>&gt;
-            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group col-md-2&#34;</span>&gt;
-              &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputZip&#34;</span>&gt;Zip&lt;/<span style="color:#f92672">label</span>&gt;
-              &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputZip&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Please enter your zip code.&#34;</span> <span style="color:#a6e22e">required</span>&gt;
-            &lt;/<span style="color:#f92672">div</span>&gt;
-          &lt;/<span style="color:#f92672">div</span>&gt;
-          &lt;<span style="color:#f92672">div</span>&gt;
-          &lt;/<span style="color:#f92672">div</span>&gt;
-          &lt;<span style="color:#f92672">p</span>&gt;Make sure that error messages have been added to all inputs.&lt;/<span style="color:#f92672">p</span>&gt;
-      &lt;/<span style="color:#f92672">div</span>&gt;
-      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-footer&#34;</span>&gt;
-        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary closeModal&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Submit&#34;</span>&gt;
-        &lt;/<span style="color:#f92672">form</span>&gt;
-      &lt;/<span style="color:#f92672">div</span>&gt;
-    &lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-overlay&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div>
-
-
-  </div>
-</div>
-
-<div class="expandable-section">
-  
-    <h2>
-  
-    <button aria-expanded="false" data-expands="js-expandable-23c824116fc843b7c03b61534f9b45ce">
-      <span class="expandable-label">CSS</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h2>
-  
-  <div id="js-expandable-23c824116fc843b7c03b61534f9b45ce" hidden>
-    
-
-
-
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">body</span> {
-  <span style="color:#66d9ef">background</span>: rgb(<span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">63</span>);
-  <span style="color:#66d9ef">background</span>: radial-gradient(
-    <span style="color:#66d9ef">circle</span>,
-    rgba(<span style="color:#ae81ff">59</span>, <span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">63</span>, <span style="color:#ae81ff">0.5186449579831933</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>,
-    rgba(<span style="color:#ae81ff">76</span>, <span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">77</span>, <span style="color:#ae81ff">1</span>) <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>
-  );
-}
-
-#launchModal {
-  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
-}
-
-.<span style="color:#a6e22e">modal-overlay</span> {
-  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">2</span>; <span style="color:#75715e">/* places the modalOverlay between the main page and the modal dialog */</span>
-  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#000</span>;
-  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.5</span>;
-  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
-  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
-  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
-}
-
-.<span style="color:#a6e22e">main-content</span> {
-  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">vh</span>;
-}
-
-</code></pre></div>
-
-
-  </div>
-</div>
-
-<div class="expandable-section">
-  
-    <h3>
-  
-    <button aria-expanded="false" data-expands="js-expandable-97f5d96f1adbff71b9e75aac5c8c0bb6">
-      <span class="expandable-label">JavaScript</span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
-        <g transform="translate(0 -981.5)">
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
-          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
-        </g>
-      </svg>
-    </button>
-  
-    </h3>
-  
-  <div id="js-expandable-97f5d96f1adbff71b9e75aac5c8c0bb6" hidden>
-    
-
-
-
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#75715e">// Will hold previously focused element before modal was opened
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">beforeModalOpenedFocus</span>;
-
-<span style="color:#75715e">// Find the modal and its overlay
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">modal</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.modal&#34;</span>);
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">modalOverlay</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.modal-overlay&#34;</span>);
-
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">openModalBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#launchModal&#34;</span>);
-<span style="color:#a6e22e">openModalBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">openModal</span>);
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">openModal</span>() {
-  <span style="color:#75715e">// Save current focus
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">beforeModalOpenedFocus</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">activeElement</span>;
-
-  <span style="color:#75715e">// Listen for and trap the keyboard
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;keydown&#34;</span>, <span style="color:#a6e22e">trapTabKey</span>);
-  <span style="color:#75715e">// change aria-hidden state
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;aria-hidden&#34;</span>, <span style="color:#e6db74">&#34;false&#34;</span>);
-
-  <span style="color:#75715e">// Listen for indicators to close the modal
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modalOverlay</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">closeModal</span>);
-  <span style="color:#75715e">// Sign-Up button
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">closeModalBtn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.closeModal&#34;</span>);
-  <span style="color:#a6e22e">closeModalBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">closeModal</span>);
-
-  <span style="color:#75715e">// Find all of the focusable children / elements
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">focusableElementsString</span> <span style="color:#f92672">=</span>
-    <span style="color:#e6db74">&#39;a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex=&#34;0&#34;], [contenteditable]&#39;</span>;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">focusableElements</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">focusableElementsString</span>);
-  <span style="color:#75715e">// Convert NodeList to Array
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">focusableElements</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">slice</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">focusableElements</span>);
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">firstTabStop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">focusableElements</span>[<span style="color:#ae81ff">0</span>];
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lastTabStop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">focusableElements</span>[<span style="color:#a6e22e">focusableElements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
-
-  <span style="color:#75715e">// Show the modal and overlay
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
-  <span style="color:#a6e22e">modalOverlay</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
-
-  <span style="color:#75715e">// Focus first child
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">firstTabStop</span>.<span style="color:#a6e22e">focus</span>();
-
-  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">trapTabKey</span>(<span style="color:#a6e22e">e</span>) {
-    <span style="color:#75715e">// Check for TAB key press
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">9</span>) {
-      <span style="color:#75715e">// SHIFT + TAB
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">shiftKey</span>) {
-        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">activeElement</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">firstTabStop</span>) {
-          <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
-          <span style="color:#a6e22e">lastTabStop</span>.<span style="color:#a6e22e">focus</span>();
-        }
-
-        <span style="color:#75715e">// TAB
-</span><span style="color:#75715e"></span>      } <span style="color:#66d9ef">else</span> {
-        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">activeElement</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">lastTabStop</span>) {
-          <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
-          <span style="color:#a6e22e">firstTabStop</span>.<span style="color:#a6e22e">focus</span>();
-        }
-      }
-    }
-
-    <span style="color:#75715e">// ESCAPE
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">27</span>) {
-      <span style="color:#a6e22e">closeModal</span>();
-    }
-  }
-}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">closeModal</span>() {
-  <span style="color:#75715e">// Hide the modal and overlay
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
-  <span style="color:#a6e22e">modalOverlay</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
-  <span style="color:#75715e">// change aria-hidden state
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;aria-hidden&#34;</span>, <span style="color:#e6db74">&#34;true&#34;</span>);
-
-  <span style="color:#75715e">// Set focus back to element that had it before the modal was opened
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">beforeModalOpenedFocus</span>.<span style="color:#a6e22e">focus</span>();
-}
-</code></pre></div>
-
-
-  </div>
-</div>
-</p>
-
-          </div>
-        
-      
-        
-          <div class="pattern-section">
-            <h1 id="graphics-and-design" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              Graphics and Design
-            </h1>
-            <h2 id="color">Color</h2>
-<ul>
-<li><a href="http://colorsafe.co/">Color Safe</a> - Accessible color palettes based on WCAG Guidelines of text and background contrast ratios</li>
-<li><a href="https://contrast-grid.eightshapes.com/?background-colors=&amp;foreground-colors=%23FFFFFF%2C%20White%0D%0A%23F2F2F2%0D%0A%23DDDDDD%0D%0A%23CCCCCC%0D%0A%23888888%0D%0A%23404040%2C%20Charcoal%0D%0A%23000000%2C%20Black%0D%0A%232F78C5%2C%20Effective%20on%20Extremes%0D%0A%230F60B6%2C%20Effective%20on%20Lights%0D%0A%23398EEA%2C%20Ineffective%0D%0A&amp;es-color-form__tile-size=compact">Contrast Grid</a> - Test BG and FG colors</li>
-</ul>
-<h2 id="charts">Charts</h2>
-<ul>
-<li><a href="https://fossheim.io/writing/posts/accessible-dataviz-design/">Designing Accessible Data Visualizations</a> - An intro to designing accessible data visualizations</li>
-<li><a href="https://fizz.studio/">Fizz Studio Software</a> - Create Accessible Data Visualizations</li>
-</ul>
-<h2 id="svg">SVG</h2>
-
-          </div>
-        
-          <div class="pattern-section">
-            <h1 id="notifications" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              Notifications
-            </h1>
-            <h1 id="notifications--alerts">Notifications / Alerts</h1>
-<ul>
-<li>Live Regions
-<ul>
-<li>Accessiblity Talks <a href="https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be">https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;feature=youtu.be</a></li>
-<li>Live Region Codepen <a href="https://codepen.io/iankonlineada/pen/eYJwQBY">https://codepen.io/iankonlineada/pen/eYJwQBY</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="aria-roles">Aria Roles</h2>
-<ol>
-<li>alert</li>
-<li>status</li>
-</ol>
-<h3 id="poor-support">Poor support</h3>
-<ol>
-<li>aria-atomic : what is read?</li>
-<li>aria-relevant : when it is read</li>
-<li>aria-busy : maybe don&rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.</li>
-</ol>
-<h3 id="no-support">No support</h3>
-<ol>
-<li>role=&quot;marquee&rdquo;</li>
-<li>role=&quot;timer&rdquo;</li>
-</ol>
-<h2 id="html-output">HTML <!-- raw HTML omitted --></h2>
-<ul>
-<li>Scott O&rsquo;Hara <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">https://www.scottohara.me/blog/2019/07/10/the-output-element.html</a></li>
-</ul>
-<h2 id="types-of-live-regions">Types of live regions</h2>
-<ol>
-<li>
-<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&quot;polite&rdquo;</p>
-<ol>
-<li>Solution: create live region that reads off numer of results after user has stopped typing for a few seconds</li>
-</ol>
-</li>
-<li>
-<p>Toasts - High risk of going wrong for many users &ndash; not just SR. Bad for zoom text users also.</p>
-<ol>
-<li>Toast should not time out / disappear unless there is an alternative way</li>
-</ol>
-</li>
-<li>
-<p>Feed and chat messages - role=&quot;log&rdquo; plus aria-live=&quot;assertive/polite&rdquo; aria-atomic=&quot;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
-</li>
-</ol>
-<h2 id="adding-live-region-to-page">Adding live region to page</h2>
-<ol>
-<li>Adding to DOM with role=&quot;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
-<li>If updating, have the empty element in page, and push the updates into the region</li>
-<li>Create a notification center where user can check notifications &ndash; apps mostly</li>
-</ol>
-<h2 id="resources">Resources</h2>
-<ul>
-<li>Notification tests <a href="https://codepen.io/smhigley/pen/abOwGro">https://codepen.io/smhigley/pen/abOwGro</a></li>
-</ul>
-
-          </div>
-        
-      
-        
-          <div class="pattern-section">
-            <h1 id="wcag-2.1" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              WCAG 2.1
-            </h1>
-            <h2 id="wcag-21-quick-reference">WCAG 2.1 Quick Reference</h2>
-<ul>
-<li><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG Quick Ref</a> - A customizable quick reference to Web Content Accessibility Guidelines (WCAG) 2 requirements (success criteria) and techniques.</li>
-</ul>
-<h2 id="wcag-21-tutorials">WCAG 2.1 Tutorials</h2>
-<ul>
-<li><a href="https://www.w3.org/WAI/tutorials/page-structure/">WCAG Tutorials</a>
-<ul>
-<li><a href="https://www.w3.org/WAI/tutorials/page-structure/">Page Structure</a></li>
-<li><a href="https://www.w3.org/WAI/tutorials/menus/">Menus</a></li>
-<li><a href="https://www.w3.org/WAI/tutorials/images/">Images</a></li>
-<li><a href="https://www.w3.org/WAI/tutorials/tables/">Tables</a></li>
-<li><a href="https://www.w3.org/WAI/tutorials/forms/">Forms</a></li>
-<li><a href="https://www.w3.org/WAI/tutorials/carousels/">Carousels</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="wcag-report-tools">WCAG Report Tools</h2>
-<ul>
-<li><a href="https://www.w3.org/WAI/eval/report-tool/#!/">WCAG-EM Report Tool</a></li>
-</ul>
-
-          </div>
-        
-          <div class="pattern-section">
-            <h1 id="atag-2.0" tabindex="-1">
-              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                <use xlink:href="#bookmark"></use>
-              </svg>
-              ATAG 2.0
-            </h1>
-            <p>Authoring tools are software and services that “authors” (web developers, designers, writers, etc.) use to produce web content (static web pages, dynamic web applications, etc.).</p>
-<h2 id="atag-overview">ATAG Overview</h2>
-<ul>
-<li><a href="https://www.w3.org/WAI/standards-guidelines/atag/">ATAG Overview</a></li>
-</ul>
-<h2 id="atag-quick-guide">ATAG Quick Guide</h2>
-<ul>
-<li><a href="https://www.w3.org/WAI/standards-guidelines/atag/glance/">ATAG Quick Guide</a></li>
-</ul>
-<h2 id="atag-report-tool">ATAG Report Tool</h2>
-<ul>
-<li><a href="https://www.w3.org/WAI/atag/report-tool/">ATAG Quick Guide</a></li>
-</ul>
-
-          </div>
-        
-      
-    
   </main>
 
           <footer role="contentinfo">
