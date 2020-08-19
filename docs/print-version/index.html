@@ -4105,9 +4105,120 @@ It is a common misconception that skip links are only for people who use screen 
   
 </ul>
 
-<h2 id="skip-link---pure-css">Skip Link - Pure CSS</h2>
-<p>Skip links can be created using pure CSS. There are multiple approaches to this, but the main idea is to hide the link from</p>
+<h2 id="skip-link">Skip Link</h2>
+<p>There are multiple approaches to creating skip links, but the main idea is to hide the link from view until it receives keyboard focus.</p>
 <h3 id="demo">Demo</h3>
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-312280495b591b673d58e33a43a6a7c5">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-312280495b591b673d58e33a43a6a7c5"></div>
+        <button data-launch="js-demo-312280495b591b673d58e33a43a6a7c5">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-312280495b591b673d58e33a43a6a7c5">Skip link using CSS transform to slide link onto page when focused.</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-312280495b591b673d58e33a43a6a7c5">
+      
+	<style>
+		@import '../../../css/bootstrap.min.css';
+		body {
+  margin: 0;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+div {
+  height: 50px;
+  background: #E84C3D;
+}
+
+.hidden {
+  padding: 8px;
+  position: absolute;
+  background: #E77E23;
+  left: 50%;
+  height: 30px;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  opacity: 0;
+}
+
+a:focus {
+  transform: translateY(0%);
+  opacity: 1;
+  border: 2px solid blue;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+	</style>
+    <a class="hidden" href="#demomain">Skip to content</a>
+<div>
+<div id="content">
+	<p tabindex="0" style="background-color: aliceblue;">Oh boy, I would love to be able to skip all of this stuff.</p>
+	<div id="demomain">
+		<p tabindex="0">Right where I want to be.</p>
+	</div>
+</div>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-312280495b591b673d58e33a43a6a7c5');
+      var template = document.getElementById('template-312280495b591b673d58e33a43a6a7c5');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-312280495b591b673d58e33a43a6a7c5\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-312280495b591b673d58e33a43a6a7c5"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "312280495b591b673d58e33a43a6a7c5";
+      });
+    })();
+  </script>
+</div>
+
 
           </div>
         
