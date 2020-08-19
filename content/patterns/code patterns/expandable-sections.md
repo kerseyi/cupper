@@ -71,7 +71,7 @@ details[open] summary {
 
 {{< codePen yLeOrqe >}}
 
-### Code
+
 
 
 
