@@ -4106,29 +4106,85 @@ It is a common misconception that skip links are only for people who use screen 
 </ul>
 
 <h2 id="skip-link">Skip Link</h2>
-<p>There are multiple approaches to creating skip links, but the main idea is to hide the link from view until it receives keyboard focus.</p>
+<p>There are multiple approaches to creating skip links, but the main idea is to hide the link from view until it receives keyboard focus. When the link is pressed, focus is moved to the section that is skipped to.</p>
 <h3 id="demo">Demo</h3>
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-312280495b591b673d58e33a43a6a7c5">
+  <figure role="group" aria-labelledby="caption-0a9cdd6a57738cf62ebb40f3ad94e1f6">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-312280495b591b673d58e33a43a6a7c5"></div>
-        <button data-launch="js-demo-312280495b591b673d58e33a43a6a7c5">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-0a9cdd6a57738cf62ebb40f3ad94e1f6"></div>
+        <button data-launch="js-demo-0a9cdd6a57738cf62ebb40f3ad94e1f6">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-312280495b591b673d58e33a43a6a7c5">Skip link using CSS transform to slide link onto page when focused.</figcaption>
+          <figcaption id="caption-0a9cdd6a57738cf62ebb40f3ad94e1f6">Skip link using CSS transform to slide link onto page when focused.</figcaption>
       
   
   </figure>
   
-  <template id="template-312280495b591b673d58e33a43a6a7c5">
+  <template id="template-0a9cdd6a57738cf62ebb40f3ad94e1f6">
       
-	<style>
-		@import '../../../css/bootstrap.min.css';
+	<script type="text/javascript">
+
+		
+		demo.getElementById('skipLink').addEventListener('click', function(e) {
+  e.preventDefault();
+  var target = demo.getElementById('demoBtn');
+  target.focus();
+});
+	</script>
+<style>
+
+	button {
+    font-size: 1.25rem;
+    border-radius: 0.33em;
+    font-family: inherit;
+    background: #111;
+    color: #fefefe;
+    padding: 0.75rem;
+    border: 0;
+    text-align: center;
+    margin-top: 20vh;
+    margin-left: 25%;
+    width: 50%;
+}
+
+ul {
+	list-style: none;
+	margin-top: 0px;
+	padding-left: 0px;
+	background-color: lightgreen;
+}
+
+ul > li {
+    font-size: 1.25rem;
+    font-family: inherit;
+    //background: #fff;
+    color: #000;
+    padding: 0.75rem;
+    //border: 1px solid black;
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    margin: 0px;
+
+}
+
+ul > li a {
+	width: 100%;
+}
+
+ul > li:hover {
+	background-color: aliceblue;
+}
+
+ul > li a:focus {
+	background-color: aliceblue;
+}
 		body {
   margin: 0;
+  height: 500px;
 }
 
 * {
@@ -4137,46 +4193,73 @@ It is a common misconception that skip links are only for people who use screen 
 
 div {
   height: 50px;
-  background: #E84C3D;
 }
 
 .hidden {
-  padding: 8px;
+  padding: 0.75rem;
+  padding-bottom: 1.25rem;
   position: absolute;
-  background: #E77E23;
+  background: #000;
+  color: #fff;
   left: 50%;
-  height: 30px;
+  height: 50px;
   transform: translateY(-100%);
   transition: transform 0.3s;
   opacity: 0;
 }
 
-a:focus {
-  transform: translateY(0%);
+.hidden:focus {
+	transform: translateY(0%);
   opacity: 1;
-  border: 2px solid blue;
+  border: 2px solid aliceblue;
+}
+
+*:focus {
+    border: 2px solid blue;
 }
 
 a {
   color: #333;
   text-decoration: none;
+  padding: 0.5rem;
+}
+
+#content {
+	height: 400px;
+	background-color: #009FD4;
+}
+#demomain {
+	
+}
+p {
+	color: white;
+	padding-left: 20px;
 }
 
 	</style>
-    <a class="hidden" href="#demomain">Skip to content</a>
-<div>
+    
+
+<a class="hidden" id="skipLink" href="#demomain">Skip to content</a>
 <div id="content">
-	<p tabindex="0" style="background-color: aliceblue;">Oh boy, I would love to be able to skip all of this stuff.</p>
+	<nav>
+	<ul>
+		<li><a href="#">Main</a></li>
+		<li><a href="#">Things</a></li>
+		<li><a href="#">Stuff</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</nav>
 	<div id="demomain">
-		<p tabindex="0">Right where I want to be.</p>
+		<p>Boy, I sure would like to be able to skip to that button without tabbing through that nav menu...</p>
+		<button id="demoBtn">Push me</button>
 	</div>
 </div>
 
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-312280495b591b673d58e33a43a6a7c5');
-      var template = document.getElementById('template-312280495b591b673d58e33a43a6a7c5');
+      var root = document.getElementById('js-demo-0a9cdd6a57738cf62ebb40f3ad94e1f6');
+      var template = document.getElementById('template-0a9cdd6a57738cf62ebb40f3ad94e1f6');
 
       
       var demoDiv = document.createElement('div');
@@ -4189,7 +4272,7 @@ a {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-312280495b591b673d58e33a43a6a7c5\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-0a9cdd6a57738cf62ebb40f3ad94e1f6\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -4198,7 +4281,7 @@ a {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-312280495b591b673d58e33a43a6a7c5"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-0a9cdd6a57738cf62ebb40f3ad94e1f6"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -4213,10 +4296,206 @@ a {
         }
         
 
-        standalone.document.title = 'demo ' + "312280495b591b673d58e33a43a6a7c5";
+        standalone.document.title = 'demo ' + "0a9cdd6a57738cf62ebb40f3ad94e1f6";
       });
     })();
   </script>
+</div>
+
+<h3 id="code">Code</h3>
+<div class="expandable-section">
+  
+    <h1>
+  
+    <button aria-expanded="false" data-expands="js-expandable-eac2aebf1eb26e4330c40e7d22845b6a">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h1>
+  
+  <div id="js-expandable-eac2aebf1eb26e4330c40e7d22845b6a" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;skipLink&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#demomain&#34;</span>&gt;Skip to content&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+	&lt;<span style="color:#f92672">nav</span>&gt;
+	&lt;<span style="color:#f92672">ul</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Main&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Things&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Stuff&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;Contact&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+	&lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">nav</span>&gt;
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demomain&#34;</span>&gt;
+		&lt;<span style="color:#f92672">p</span>&gt;Boy, I sure would like to be able to skip to that button without tabbing through that nav menu...&lt;/<span style="color:#f92672">p</span>&gt;
+		&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demoBtn&#34;</span>&gt;Push me&lt;/<span style="color:#f92672">button</span>&gt;
+	&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h2>
+  
+    <button aria-expanded="false" data-expands="js-expandable-f3c0562d44e13baa937986d85f1b3804">
+      <span class="expandable-label">CSS</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h2>
+  
+  <div id="js-expandable-f3c0562d44e13baa937986d85f1b3804" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">*</span>:<span style="color:#a6e22e">focus</span> {
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">blue</span>;
+}
+
+<span style="color:#f92672">*</span> {
+ <span style="color:#66d9ef">box-sizing</span>: <span style="color:#66d9ef">border-box</span>;
+}
+
+<span style="color:#f92672">body</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+}
+
+<span style="color:#f92672">a</span> {
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>;
+  <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+}
+
+<span style="color:#f92672">button</span> {
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.33</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">inherit</span>;
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#111</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fefefe</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">vh</span>;
+  <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+}
+
+<span style="color:#f92672">ul</span> {
+	<span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
+	<span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightgreen</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span> {
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">inherit</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#000</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">24</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span> <span style="color:#f92672">a</span> {
+	<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span>:<span style="color:#a6e22e">hover</span> {
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">aliceblue</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">focus</span> {
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">aliceblue</span>;
+}
+
+.<span style="color:#a6e22e">hidden</span> {
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#000</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-100</span><span style="color:#66d9ef">%</span>);
+  <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">transform</span> <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">s</span>;
+  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+}
+
+.<span style="color:#a6e22e">hidden</span>:<span style="color:#a6e22e">focus</span> {
+	<span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>);
+  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">aliceblue</span>;
+}
+
+#content {
+	<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#009FD4</span>;
+}
+
+<span style="color:#f92672">p</span> {
+	<span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
+	<span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+}
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-8dfd845e9dc2c1dce807e4e071e2d024">
+      <span class="expandable-label">JavaScript</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-8dfd845e9dc2c1dce807e4e071e2d024" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript">document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;skipLink&#39;</span>).<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+  <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;demoBtn&#39;</span>);
+  <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">focus</span>();
+});
+</code></pre></div>
+
+
+  </div>
 </div>
 
 
