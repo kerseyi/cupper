@@ -76,38 +76,14 @@ Here is an example of the menu button being activated on the click event.
 </nav>
 {{</demo>}}
 
-## Code Pattern
-
-### HTML
-
-
-<nav>
-	<button id="menu-btn-example"  aria-expanded="false" aria-haspopup="true">Press me!</button>
-	<ul class="menu-btn-example-ul" role="menu" hidden>
-		<li>
-			<a href="#" role="menuitem">Option 1</a>
-		</li>
-		<li>
-			<a href="#" role="menuitem">Option 2</a>
-		</li>
-		<li>
-			<a href="#" role="menuitem">Option 3</a>
-		</li>
-	</ul>
-</nav>
+### Code Pattern
 	
-
-
-### JavaScript
 {{< expandable label="HTML" level="1" >}}
 {{< snippet file="menuBtn_html.md" >}}
 {{< /expandable >}}
-
-const menuButton = document.getElementById('menu-btn-example');
-
-menuButton.addEventListener('click', function(){
-	let expanded = this.getAttribute('aria-expanded') === 'true';
-	this.setAttribute('aria-expanded', !expanded);
-	let exampleMenu = this.nextElementSibling;
-	exampleMenu.hidden = !exampleMenu.hidden;
-})
+{{< expandable label="CSS" level="2" >}}
+{{< snippet file="menuBtn_CSS.md" >}}
+{{< /expandable >}}
+{{< expandable label="Javascript" level="3" >}}
+{{< snippet file="menuBtn_js.md" >}}
+{{< /expandable >}}

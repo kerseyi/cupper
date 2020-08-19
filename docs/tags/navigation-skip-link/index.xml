@@ -16,9 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/skiplink/</guid>
-      <description>Skip links are a common accessibility feature on websites. They are simply shortcuts to important parts of the webpage that makes it easier and quicker for some users – especially users with disabilities – to find their way around. They are commonly constructed using
-Skip links are usually hidden visually by default and appear when users navigate to them using the tab key on their keyboard.
-Applicable WCAG 2.1 Success Criteria 2.</description>
+      <description>Skip links are a common accessibility feature on websites. They are shortcuts to important parts of the webpage that makes it easier and quicker for some users – especially users with disabilities – to find their way around. They care commonly placed before the main navigation menu on the page, but can be used anywhere there is a chunk of content.
+Skip links are usually hidden visually by default and appear when users navigate to them using the tab key on their keyboard.</description>
     </item>
     
   </channel>

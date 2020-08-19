@@ -1,14 +1,14 @@
 name = "Cupper"
-description = ""
-homepage = "https://www.paciellogroup.com/"
+description = "A repository of accessible component code patterns, references, and educational materials."
+homepage = "https://www.iankersey.com"
 tags = ["inclusive design", "accessibility"]
 min_version = 0.1
 
 SectionPagesMenu = "main"
 
 [author]
-  name = "Heydon Pickering"
-  homepage = "https://inclusive-components.design"
+  name = "Ian Kersey"
+  homepage = "https://www.iankersey.com"
 
 [taxonomies]
   tag = "tags"

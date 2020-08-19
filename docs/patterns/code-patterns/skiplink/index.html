@@ -346,10 +346,40 @@
     
       
 
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#applicable-wcag-2.1-success-criteria">
+            Applicable WCAG 2.1 Success Criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#skip-link-pure-css">
+            Skip Link - Pure CSS
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
 
     
-    <p>Skip links are a common accessibility feature on websites. They are simply shortcuts to important parts of the webpage that makes it easier and quicker for some users – especially users with disabilities – to find their way around. They are commonly constructed using</p>
+    <p>Skip links are a common accessibility feature on websites. They are shortcuts to important parts of the webpage that makes it easier and quicker for some users – especially users with disabilities – to find their way around. They care commonly placed before the main navigation menu on the page, but can be used anywhere there is a chunk of content.</p>
 <p>Skip links are usually hidden visually by default and appear when users navigate to them using the tab key on their keyboard.</p>
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    
+It is a common misconception that skip links are only for people who use screen readers, and therefore do not need to be visible on the page. Skip links <strong>must be visible on focus.</strong>
+
+  </div>
+</aside>
+
 <h2 id="applicable-wcag-21-success-criteria">Applicable WCAG 2.1 Success Criteria</h2>
 
 
@@ -494,6 +524,9 @@
   
 </ul>
 
+<h2 id="skip-link---pure-css">Skip Link - Pure CSS</h2>
+<p>Skip links can be created using pure CSS. There are multiple approaches to this, but the main idea is to hide the link from</p>
+<h3 id="demo">Demo</h3>
 
   </main>
 
@@ -504,8 +537,7 @@
                 <span aria-hidden="true"></span>
               </label>
             </div>
-            Powered by <strong>Cupper</strong>, a <strong>The Paciello Group</strong> project.<br>
-            For general enquiries, contact us on info@paciellogroup.com.
+            Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/ThePacielloGroup/cupper">Cupper</a>. Deployed to GitHub Pages.
           </footer>
         </div>
       </div>

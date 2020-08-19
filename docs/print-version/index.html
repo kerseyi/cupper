@@ -3788,11 +3788,8 @@ Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">s
   </script>
 </div>
 
-<h2 id="code-pattern">Code Pattern</h2>
-<h3 id="html">HTML</h3>
-<!-- raw HTML omitted -->
-<h3 id="javascript">JavaScript</h3>
-<div class="expandable-section">
+<h3 id="code-pattern">Code Pattern</h3>
+<p><div class="expandable-section">
   
     <h1>
   
@@ -3835,13 +3832,112 @@ Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">s
   </div>
 </div>
 
-<p>const menuButton = document.getElementById(&lsquo;menu-btn-example&rsquo;);</p>
-<p>menuButton.addEventListener(&lsquo;click&rsquo;, function(){
-let expanded = this.getAttribute(&lsquo;aria-expanded&rsquo;) === &lsquo;true&rsquo;;
-this.setAttribute(&lsquo;aria-expanded&rsquo;, !expanded);
-let exampleMenu = this.nextElementSibling;
-exampleMenu.hidden = !exampleMenu.hidden;
-})</p>
+<div class="expandable-section">
+  
+    <h2>
+  
+    <button aria-expanded="false" data-expands="js-expandable-9327d3352035c13c414e6e74c3a78901">
+      <span class="expandable-label">CSS</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h2>
+  
+  <div id="js-expandable-9327d3352035c13c414e6e74c3a78901" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS"><span style="color:#f92672">button</span> {
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.33</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">inherit</span>;
+    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#111</span>;
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fefefe</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#f92672">ul</span> {
+	<span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
+	<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">border-bottom-left-radius</span>: <span style="color:#ae81ff">0.33</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">border-bottom-right-radius</span>: <span style="color:#ae81ff">0.33</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">border-top-right-radius</span>: <span style="color:#ae81ff">0.33</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span> {
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
+    <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">inherit</span>;
+    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#fff</span>;
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#000</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span> <span style="color:#f92672">a</span> {
+	<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span>:<span style="color:#a6e22e">hover</span> {
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">aliceblue</span>;
+}
+
+<span style="color:#f92672">ul</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">li</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">focus</span> {
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">aliceblue</span>;
+}
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-08d58b018df4be0e2dc3f8b9560fdf7e">
+      <span class="expandable-label">Javascript</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-08d58b018df4be0e2dc3f8b9560fdf7e" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">menuButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;menu-btn-example&#39;</span>);
+
+<span style="color:#a6e22e">menuButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(){
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">expanded</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;true&#39;</span>;
+	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;aria-expanded&#39;</span>, <span style="color:#f92672">!</span><span style="color:#a6e22e">expanded</span>);
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">exampleMenu</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">nextElementSibling</span>;
+	<span style="color:#a6e22e">exampleMenu</span>.<span style="color:#a6e22e">hidden</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">exampleMenu</span>.<span style="color:#a6e22e">hidden</span>;
+})
+</code></pre></div>
+
+
+  </div>
+</div>
+</p>
 
           </div>
         
@@ -3852,8 +3948,19 @@ exampleMenu.hidden = !exampleMenu.hidden;
               </svg>
               Skip Links
             </h1>
-            <p>Skip links are a common accessibility feature on websites. They are simply shortcuts to important parts of the webpage that makes it easier and quicker for some users – especially users with disabilities – to find their way around. They are commonly constructed using</p>
+            <p>Skip links are a common accessibility feature on websites. They are shortcuts to important parts of the webpage that makes it easier and quicker for some users – especially users with disabilities – to find their way around. They care commonly placed before the main navigation menu on the page, but can be used anywhere there is a chunk of content.</p>
 <p>Skip links are usually hidden visually by default and appear when users navigate to them using the tab key on their keyboard.</p>
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    
+It is a common misconception that skip links are only for people who use screen readers, and therefore do not need to be visible on the page. Skip links <strong>must be visible on focus.</strong>
+
+  </div>
+</aside>
+
 <h2 id="applicable-wcag-21-success-criteria">Applicable WCAG 2.1 Success Criteria</h2>
 
 
@@ -3998,6 +4105,9 @@ exampleMenu.hidden = !exampleMenu.hidden;
   
 </ul>
 
+<h2 id="skip-link---pure-css">Skip Link - Pure CSS</h2>
+<p>Skip links can be created using pure CSS. There are multiple approaches to this, but the main idea is to hide the link from</p>
+<h3 id="demo">Demo</h3>
 
           </div>
         
@@ -4553,8 +4663,7 @@ exampleMenu.hidden = !exampleMenu.hidden;
                 <span aria-hidden="true"></span>
               </label>
             </div>
-            Powered by <strong>Cupper</strong>, a <strong>The Paciello Group</strong> project.<br>
-            For general enquiries, contact us on info@paciellogroup.com.
+            Made with <a href="https://gohugo.io/">Hugo</a>. Themed by <a href="https://github.com/ThePacielloGroup/cupper">Cupper</a>. Deployed to GitHub Pages.
           </footer>
         </div>
       </div>
