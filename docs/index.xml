@@ -76,6 +76,15 @@ Demo Launch ↗Menu Buttonconst menuButton = demo.getElementById(&#39;menu-
     </item>
     
     <item>
+      <title>Alternate Text, Text Descriptions, and Captions</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/reference/alttext/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/reference/alttext/</guid>
+      <description>Alternate Text  Poet Training Tool - Exhaustive training tool that details best practices for creating alternate text for images.  WCAG Criteria1.1.1 Non-text Content (level A):All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below. (Controls, Input:If non-text content is a control or accepts user input, then it has a name that describes its purpose.</description>
+    </item>
+    
+    <item>
       <title>Graphics and Design</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/reference/color/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
