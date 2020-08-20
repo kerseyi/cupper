@@ -988,3 +988,7 @@ h1 svg {
       background: none;
   }
 }
+
+iframe .h1__main {
+    display: none;
+}
