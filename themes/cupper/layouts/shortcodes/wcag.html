@@ -23,6 +23,15 @@
               {{ end }}
             </ul>
           {{ end }}
+          {{ if .desc_li }}
+            <ul>
+              {{ range .desc_li }}
+                <li>
+                  {{ .desc }}
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
         {{ end }}
       </li>
     {{ end }}

@@ -627,10 +627,18 @@
     {
         "ref_id": "1.4.10",
         "title": "Reflow",
-        "description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.",
+        "description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for:",
         "url": "https://www.w3.org/TR/WCAG21/#images-of-text-no-exception",
         "level": "AA",
         "special_cases": null,
+        "desc_li": [
+            {
+                "desc": "Vertical scrolling content at a width equivalent to 320 CSS pixels;"
+            },
+            {
+                "desc": "Horizontal scrolling content at a height equivalent to 256 CSS pixels."
+            }
+        ],
         "notes": [
             {
                 "content": "Note: 320 CSS pixels is equivalent to a starting viewport width of 1280 CSS pixels wide at 400% zoom. For web content which are designed to scroll horizontally (e.g. with vertical text), the 256 CSS pixels is equivalent to a starting viewport height of 1024px at 400% zoom."
@@ -676,7 +684,39 @@
             },
             {
                 "title": "Understanding 1.4.11",
-                "url": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
+            }
+        ]
+    },
+    {
+        "ref_id": "1.4.12",
+        "title": "Text Spacing",
+        "description": "In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:",
+        "url": "https://www.w3.org/TR/WCAG21/#non-text-contrast",
+        "level": "AA",
+        "desc_li": [
+            {
+                "desc": "Line height (line spacing) to at least 1.5 times the font size;"
+            },
+            {
+                "desc": "Spacing following paragraphs to at least 2 times the font size;"
+            },
+            {
+                "desc": "Letter spacing (tracking) to at least 0.12 times the font size;"
+            },
+            {
+                "desc": "Word spacing to at least 0.16 times the font size."
+            }
+        ],
+        "notes": null,
+        "references": [
+            {
+                "title": "How to Meet 1.4.12",
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#text-spacing"
+            },
+            {
+                "title": "Understanding 1.4.12",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
             }
         ]
     },
