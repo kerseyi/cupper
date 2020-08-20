@@ -437,19 +437,19 @@
     {
         "ref_id": "1.4.4",
         "title": "Resize text",
-        "description": "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality",
-        "url": "https://www.w3.org/TR/WCAG20/#visual-audio-contrast-scale",
+        "description": "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+        "url": "https://www.w3.org/TR/WCAG21/#resize-text",
         "level": "AA",
         "special_cases": null,
         "notes": null,
         "references": [
             {
                 "title": "How to Meet 1.4.4",
-                "url": "http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-scale"
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#resize-text"
             },
             {
                 "title": "Understanding 1.4.4",
-                "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html"
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html"
             }
         ]
     },
@@ -457,7 +457,7 @@
         "ref_id": "1.4.5",
         "title": "Images of Text",
         "description": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following",
-        "url": "https://www.w3.org/TR/WCAG20/#visual-audio-contrast-text-presentation",
+        "url": "https://www.w3.org/TR/WCAG21/#images-of-text",
         "level": "AA",
         "special_cases": [
             {
@@ -479,11 +479,11 @@
         "references": [
             {
                 "title": "How to Meet 1.4.5",
-                "url": "http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-text-presentation"
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#images-of-text"
             },
             {
                 "title": "Understanding 1.4.5",
-                "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-presentation.html"
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html"
             }
         ]
     },
@@ -491,7 +491,7 @@
         "ref_id": "1.4.6",
         "title": "Contrast (Enhanced)",
         "description": "The visual presentation of text and images of text has a contrast ratio of at least 7:1, except for the following: ",
-        "url": "https://www.w3.org/TR/WCAG20/#visual-audio-contrast7",
+        "url": "https://www.w3.org/TR/WCAG21/#contrast-enhanced",
         "level": "AAA",
         "special_cases": [
             {
@@ -514,11 +514,11 @@
         "references": [
             {
                 "title": "How to Meet 1.4.6",
-                "url": "http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast7"
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#contrast-enhanced"
             },
             {
                 "title": "Understanding 1.4.6",
-                "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html"
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html"
             }
         ]
     },
@@ -526,7 +526,7 @@
         "ref_id": "1.4.7",
         "title": "Low or No Background Audio",
         "description": "For prerecorded audio-only content that (1) contains primarily speech in the foreground, (2) is not an audio CAPTCHA or audio logo, and (3) is not vocalization intended to be primarily musical expression such as singing or rapping, at least one of the following is true: (Level AAA)",
-        "url": "https://www.w3.org/TR/WCAG20/#visual-audio-contrast-noaudio",
+        "url": "https://www.w3.org/TR/WCAG21/#low-or-no-background-audio",
         "level": "AAA",
         "special_cases": [
             {
@@ -553,10 +553,11 @@
         "references": [
             {
                 "title": "How to Meet 1.4.7",
-                "url": "http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-noaudio"
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#low-or-no-background-audio"
             },
             {
-                "title": "Understanding 1.4.7"
+                "title": "Understanding 1.4.7",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/low-or-no-background-audio.html"
             }
         ]
     },
@@ -564,7 +565,7 @@
         "ref_id": "1.4.8",
         "title": "Visual Presentation",
         "description": "For the visual presentation of blocks of text, a mechanism is available to achieve the following:",
-        "url": "https://www.w3.org/TR/WCAG20/#visual-audio-contrast-visual-presentation",
+        "url": "https://www.w3.org/TR/WCAG21/#visual-presentation",
         "level": "AAA",
         "special_cases": [
             {
@@ -592,11 +593,11 @@
         "references": [
             {
                 "title": "How to Meet 1.4.8",
-                "url": "http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-visual-presentation"
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#visual-presentation"
             },
             {
                 "title": "Understanding 1.4.8",
-                "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html"
             }
         ]
     },
@@ -604,7 +605,7 @@
         "ref_id": "1.4.9",
         "title": "Images of Text (No Exception)",
         "description": "Images of text are only used for pure decoration or where a particular presentation of text is essential to the information being conveyed.",
-        "url": "https://www.w3.org/TR/WCAG20/",
+        "url": "https://www.w3.org/TR/WCAG21/#images-of-text-no-exception",
         "level": "AAA",
         "special_cases": null,
         "notes": [
@@ -615,11 +616,67 @@
         "references": [
             {
                 "title": "How to Meet 1.4.9",
-                "url": "http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-text-images"
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#images-of-text-no-exception"
             },
             {
                 "title": "Understanding 1.4.9",
-                "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-images.html"
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/images-of-text-no-exception.html"
+            }
+        ]
+    },
+    {
+        "ref_id": "1.4.10",
+        "title": "Reflow",
+        "description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.",
+        "url": "https://www.w3.org/TR/WCAG21/#images-of-text-no-exception",
+        "level": "AA",
+        "special_cases": null,
+        "notes": [
+            {
+                "content": "Note: 320 CSS pixels is equivalent to a starting viewport width of 1280 CSS pixels wide at 400% zoom. For web content which are designed to scroll horizontally (e.g. with vertical text), the 256 CSS pixels is equivalent to a starting viewport height of 1024px at 400% zoom."
+            },
+            {
+                "content": "Examples of content which require two-dimensional layout are images, maps, diagrams, video, games, presentations, data tables, and interfaces where it is necessary to keep toolbars in view while manipulating content."
+            }
+        ],
+        "references": [
+            {
+                "title": "How to Meet 1.4.10",
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#reflow"
+            },
+            {
+                "title": "Understanding 1.4.10",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/reflow.html"
+            }
+        ]
+    },
+    {
+        "ref_id": "1.4.11",
+        "title": "Non-text Contrast",
+        "description": "The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):",
+        "url": "https://www.w3.org/TR/WCAG21/#non-text-contrast",
+        "level": "AA",
+        "special_cases": [
+            {
+                "type": "at_least_one",
+                "title": "User Interface Components",
+                "description": "Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;"
+            },
+            {
+                "type": "at_least_one",
+                "title": "Graphical Objects",
+                "description": "Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed."
+            }
+        ],
+        "notes": null,
+        "references": [
+            {
+                "title": "How to Meet 1.4.11",
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#non-text-contrast"
+            },
+            {
+                "title": "Understanding 1.4.11",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
             }
         ]
     },
@@ -629,7 +686,18 @@
         "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints",
         "url": "https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable",
         "level": "A",
-        "special_cases": null,
+        "special_cases": [
+            {
+                "type": "at_least_one",
+                "title": "No Background",
+                "description": "The audio does not contain background sounds."
+            },
+            {
+                "type": "at_least_one",
+                "title": "Turn Off",
+                "description": "The background sounds can be turned off."
+            }
+        ],
         "notes": [
             {
                 "content": "This exception relates to the underlying function, not the input technique. For example, if using handwriting to enter text, the input technique (handwriting) requires path-dependent input but the underlying function (text input) does not."

@@ -17,7 +17,7 @@
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/datepicker/</guid>
       <description>Accessible datepicker, ported from Inclusive Dates.
-Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A):Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.2.1.1 Keyboard (level A):All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user&amp;#39;s movement and not just the endpoints4.</description>
+Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A):Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.2.1.1 Keyboard (level A):All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user&amp;#39;s movement and not just the endpointsNo Background:The audio does not contain background sounds.</description>
     </item>
     
   </channel>

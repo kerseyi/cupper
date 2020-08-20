@@ -7,11 +7,11 @@ tags = ["accordion, menu, toggle, expand"]
 
 ## Applicable WCAG 2.1 Success Criteria
 
-{{< wcag include="1.3.5, 4.1.2, 2.1.1, 4.1.1" descriptions="true" >}}
+{{< wcag include="1.4.12, 4.1.2, 2.1.1, 4.1.1" descriptions="true" >}}
 
 ## HTML Details Element
 
-What's that? An HTML accordion you say? Yup! It's called the [HTML Details Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details).
+[HTML Details Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
 ### Demo
 
