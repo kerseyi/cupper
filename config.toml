@@ -1,5 +1,5 @@
 languageCode = "en-us"
-title = "Cupper"
+title = "A11y Ref"
 baseURL = "https://kerseyi.github.io/cupper-2/"
 canonifyURLs = true
 theme = "cupper"

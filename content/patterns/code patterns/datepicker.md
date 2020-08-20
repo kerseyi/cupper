@@ -1,7 +1,7 @@
 +++
 title = "Datepicker"
 toc = true
-tags = ["datepicker, skip link"]
+tags = ["datepicker"]
 +++
 
 Accessible datepicker, ported from [Inclusive Dates](https://github.com/fymmot/inclusive-dates).

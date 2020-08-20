@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>References on Cupper</title>
+    <title>References on A11y Ref</title>
     <link>https://kerseyi.github.io/cupper-2/patterns/reference/</link>
-    <description>Recent content in References on Cupper</description>
+    <description>Recent content in References on A11y Ref</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/reference/alttext/</guid>
-      <description>Alternate Text  Poet Training Tool - Exhaustive training tool that details best practices for creating alternate text for images.  WCAG Criteria1.1.1 Non-text Content (level A):All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below. (Controls, Input:If non-text content is a control or accepts user input, then it has a name that describes its purpose.</description>
+      <description>Alternate Text  Poet Training Tool - Exhaustive training tool that details best practices for creating alternate text for images.  WCAG Criteria1.1.1 Non-text Content (level A):All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below.Controls, Input:If non-text content is a control or accepts user input, then it has a name that describes its purpose.</description>
     </item>
     
     <item>

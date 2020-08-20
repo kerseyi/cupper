@@ -7,7 +7,7 @@ tags = ["accordion, menu, toggle, expand"]
 
 ## Applicable WCAG 2.1 Success Criteria
 
-{{< wcag include="1.3.1, 4.1.2, 2.1.1, 4.1.1" descriptions="true" >}}
+{{< wcag include="1.3.5, 4.1.2, 2.1.1, 4.1.1" descriptions="true" >}}
 
 ## HTML Details Element
 
