@@ -12,4 +12,4 @@ Accessible datepicker, ported from [Inclusive Dates](https://github.com/fymmot/i
 
 ## Demo
 
-{{ < iframe source="https://fymmot.github.io/inclusive-dates/" > }}
+{{< iframe src="fymmot.github.io/inclusive-dates/" title="accessible datepicker">}}
