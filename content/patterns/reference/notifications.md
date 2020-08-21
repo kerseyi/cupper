@@ -3,6 +3,7 @@ title = "Notifications / Alerts"
 toc = true
 +++
 
+{{< youtube W5YAaLLBKhQ >}}
 - Live Regions 
 	- Accessiblity Talks <https://www.youtube.com/watch?v=W5YAaLLBKhQ&feature=youtu.be>
 	- Live Region Codepen <https://codepen.io/iankonlineada/pen/eYJwQBY>

@@ -95,6 +95,15 @@ Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A):
     </item>
     
     <item>
+      <title>Dev Resources</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/reference/dev_resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/reference/dev_resources/</guid>
+      <description> Accessiblity Checklist - Accessiblity checklist for those building websites and interfaces.  </description>
+    </item>
+    
+    <item>
       <title>Graphics and Design</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/reference/color/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -121,6 +130,16 @@ Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A):
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/reference/notifications/</guid>
       <description>Live Regions  Accessiblity Talks https://www.youtube.com/watch?v=W5YAaLLBKhQ&amp;amp;feature=youtu.be Live Region Codepen https://codepen.io/iankonlineada/pen/eYJwQBY    Aria Roles  alert status  Poor support  aria-atomic : what is read? aria-relevant : when it is read aria-busy : maybe don&amp;rsquo;t read this? Wait until something else is done. Dependent on screen reader / user tech.  No support  role=&amp;quot;marquee&amp;rdquo; role=&amp;quot;timer&amp;rdquo;  HTML   Scott O&amp;rsquo;Hara https://www.scottohara.me/blog/2019/07/10/the-output-element.html  Types of live regions   Dynamic search bar - Don&amp;rsquo;t want it to update to frequently.</description>
+    </item>
+    
+    <item>
+      <title>Plugins and Apps</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/reference/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/reference/plugins/</guid>
+      <description>Plugins, apps, and other tools to test
+Plugins  Accessiblity Checklist - Accessiblity checklist for those building websites and interfaces.  Testing Building Empathy </description>
     </item>
     
     <item>
