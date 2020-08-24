@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/expandable-sections/</guid>
-      <description>Applicable WCAG 2.1 Success Criteria 1.4.12 Text Spacing (level AA):In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:Line height (line spacing) to at least 1.5 times the font size;Spacing following paragraphs to at least 2 times the font size;Letter spacing (tracking) to at least 0.</description>
+      <description>Applicable WCAG 2.1 Success Criteria 1.4.12 Text Spacing (level AA):In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:Dismissable:A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;Hoverable:If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;2.</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ ATAG Overview  ATAG Overview  ATAG Quick Guide  ATAG Quick Guide  ATAG Report To
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/modal/</guid>
-      <description>Popups and Modals Modals are intended to be used as a quick and simple way to capture an interaction from a user. They trap the user’s focus (visual and navigational) in a window that is separated from the rest of the page content, blocking access to the contents on the main page until the modal is closed by the user. These modal windows are overlaid over the main page content, trapping keyboard focus in their windows, and blurring out or dimming the main page content.</description>
+      <description>Modals are intended to be used as a quick and simple way to capture an interaction from a user. They trap the user’s focus (visual and navigational) in a window that is separated from the rest of the page content, blocking access to the contents on the main page until the modal is closed by the user. These modal windows are overlaid over the main page content, trapping keyboard focus in their windows, and blurring out or dimming the main page content.</description>
     </item>
     
     <item>
@@ -113,6 +113,16 @@ Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A):
     </item>
     
     <item>
+      <title>Interactive Tables</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/sort-table/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/sort-table/</guid>
+      <description>Interactive tables are powerful widgets that can provide many different layers of fucntionality. They provide a variety of different fucntions, which can be as simple as sorting rows or as complex as duplicating spreadsheet functions.
+WCAG Criteria 1.3.1 Info and Relationships (level A)4.1.1 Parsing (level A)4.1.2 Name, Role, Value (level A)Example 1: Sortable Data Grid w / Editable Cells Demo Launch ↗Transactions January 1 through January 7DateTypeDescriptionCategoryAmountBalance01-Jan-16DepositCash DepositIncomeIncomeGroceriesDining OutAutoHouseholdBeauty$1,000,000.</description>
+    </item>
+    
+    <item>
       <title>Navigation</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/reference/nav/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -153,12 +163,12 @@ Skip links are usually hidden visually by default and appear when users navigate
     </item>
     
     <item>
-      <title>Sortable Table</title>
-      <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/sort-table/</link>
+      <title>Tables</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/tables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/sort-table/</guid>
-      <description>Adapted from: Inclusive Components</description>
+      <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/tables/</guid>
+      <description>WCAG Criteria 1.3.1 Info and Relationships (level A)4.1.1 Parsing (level A)4.1.2 Name, Role, Value (level A)Techniques H43: Using id and headers attributes to associate data cells with header cells in data tables Description The objective of this technique is to associate each data cell (in a data table) with the appropriate headers.</description>
     </item>
     
   </channel>

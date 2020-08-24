@@ -694,6 +694,36 @@
         "description": "In content implemented using markup languages that support the following text style properties, no loss of content or functionality occurs by setting all of the following and by changing no other style property:",
         "url": "https://www.w3.org/TR/WCAG21/#non-text-contrast",
         "level": "AA",
+        "special_cases": [
+            {
+                "type": "at_least_one",
+                "title": "Dismissable",
+                "description": "A mechanism is available to dismiss the additional content without moving pointer hover or keyboard focus, unless the additional content communicates an input error or does not obscure or replace other content;"
+            },
+            {
+                "type": "at_least_one",
+                "title": "Hoverable",
+                "description": "If pointer hover can trigger the additional content, then the pointer can be moved over the additional content without the additional content disappearing;"
+            }
+        ],
+        "notes": null,
+        "references": [
+            {
+                "title": "How to Meet 1.4.12",
+                "url": "https://www.w3.org/WAI/WCAG21/quickref/#text-spacing"
+            },
+            {
+                "title": "Understanding 1.4.12",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
+            }
+        ]
+    },
+    {
+        "ref_id": "1.4.13",
+        "title": "Content on Hover or Focus",
+        "description": "Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:",
+        "url": "https://www.w3.org/TR/WCAG21/#content-on-hover-or-focus",
+        "level": "AA",
         "desc_li": [
             {
                 "desc": "Line height (line spacing) to at least 1.5 times the font size;"
@@ -711,11 +741,11 @@
         "notes": null,
         "references": [
             {
-                "title": "How to Meet 1.4.12",
+                "title": "How to Meet 1.4.13",
                 "url": "https://www.w3.org/WAI/WCAG21/quickref/#text-spacing"
             },
             {
-                "title": "Understanding 1.4.12",
+                "title": "Understanding 1.4.13",
                 "url": "https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"
             }
         ]
