@@ -48,6 +48,10 @@
   </url>
   
   <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/aria/</loc>
+  </url>
+  
+  <url>
     <loc>https://kerseyi.github.io/cupper-2/categories/</loc>
   </url>
   
@@ -121,6 +125,10 @@
   
   <url>
     <loc>https://kerseyi.github.io/cupper-2/patterns/w3c/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/reference/aria/</loc>
   </url>
   
 </urlset>

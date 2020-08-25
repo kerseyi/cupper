@@ -166,6 +166,15 @@
         <ul id="patterns-list">
           
             <li class="pattern">
+              <a href="#aria" >
+                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                  <use xlink:href="#bookmark"></use>
+                </svg>
+                <span class="text">ARIA</span>
+              </a>
+            </li>
+          
+            <li class="pattern">
               <a href="#code-patterns" >
                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                   <use xlink:href="#bookmark"></use>
@@ -192,6 +201,13 @@
               </a>
             </li>
           
+          
+            <li>
+              <h3>ARIA</h3>
+              <ul>
+                
+              </ul>
+            </li>
           
             <li>
               <h3>Code Patterns</h3>
@@ -330,6 +346,15 @@
                     </a>
                   </li>
                 
+                  <li class="pattern">
+                    <a href="#what-is-aria" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">What is ARIA</span>
+                    </a>
+                  </li>
+                
               </ul>
             </li>
           
@@ -365,6 +390,17 @@
     
       
         <div class="pattern-section">
+          <h1 id="aria" tabindex="-1">
+            <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+              <use xlink:href="#bookmark"></use>
+            </svg>
+            ARIA
+          </h1>
+          <h2 id="attributes">Attributes</h2>
+
+        </div>
+      
+        <div class="pattern-section">
           <h1 id="code-patterns" tabindex="-1">
             <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
               <use xlink:href="#bookmark"></use>
@@ -394,6 +430,8 @@
           
         </div>
       
+      
+        
       
         
           <div class="pattern-section">
@@ -8365,8 +8403,7 @@ p {
               </svg>
               Alternate Text, Text Descriptions, and Captions
             </h1>
-            <h2 id="alternate-text">Alternate Text</h2>
-<ul>
+            <ul>
 <li><a href="https://poet.diagramcenter.org/">Poet Training Tool</a> - Exhaustive training tool that details best practices for creating alternate text for images.</li>
 </ul>
 <div class="expandable-section">
@@ -8903,6 +8940,46 @@ p {
 </ul>
 <h2 id="testing">Testing</h2>
 <h2 id="building-empathy">Building Empathy</h2>
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="what-is-aria" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              What is ARIA
+            </h1>
+            <h2 id="what-is-aria">What is ARIA?</h2>
+<p>ARIA is a way for websites and web apps to communicate with screen readers. You can think of ARIA as an API for communicating information about an interactive HTML element / widget to a screen reader.</p>
+<h3 id="what-aria-isnt">What ARIA isn&rsquo;t</h3>
+<ul>
+<li>A programming language</li>
+<li>Magic</li>
+</ul>
+<h3 id="what-aria-communicates-to-screen-readers">What ARIA Communicates to Screen Readers</h3>
+<ul>
+<li>labels and names</li>
+<li>roles</li>
+<li>states</li>
+<li>properties</li>
+<li>relationships</li>
+<li>live announcements</li>
+</ul>
+<h2 id="accessible-name-calculation">Accessible Name Calculation</h2>
+
+
+
+<!-- raw HTML omitted -->
+<p>Here is how the <strong>accessible name</strong> of an element is calculated:</p>
+<ol>
+<li><strong>aria-labelledby</strong> : This attribute will override all of the others if present.</li>
+<li><strong>aria-label</strong> : This attribute will override all of the others if no <strong>aria-labelledby</strong> is present. This attribute is <strong>only accessible to screen readers</strong> &ndash; it will not be displayed visually on the page.</li>
+<li>Native HTML text :  If <strong>aria-labelledby</strong> and <strong>aria-label</strong> are missing, the native text of the HTML element will be used. Native text is the text between the opening and closing tags of the element. Ex:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">button</span>&gt;This is a button&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div>
+
 
           </div>
         
