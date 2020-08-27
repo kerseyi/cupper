@@ -36,6 +36,7 @@
     </title>
     
 
+    <script src="https://kit.fontawesome.com/dd9a51c0f1.js" crossorigin="anonymous"></script>
 
   </head>
   <body>
@@ -449,8 +450,26 @@
         </li>
       
         <li>
-          <a href="#features-and">
-            Features and
+          <a href="#features">
+            Features
+          </a>
+        </li>
+      
+        <li>
+          <a href="#implementation-notes">
+            Implementation Notes
+          </a>
+        </li>
+      
+        <li>
+          <a href="#demo-and-code">
+            Demo and Code
+          </a>
+        </li>
+      
+        <li>
+          <a href="#browser-and-screen-reader-support">
+            Browser and Screen Reader support
           </a>
         </li>
       
@@ -633,7 +652,216 @@
   
 </ul>
 
-<h2 id="features-and">Features and</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Activation</strong>: Alerts are activated by a user interaction, timer, or other method.</li>
+<li><strong>Keyboard Focus</strong>: Focus must not be moved when an alert is activated.</li>
+<li><strong>Design</strong>: Distinct from other visual content on page.</li>
+<li><strong>Position</strong>: Should be positioned close to the user&rsquo;s mouse, or element / region of page that currently has focus. This is to ensure that users using screen magnifiers will be aware of the alert.</li>
+<li><strong>Message text and length</strong>: Messages should be concise and brief. If an icon is used to convey semantics (warning, success, etc.), make sure that the meaning of the icon is communicated in the alert text.</li>
+</ul>
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    
+Best practice is to only have one alert message on the screen at a time. Make sure to clear a previous alert when a new one is introduced.
+
+  </div>
+</aside>
+
+<h2 id="implementation-notes">Implementation Notes</h2>
+<ol>
+<li>An empty ARIA live region <strong>MUST</strong> be present in the DOM on page load.</li>
+<li>The ARIA live region <strong>MUST</strong> be empty on page load.</li>
+<li>Another ARIA live region can be added to the DOM later, but it <strong>MUST</strong> be empty.</li>
+<li>If an ARIA live region is added to the DOM without a page load / refresh event, a JavaScript delay should be used before putting content into the live region.</li>
+</ol>
+<h2 id="demo-and-code">Demo and Code</h2>
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-9562c03292f2e9710ac7f2a11df1a832"></div>
+        <button data-launch="js-demo-9562c03292f2e9710ac7f2a11df1a832">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-9562c03292f2e9710ac7f2a11df1a832">
+      
+<div class="alertGroup" >
+  <div id="alertBox" class="hidden" role="alert" aria-live="polite"></div>
+  <p>
+    <button id="yass" data-msg="Great job! Such success!" data-class="yes">Success!</button>
+    <button id="error">Error</button>
+    <button id="clear" class="clear">Clear alert</button>
+  </p>
+</div>
+
+<style>
+  .hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  .yes {
+    color: green;
+  }
+
+  .no {
+    color: red;
+  }
+</style>
+
+<script>
+  const group = document.getElementById("alertGroup");
+  const alert = document.getElementById("alertBox");
+  const goodJob = document.getElementById("yass");
+  const badJob = document.getElementById("error");
+
+  goodJob.onclick = activateAlert;
+  badJob.onclick = activateAlert;
+
+  function activateAlert(){
+    alert.innerHTML = "";
+    alert.classList.add(button.dataset.class);
+    alert.classList.remove("hidden");
+    alert.innerHTML = button.dataset.msg;
+  }
+
+
+</script>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-9562c03292f2e9710ac7f2a11df1a832');
+      var template = document.getElementById('template-9562c03292f2e9710ac7f2a11df1a832');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-9562c03292f2e9710ac7f2a11df1a832\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-9562c03292f2e9710ac7f2a11df1a832"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "9562c03292f2e9710ac7f2a11df1a832";
+      });
+    })();
+  </script>
+</div>
+
+<h2 id="browser-and-screen-reader-support">Browser and Screen Reader support</h2>
+
+
+
+<table class="tested">
+  <tr>
+    <th scope="row">
+      <svg viewBox="0 0 177.16535 177.16535" focusable="false" aria-hidden="true">
+        <use xlink:href="#tick"></use>
+      </svg>
+      Tested using
+    </th>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-firefox.svg" alt="">
+        <span><strong>Firefox </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>JAWS</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-chrome.svg" alt="">
+        <span><strong>Chrome </strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-safari-ios.svg" alt="">
+        <span><strong>Safari iOS </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>Voiceover</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-ie.svg" alt="">
+        <span><strong>IE </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>JAWS</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-edge.svg" alt="">
+        <span><strong>Edge </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>Narrator</strong></span>
+        
+      </td>
+    
+  </tr>
+</table>
+
 
   </main>
 

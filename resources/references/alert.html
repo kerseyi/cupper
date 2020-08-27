@@ -1,0 +1,41 @@
+
+<div class="alertGroup" class="hidden">
+  <div id="alertBox" role="alert" aria-live="polite"></div>
+  <p>
+    <button id="yass" data-msg="Great job! Such success!" data-class="yes">Success!</button>
+    <button id="error">Error</button>
+    <button id="clear" class="clear">Clear alert</button>
+  </p>
+</div>
+
+<style>
+  .hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  .yes {
+    color: green;
+  }
+
+  .no {
+    color: red;
+  }
+</style>
+
+<script>
+  const group = getElementById("alertGroup");
+  const alert = getElementById("alertBox");
+
+  document.getElementById("yass").onclick = activateAlert;
+  document.getElementById("error").onclick = activateAlert;
+
+  function activateAlert(){
+    alert.innerHTML("");
+    alert.classList.add(button.dataset.class);
+    group.classList.remove("hidden");
+    alert.innerHTML(button.dataset.msg);
+  }
+
+
+</script>

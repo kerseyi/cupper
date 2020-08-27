@@ -10,9 +10,9 @@ toc = true
 -	[Accessible Colors](https://accessible-colors.com/)
 -	[Accessible color palette builder](https://toolness.github.io/accessible-color-matrix/) - Build an accessible color palette
 
-### Applicable WCAG Criteria
-
+{{< expandable label="WCAG Criteria" level="1" >}}
 {{< wcag include="1.4.1, 1.4.3, 1.4.6, 1.4.11," >}}
+{{< /expandable >}}
 
 
 ## Charts
