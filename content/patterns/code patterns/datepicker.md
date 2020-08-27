@@ -13,4 +13,4 @@ Accessible datepicker, ported from [Inclusive Dates](https://github.com/fymmot/i
 ## Demo
 
 
-{{< iframe id="datepicker" src="kerseyi.github.io/inclusive-dates/" title="accessible datepicker">}}
+{{< iframe id="datepicker" src="kerseyi.github.io/inclusive-dates/" title="accessible datepicker" height="150vh">}}
