@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/tables/">
+    <link rel="canonical" href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/alerts/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://kerseyi.github.io/cupper-2/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Tables | A11y Ref
+        Alerts | A11y Ref
       
     </title>
     
@@ -267,7 +267,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/alerts/" >
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/alerts/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -303,7 +303,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/tables/" aria-current="page">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/tables/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -432,22 +432,8 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Tables
+      Alerts
     </h1>
-    
-      <div class="tags">
-        <strong aria-hidden="true">Tags: </strong>
-        <ul aria-label="tags">
-          
-            <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              <a href="https://kerseyi.github.io/cupper-2/tags/table-grid-sorting">table, grid, sorting</a>
-            </li>
-          
-        </ul>
-      </div>
     
     
       
@@ -457,20 +443,14 @@
     <ol>
       
         <li>
-          <a href="#wcag-criteria">
-            WCAG Criteria
+          <a href="#applicable-wcag-2.1-success-criteria">
+            Applicable WCAG 2.1 Success Criteria
           </a>
         </li>
       
         <li>
-          <a href="#techniques">
-            Techniques
-          </a>
-        </li>
-      
-        <li>
-          <a href="#references">
-            References
+          <a href="#features-and">
+            Features and
           </a>
         </li>
       
@@ -479,12 +459,13 @@
 
 
     
-    <h2 id="wcag-criteria">WCAG Criteria</h2>
+    <p>Alerts are an important type of ARIA live region which provide screen readers with ways to announce meaningful information to a user. These alerts are triggered programmatically, usually based on a user interaction or timer. They announce text to the use without moving keyboard focus. Since they are intended to stand out from other content on the page, they should be styled and positioned on the page close to the user&rsquo;s mouse or element that has keyboard focus.</p>
+<h2 id="applicable-wcag-21-success-criteria">Applicable WCAG 2.1 Success Criteria</h2>
 
 
 
 
-<ul class="wcag ">
+<ul class="wcag with-desc">
   
     
   
@@ -512,8 +493,12 @@
           <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
             <use xlink:href="#w3c"></use>
           </svg>
-          1.3.1 Info and Relationships</a> (level A)
+          1.3.1 Info and Relationships</a> (level A):
         </strong>
+        
+          Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.
+          
+          
         
       </li>
     
@@ -628,16 +613,6 @@
   
     
   
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-parses">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          4.1.1 Parsing</a> (level A)
-        </strong>
-        
-      </li>
     
   
     
@@ -646,90 +621,19 @@
           <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
             <use xlink:href="#w3c"></use>
           </svg>
-          4.1.2 Name, Role, Value</a> (level A)
+          4.1.2 Name, Role, Value</a> (level A):
         </strong>
+        
+          For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.
+          
+          
         
       </li>
     
   
 </ul>
 
-<h2 id="techniques">Techniques</h2>
-
-
-
-<!-- raw HTML omitted -->
-<h3 id="h43-using-id-and-headers-attributes-to-associate-data-cells-with-header-cells-in-data-tableshttpswwww3orgwaiwcag21techniqueshtmlh43html"><a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H43.html">H43: Using id and headers attributes to associate data cells with header cells in data tables</a></h3>
-<h3 id="description">Description</h3>
-<p>The objective of this technique is to associate each data cell (in a data table) with the appropriate headers. This technique adds a headers attribute to each data cell (td element). It also adds an id attribute to any cell used as a header for other cells. The headers attribute of a cell contains a list of the id attributes of the associated header cells. If there is more than one id, they are separated by spaces.</p>
-<p>This technique is used when data cells are associated with more than one row and/or one column header. This allows screen readers to speak the headers associated with each data cell when the relationships are too complex to be identified using the th element alone or the th element with the scope attribute. Using this technique also makes these complex relationships perceivable when the presentation format changes.</p>
-<p>This technique is not recommended for layout tables since its use implies a relationship between cells that is not meaningful when tables are used for layout.</p>
-<h3 id="examples">Examples</h3>
-<h4 id="table-with-multiple-rows-of-headers">Table with multiple rows of headers</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">table</span>&gt;
-   &lt;<span style="color:#f92672">tr</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">rowspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;h&#34;</span>&gt;Homework&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e&#34;</span>&gt;Exams&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p&#34;</span>&gt;Projects&lt;/<span style="color:#f92672">th</span>&gt;
-   &lt;/<span style="color:#f92672">tr</span>&gt;
-   &lt;<span style="color:#f92672">tr</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e1&#34;</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e&#34;</span>&gt;1&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e2&#34;</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e&#34;</span>&gt;2&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ef&#34;</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e&#34;</span>&gt;Final&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p1&#34;</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p&#34;</span>&gt;1&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p2&#34;</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p&#34;</span>&gt;2&lt;/<span style="color:#f92672">th</span>&gt;
-     &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pf&#34;</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p&#34;</span>&gt;Final&lt;/<span style="color:#f92672">th</span>&gt;
-   &lt;/<span style="color:#f92672">tr</span>&gt;
-   &lt;<span style="color:#f92672">tr</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;h&#34;</span>&gt;15%&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e e1&#34;</span>&gt;15%&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e e2&#34;</span>&gt;15%&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;e ef&#34;</span>&gt;20%&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p p1&#34;</span>&gt;10%&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p p2&#34;</span>&gt;10%&lt;/<span style="color:#f92672">td</span>&gt;
-    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p pf&#34;</span>&gt;15%&lt;/<span style="color:#f92672">td</span>&gt;
-   &lt;/<span style="color:#f92672">tr</span>&gt;
- &lt;/<span style="color:#f92672">table</span>&gt;
-</code></pre></div>
-
-
-
- <style>
- 	th {
- 		overflow-wrap: break-word;
-
- 	}
- </style>
-	<table>
-   <tr>
-     <th rowspan="2" id="h">Homework</th>
-     <th colspan="3" id="e">Exams</th>
-     <th colspan="3" id="p">Projects</th>
-   </tr>
-   <tr>
-     <th id="e1" headers="e">1</th>
-     <th id="e2" headers="e">2</th>
-     <th id="ef" headers="e">Final</th>
-     <th id="p1" headers="p">1</th>
-     <th id="p2" headers="p">2</th>
-     <th id="pf" headers="p">Final</th>
-   </tr>
-   <tr>
-    <td headers="h">15%</td>
-    <td headers="e e1">15%</td>
-    <td headers="e e2">15%</td>
-    <td headers="e ef">20%</td>
-    <td headers="p p1">10%</td>
-    <td headers="p p2">10%</td>
-    <td headers="p pf">15%</td>
-   </tr>
-  </table>
-
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://inclusive-components.design/data-tables/">Inclusive Components</a></li>
-<li><a href="https://adrianroselli.com/2017/11/hey-its-still-ok-to-use-tables.html">It&rsquo;s still OK to use Tables!</a></li>
-</ul>
+<h2 id="features-and">Features and</h2>
 
   </main>
 

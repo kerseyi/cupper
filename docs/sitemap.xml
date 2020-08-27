@@ -44,7 +44,15 @@
   </url>
   
   <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/code-patterns/alerts/</loc>
+  </url>
+  
+  <url>
     <loc>https://kerseyi.github.io/cupper-2/patterns/reference/alttext/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/aria/roles/application/</loc>
   </url>
   
   <url>
@@ -84,6 +92,18 @@
   </url>
   
   <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/aria/name/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/aria/name/name/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/aria/name/name2/</loc>
+  </url>
+  
+  <url>
     <loc>https://kerseyi.github.io/cupper-2/patterns/reference/nav/</loc>
   </url>
   
@@ -105,6 +125,14 @@
   
   <url>
     <loc>https://kerseyi.github.io/cupper-2/patterns/reference/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/aria/roles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kerseyi.github.io/cupper-2/patterns/reference/sr/</loc>
   </url>
   
   <url>

@@ -34,7 +34,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/reference/color/</guid>
-      <description>Color  Color Safe - Accessible color palettes based on WCAG Guidelines of text and background contrast ratios Contrast Grid - Test BG and FG colors  Charts  Designing Accessible Data Visualizations - An intro to designing accessible data visualizations Fizz Studio Software - Create Accessible Data Visualizations  SVG  Deque - creating Accessible SVGs - Create Accessible SVGs  </description>
+      <description>Color  Color Safe - Accessible color palettes based on WCAG Guidelines of text and background contrast ratios Contrast Grid - Test BG and FG colors Accessible Colors Accessible color palette builder - Build an accessible color palette  Applicable WCAG Criteria 1.4.1 Use of Color (level A)1.4.3 Contrast (Minimum) (level AA)1.4.6 Contrast (Enhanced) (level AAA)1.</description>
     </item>
     
     <item>
@@ -65,6 +65,15 @@
       <guid>https://kerseyi.github.io/cupper-2/patterns/reference/plugins/</guid>
       <description>Plugins, apps, and other tools to test
 Plugins  Accessiblity Checklist - Accessiblity checklist for those building websites and interfaces.  Testing Building Empathy </description>
+    </item>
+    
+    <item>
+      <title>Screen Readers</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/reference/sr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/reference/sr/</guid>
+      <description>Using a Screen Reader  Understanding Screen Reader Interaction - A great primer on how to use a screen reader VoiceOver Keyboard Shortcuts - A free screen reader for Windows  Screen Readers  NVDA - A free screen reader for Windows JAWS - A paid screen reader for Windows VoiceOver - VoiceOver is the built-in screen reader for Mac and iOS devices.  </description>
     </item>
     
     <item>
