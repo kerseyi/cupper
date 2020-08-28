@@ -31,18 +31,13 @@ Best practice is to only have one alert message on the screen at a time. Make su
 
 ## Demo and Code
 
-{{< demo >}}
-<div class="alertGroup" >
-  <div id="alertBox" class="hidden" role="alert" aria-live="polite"></div>
-  <p>
-    <button id="yass" data-msg="Great job! Such success!" data-class="yes">Success!</button>
-    <button id="error">Error</button>
-    <button id="clear" class="clear">Clear alert</button>
-  </p>
-</div>
+
+
+{{< rawhtml >}}
 
 <style>
-  .hidden {
+
+  .demo-hidden {
     display: none;
     visibility: hidden;
   }
@@ -55,26 +50,43 @@ Best practice is to only have one alert message on the screen at a time. Make su
     color: red;
   }
 </style>
+<div class="alertGroup" >
+  <div id="alertBox" class="demo-hidden" role="alert" aria-live="polite"></div>
+  <p>
+    <button id="yass">Success!</button>
+    <button id="error">Error</button>
+    <button id="clear" class="clear">Clear alert</button>
+  </p>
+</div>
 
 <script>
-  const group = document.getElementById("alertGroup");
   const alert = document.getElementById("alertBox");
   const goodJob = document.getElementById("yass");
   const badJob = document.getElementById("error");
 
-  goodJob.onclick = activateAlert;
-  badJob.onclick = activateAlert;
+/* goodJob.addEventListener("click", => {
+ 	activateAlert("Great job! Such success!", "yes" );
+ })*/
 
-  function activateAlert(){
+ badJob.addEventListener("click", () => {
+ 	activateAlert("Whoa, there's something wrong here...", "no" );
+ });
+
+ goodJob.addEventListener("click", () => {
+ 	activateAlert("Success! Such a good job!", "yes" );
+ });
+
+  function activateAlert(alertMsg, alertClass){
     alert.innerHTML = "";
-    alert.classList.add(button.dataset.class);
-    alert.classList.remove("hidden");
-    alert.innerHTML = button.dataset.msg;
+    alertBox.classList.remove("yes", "no");
+    alertBox.classList.add(alertClass);
+    alert.classList.remove("demo-hidden");
+    alert.innerHTML = alertMsg;
   }
 
 
 </script>
-{{< /demo >}}
+{{< /rawhtml >}}
 
 
 
