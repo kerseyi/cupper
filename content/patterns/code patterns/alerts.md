@@ -29,67 +29,81 @@ Best practice is to only have one alert message on the screen at a time. Make su
 3. Another ARIA live region can be added to the DOM later, but it **MUST** be empty.
 4. If an ARIA live region is added to the DOM without a page load / refresh event, a JavaScript delay should be used before putting content into the live region.
 
-## Demo and Code
-
-
+## Demo
 
 {{< rawhtml >}}
 
 <style>
 
-  .demo-hidden {
-    display: none;
-    visibility: hidden;
-  }
-
-  .yes {
-    color: green;
-  }
-
-  .no {
-    color: red;
-  }
+.demo-hidden {
+  display: none;
+  visibility: hidden;
+}
+#alertBox {
+	padding: 20px;
+}
+.yes {
+  color: green;
+  border: 2px solid green;
+  border-radius: 10px;
+}
+.no {
+  color: red;
+  border: 2px solid red;
+  border-radius: 10px;
+}
 </style>
 <div class="alertGroup" >
   <div id="alertBox" class="demo-hidden" role="alert" aria-live="polite"></div>
   <p>
     <button id="yass">Success!</button>
     <button id="error">Error</button>
-    <button id="clear" class="clear">Clear alert</button>
+    <button id="clear">Clear alert</button>
   </p>
 </div>
 
 <script>
-  const alert = document.getElementById("alertBox");
-  const goodJob = document.getElementById("yass");
-  const badJob = document.getElementById("error");
+const alert = document.getElementById("alertBox");
+const goodJob = document.getElementById("yass");
+const badJob = document.getElementById("error");
+const clear = document.getElementById("clear");
 
-/* goodJob.addEventListener("click", => {
- 	activateAlert("Great job! Such success!", "yes" );
- })*/
+badJob.addEventListener("click", () => {
+ activateAlert("Whoa, there's something wrong here...", "no" );
+});
 
- badJob.addEventListener("click", () => {
- 	activateAlert("Whoa, there's something wrong here...", "no" );
- });
+goodJob.addEventListener("click", () => {
+ activateAlert("Success! Such a good job!", "yes" );
+});
 
- goodJob.addEventListener("click", () => {
- 	activateAlert("Success! Such a good job!", "yes" );
- });
+clear.addEventListener("click", () => {
+ alert.classList.add("demo-hidden");
+});
 
-  function activateAlert(alertMsg, alertClass){
-    alert.innerHTML = "";
-    alertBox.classList.remove("yes", "no");
-    alertBox.classList.add(alertClass);
-    alert.classList.remove("demo-hidden");
-    alert.innerHTML = alertMsg;
-  }
+function activateAlert(alertMsg, alertClass){
+  alert.className = alertClass;
+  alert.innerHTML = "";
+  alert.classList.remove("demo-hidden");
+  alert.innerHTML = alertMsg;
+}
 
 
 </script>
 {{< /rawhtml >}}
 
+## Code
 
+{{< expandable label="HTML" level="4" >}}
+{{< snippet file="alerts/alert_html.md" >}}
+{{< /expandable >}}
 
+{{< expandable label="CSS" level="5" >}}
+{{< snippet file="alerts/alert_css.md" >}}
+{{< /expandable >}}
+
+{{< expandable label="JavaScript" level="6" >}}
+{{< snippet file="alerts/alert_js.md" >}}
+{{< /expandable >}}
 
 
 

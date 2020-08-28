@@ -4388,61 +4388,196 @@ Best practice is to only have one alert message on the screen at a time. Make su
 <li>Another ARIA live region can be added to the DOM later, but it <strong>MUST</strong> be empty.</li>
 <li>If an ARIA live region is added to the DOM without a page load / refresh event, a JavaScript delay should be used before putting content into the live region.</li>
 </ol>
-<h2 id="demo-and-code">Demo and Code</h2>
+<h2 id="demo">Demo</h2>
 
 
 
 <style>
 
-  .demo-hidden {
-    display: none;
-    visibility: hidden;
-  }
-
-  .yes {
-    color: green;
-  }
-
-  .no {
-    color: red;
-  }
+.demo-hidden {
+  display: none;
+  visibility: hidden;
+}
+#alertBox {
+	padding: 20px;
+}
+.yes {
+  color: green;
+  border: 2px solid green;
+  border-radius: 10px;
+}
+.no {
+  color: red;
+  border: 2px solid red;
+  border-radius: 10px;
+}
 </style>
 <div class="alertGroup" >
   <div id="alertBox" class="demo-hidden" role="alert" aria-live="polite"></div>
   <p>
     <button id="yass">Success!</button>
     <button id="error">Error</button>
-    <button id="clear" class="clear">Clear alert</button>
+    <button id="clear">Clear alert</button>
   </p>
 </div>
 
 <script>
-  const alert = document.getElementById("alertBox");
-  const goodJob = document.getElementById("yass");
-  const badJob = document.getElementById("error");
+const alert = document.getElementById("alertBox");
+const goodJob = document.getElementById("yass");
+const badJob = document.getElementById("error");
+const clear = document.getElementById("clear");
 
-/* goodJob.addEventListener("click", => {
- 	activateAlert("Great job! Such success!", "yes" );
- })*/
+badJob.addEventListener("click", () => {
+ activateAlert("Whoa, there's something wrong here...", "no" );
+});
 
- badJob.addEventListener("click", () => {
- 	activateAlert("Whoa, there's something wrong here...", "no" );
- });
+goodJob.addEventListener("click", () => {
+ activateAlert("Success! Such a good job!", "yes" );
+});
 
- goodJob.addEventListener("click", () => {
- 	activateAlert("Success! Such a good job!", "yes" );
- });
+clear.addEventListener("click", () => {
+ alert.classList.add("demo-hidden");
+});
 
-  function activateAlert(alertMsg, alertClass){
-    alert.innerHTML = "";
-    alertBox.classList.remove("yes", "no");
-    alertBox.classList.add(alertClass);
-    alert.classList.remove("demo-hidden");
-    alert.innerHTML = alertMsg;
-  }
+function activateAlert(alertMsg, alertClass){
+  alert.className = alertClass;
+  alert.innerHTML = "";
+  alert.classList.remove("demo-hidden");
+  alert.innerHTML = alertMsg;
+}
 
 
 </script>
+
+<h2 id="code">Code</h2>
+<div class="expandable-section">
+  
+    <h4>
+  
+    <button aria-expanded="false" data-expands="js-expandable-b99eb526f398bb6ade19ee9c76e616e4">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h4>
+  
+  <div id="js-expandable-b99eb526f398bb6ade19ee9c76e616e4" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alertGroup&#34;</span> &gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alertBox&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo-hidden&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span> <span style="color:#a6e22e">aria-live</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;polite&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yass&#34;</span>&gt;Success!&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span>&gt;Error&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clear&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clear&#34;</span>&gt;Clear alert&lt;/<span style="color:#f92672">button</span>&gt;
+  &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h5>
+  
+    <button aria-expanded="false" data-expands="js-expandable-7cfaf821ed19747b17e26d100fc11d24">
+      <span class="expandable-label">CSS</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h5>
+  
+  <div id="js-expandable-7cfaf821ed19747b17e26d100fc11d24" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">.<span style="color:#a6e22e">demo-hidden</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>;
+}
+.<span style="color:#a6e22e">yes</span> {
+  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">green</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">green</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+}
+.<span style="color:#a6e22e">no</span> {
+  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+}
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h6>
+  
+    <button aria-expanded="false" data-expands="js-expandable-fa1b21cebe6cd20de76b401adfd39844">
+      <span class="expandable-label">JavaScript</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h6>
+  
+  <div id="js-expandable-fa1b21cebe6cd20de76b401adfd39844" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVASCRIPT" data-lang="JAVASCRIPT"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">alert</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;alertBox&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">goodJob</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;yass&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">badJob</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;error&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">clear</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;clear&#34;</span>);
+
+<span style="color:#a6e22e">badJob</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+ <span style="color:#a6e22e">activateAlert</span>(<span style="color:#e6db74">&#34;Whoa, there&#39;s something wrong here...&#34;</span>, <span style="color:#e6db74">&#34;no&#34;</span> );
+});
+
+<span style="color:#a6e22e">goodJob</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+ <span style="color:#a6e22e">activateAlert</span>(<span style="color:#e6db74">&#34;Success! Such a good job!&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span> );
+});
+
+<span style="color:#a6e22e">clear</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+ <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;demo-hidden&#34;</span>);
+});
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">activateAlert</span>(<span style="color:#a6e22e">alertMsg</span>, <span style="color:#a6e22e">alertClass</span>){
+  <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">alertClass</span>;
+  <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+  <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;demo-hidden&#34;</span>);
+  <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">alertMsg</span>;
+}
+</code></pre></div>
+
+
+  </div>
+</div>
 
 <h2 id="browser-and-screen-reader-support">Browser and Screen Reader support</h2>
 
@@ -9052,6 +9187,7 @@ p {
 <li><a href="https://contrast-grid.eightshapes.com/?background-colors=&amp;foreground-colors=%23FFFFFF%2C%20White%0D%0A%23F2F2F2%0D%0A%23DDDDDD%0D%0A%23CCCCCC%0D%0A%23888888%0D%0A%23404040%2C%20Charcoal%0D%0A%23000000%2C%20Black%0D%0A%232F78C5%2C%20Effective%20on%20Extremes%0D%0A%230F60B6%2C%20Effective%20on%20Lights%0D%0A%23398EEA%2C%20Ineffective%0D%0A&amp;es-color-form__tile-size=compact">Contrast Grid</a> - Test BG and FG colors</li>
 <li><a href="https://accessible-colors.com/">Accessible Colors</a></li>
 <li><a href="https://toolness.github.io/accessible-color-matrix/">Accessible color palette builder</a> - Build an accessible color palette</li>
+<li><a href="https://oomphinc.github.io/colorcube/">Color Cube Color Checker</a> - Tool that checks color combinations for accessibility, and lets you adjust colors until they pass. Great for tweaking brand colors.</li>
 </ul>
 <div class="expandable-section">
   
