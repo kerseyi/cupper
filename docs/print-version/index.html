@@ -4388,12 +4388,31 @@ Best practice is to only have one alert message on the screen at a time. Make su
 <li>Another ARIA live region can be added to the DOM later, but it <strong>MUST</strong> be empty.</li>
 <li>If an ARIA live region is added to the DOM without a page load / refresh event, a JavaScript delay should be used before putting content into the live region.</li>
 </ol>
-<h2 id="demo">Demo</h2>
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    
+<H3>Role Alert or Alert Dialog?</H3>
+<ul>
+	<li>
+		<h4><code>role="alert"</code></h4> This role does not move keyboard focus, require a user action, or hide any part of the page.
+	</li>
+	<li>
+		<h4><code>role="alertdialog"</code></h4> This role is like a hybrid of and alert and a typical modal (see <a class="pattern-link" href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/modal/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Pop ups and Modals</a>). This role requires a user action, and moves keyboard focus to the dialog when it is activated. Like a typical dialog / modal, the alert cannot be dismissed until a user closes the modal. 
+	</li>
+</ul>
+
+
+  </div>
+</aside>
+
+<h2 id="demo---role-alert-and-alertdialog">Demo - role alert and alertdialog</h2>
 
 
 
 <style>
-
 .demo-hidden {
   display: none;
   visibility: hidden;
@@ -4411,15 +4430,58 @@ Best practice is to only have one alert message on the screen at a time. Make su
   border: 2px solid red;
   border-radius: 10px;
 }
+
+.modal {
+	position: fixed;
+	top: 30%;
+  	left: 50%;
+  	z-index: 5;
+  	display: none;
+}
+
+.modal-dialog {
+	border: 2px solid black;
+  	border-radius: 20px;
+  	padding: 10px;
+  	text-align: center;
+}
+
+.modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2; /* places the modalOverlay between the main page and the modal dialog */
+  background-color: #000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
 </style>
 <div class="alertGroup" >
   <div id="alertBox" class="demo-hidden" role="alert" aria-live="polite"></div>
-  <p>
     <button id="yass">Success!</button>
     <button id="error">Error</button>
     <button id="clear">Clear alert</button>
-  </p>
+    <button id="launchModal">
+        Alert Dialog
+    </button>
 </div>
+
+
+<!-- Modal -->
+
+<div class="modal" aria-modal="true" id="exampleModal" tabindex="-1" role="alertdialog" aria-labelledby="launchModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+        <p tabindex="0">Alert! There's something very wrong here.</p>
+         <button type="button" class="close closeModal" aria-label="Close">
+          Close
+        </button>
+  </div>
+</div>
+<div class="modal-overlay"></div>
 
 <script>
 const alert = document.getElementById("alertBox");
@@ -4446,15 +4508,96 @@ function activateAlert(alertMsg, alertClass){
   alert.innerHTML = alertMsg;
 }
 
+//for alertdialog
+
+// Will hold previously focused element before modal was opened
+let beforeModalOpenedFocus;
+
+// Find the modal and its overlay
+let modal = document.querySelector(".modal");
+let modalOverlay = document.querySelector(".modal-overlay");
+
+let openModalBtn = document.querySelector("#launchModal");
+openModalBtn.addEventListener("click", openModal);
+
+function openModal() {
+  // Save current focus
+ 
+  beforeModalOpenedFocus = document.activeElement;
+
+  // Listen for and trap the keyboard
+  modal.addEventListener("keydown", trapTabKey);
+  // change aria-hidden state
+  modal.setAttribute("aria-hidden", "false");
+
+  // Listen for indicators to close the modal
+  modalOverlay.addEventListener("click", closeModal);
+  // Sign-Up button
+  const closeModalBtn = modal.querySelector(".closeModal");
+  closeModalBtn.addEventListener("click", closeModal);
+
+  // Find all of the focusable children / elements
+  let focusableElementsString =
+    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+  let focusableElements = modal.querySelectorAll(focusableElementsString);
+  // Convert NodeList to Array
+  focusableElements = Array.prototype.slice.call(focusableElements);
+
+  const firstTabStop = focusableElements[0];
+  const lastTabStop = focusableElements[focusableElements.length - 1];
+
+  // Show the modal and overlay
+  modal.style.display = "block";
+  modalOverlay.style.display = "block";
+
+  // Focus first child
+  firstTabStop.focus();
+
+  function trapTabKey(e) {
+    // Check for TAB key press
+    if (e.keyCode === 9) {
+      // SHIFT + TAB
+      if (e.shiftKey) {
+        if (document.activeElement === firstTabStop) {
+          e.preventDefault();
+          lastTabStop.focus();
+        }
+
+        // TAB
+      } else {
+        if (document.activeElement === lastTabStop) {
+          e.preventDefault();
+          firstTabStop.focus();
+        }
+      }
+    }
+
+    // ESCAPE
+    if (e.keyCode === 27) {
+      closeModal();
+    }
+  }
+}
+
+function closeModal() {
+  // Hide the modal and overlay
+ modal.style.display = "none";
+  modalOverlay.style.display = "none";
+  // change aria-hidden state
+  modal.setAttribute("aria-hidden", "true");
+
+  // Set focus back to element that had it before the modal was opened
+  beforeModalOpenedFocus.focus();
+}
 
 </script>
 
 <h2 id="code">Code</h2>
 <div class="expandable-section">
   
-    <h4>
+    <h1>
   
-    <button aria-expanded="false" data-expands="js-expandable-b99eb526f398bb6ade19ee9c76e616e4">
+    <button aria-expanded="false" data-expands="js-expandable-8ea5fa4e28e00064ff7a187522ba6344">
       <span class="expandable-label">HTML</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -4464,9 +4607,9 @@ function activateAlert(alertMsg, alertClass){
       </svg>
     </button>
   
-    </h4>
+    </h1>
   
-  <div id="js-expandable-b99eb526f398bb6ade19ee9c76e616e4" hidden>
+  <div id="js-expandable-8ea5fa4e28e00064ff7a187522ba6344" hidden>
     
 
 
@@ -4474,12 +4617,25 @@ function activateAlert(alertMsg, alertClass){
 <!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alertGroup&#34;</span> &gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alertBox&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo-hidden&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span> <span style="color:#a6e22e">aria-live</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;polite&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;<span style="color:#f92672">p</span>&gt;
     &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yass&#34;</span>&gt;Success!&lt;/<span style="color:#f92672">button</span>&gt;
     &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span>&gt;Error&lt;/<span style="color:#f92672">button</span>&gt;
-    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clear&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clear&#34;</span>&gt;Clear alert&lt;/<span style="color:#f92672">button</span>&gt;
-  &lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clear&#34;</span>&gt;Clear alert&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;launchModal&#34;</span>&gt;
+        Alert Dialog
+    &lt;/<span style="color:#f92672">button</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
+
+<span style="color:#75715e">&lt;!-- Modal --&gt;</span>
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal&#34;</span> <span style="color:#a6e22e">aria-modal</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleModal&#34;</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-1&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alertdialog&#34;</span> <span style="color:#a6e22e">aria-labelledby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;launchModal&#34;</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-dialog&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;document&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;Alert! There&#39;s something very wrong here.&lt;/<span style="color:#f92672">p</span>&gt;
+         &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;close closeModal&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Close&#34;</span>&gt;
+          Close
+        &lt;/<span style="color:#f92672">button</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modal-overlay&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div>
 
 
@@ -4488,9 +4644,9 @@ function activateAlert(alertMsg, alertClass){
 
 <div class="expandable-section">
   
-    <h5>
+    <h2>
   
-    <button aria-expanded="false" data-expands="js-expandable-7cfaf821ed19747b17e26d100fc11d24">
+    <button aria-expanded="false" data-expands="js-expandable-1b45a20b5ab0a6d07ca7df3c9b6a155b">
       <span class="expandable-label">CSS</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -4500,9 +4656,9 @@ function activateAlert(alertMsg, alertClass){
       </svg>
     </button>
   
-    </h5>
+    </h2>
   
-  <div id="js-expandable-7cfaf821ed19747b17e26d100fc11d24" hidden>
+  <div id="js-expandable-1b45a20b5ab0a6d07ca7df3c9b6a155b" hidden>
     
 
 
@@ -4511,6 +4667,9 @@ function activateAlert(alertMsg, alertClass){
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">.<span style="color:#a6e22e">demo-hidden</span> {
   <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
   <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>;
+}
+#alertBox {
+	<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
 }
 .<span style="color:#a6e22e">yes</span> {
   <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">green</span>;
@@ -4522,7 +4681,35 @@ function activateAlert(alertMsg, alertClass){
   <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;
   <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre></div>
+
+.<span style="color:#a6e22e">modal</span> {
+	<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+	<span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">%</span>;
+  	<span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+  	<span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">5</span>;
+  	<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+}
+
+.<span style="color:#a6e22e">modal-dialog</span> {
+	<span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+  	<span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+  	<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  	<span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+}
+
+.<span style="color:#a6e22e">modal-overlay</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">vw</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">vh</span>;
+  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">2</span>; <span style="color:#75715e">/* places the modalOverlay between the main page and the modal dialog */</span>
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#000</span>;
+  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.5</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+}<span style="color:#960050;background-color:#1e0010">```</span></code></pre></div>
 
 
   </div>
@@ -4530,9 +4717,9 @@ function activateAlert(alertMsg, alertClass){
 
 <div class="expandable-section">
   
-    <h6>
+    <h3>
   
-    <button aria-expanded="false" data-expands="js-expandable-fa1b21cebe6cd20de76b401adfd39844">
+    <button aria-expanded="false" data-expands="js-expandable-bef771cd5461651bf88ec260b670bc46">
       <span class="expandable-label">JavaScript</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -4542,9 +4729,9 @@ function activateAlert(alertMsg, alertClass){
       </svg>
     </button>
   
-    </h6>
+    </h3>
   
-  <div id="js-expandable-fa1b21cebe6cd20de76b401adfd39844" hidden>
+  <div id="js-expandable-bef771cd5461651bf88ec260b670bc46" hidden>
     
 
 
@@ -4573,6 +4760,89 @@ function activateAlert(alertMsg, alertClass){
   <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;demo-hidden&#34;</span>);
   <span style="color:#a6e22e">alert</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">alertMsg</span>;
 }
+
+<span style="color:#75715e">//for alertdialog
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// Will hold previously focused element before modal was opened
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">beforeModalOpenedFocus</span>;
+
+<span style="color:#75715e">// Find the modal and its overlay
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">modal</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.modal&#34;</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">modalOverlay</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.modal-overlay&#34;</span>);
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">openModalBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#launchModal&#34;</span>);
+<span style="color:#a6e22e">openModalBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">openModal</span>);
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">openModal</span>() {
+  <span style="color:#75715e">// Save current focus
+</span><span style="color:#75715e"></span> 
+  <span style="color:#a6e22e">beforeModalOpenedFocus</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">activeElement</span>;
+
+  <span style="color:#75715e">// Listen for and trap the keyboard
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;keydown&#34;</span>, <span style="color:#a6e22e">trapTabKey</span>);
+  <span style="color:#75715e">// change aria-hidden state
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;aria-hidden&#34;</span>, <span style="color:#e6db74">&#34;false&#34;</span>);
+
+  <span style="color:#75715e">// Listen for indicators to close the modal
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modalOverlay</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">closeModal</span>);
+  <span style="color:#75715e">// Sign-Up button
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">closeModalBtn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.closeModal&#34;</span>);
+  <span style="color:#a6e22e">closeModalBtn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">closeModal</span>);
+
+  <span style="color:#75715e">// Find all of the focusable children / elements
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">focusableElementsString</span> <span style="color:#f92672">=</span>
+    <span style="color:#e6db74">&#39;a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex=&#34;0&#34;], [contenteditable]&#39;</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">focusableElements</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">focusableElementsString</span>);
+  <span style="color:#75715e">// Convert NodeList to Array
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">focusableElements</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">slice</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">focusableElements</span>);
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">firstTabStop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">focusableElements</span>[<span style="color:#ae81ff">0</span>];
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lastTabStop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">focusableElements</span>[<span style="color:#a6e22e">focusableElements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+
+  <span style="color:#75715e">// Show the modal and overlay
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
+  <span style="color:#a6e22e">modalOverlay</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
+
+  <span style="color:#75715e">// Focus first child
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">firstTabStop</span>.<span style="color:#a6e22e">focus</span>();
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">trapTabKey</span>(<span style="color:#a6e22e">e</span>) {
+    <span style="color:#75715e">// Check for TAB key press
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">9</span>) {
+      <span style="color:#75715e">// SHIFT + TAB
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">shiftKey</span>) {
+        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">activeElement</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">firstTabStop</span>) {
+          <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+          <span style="color:#a6e22e">lastTabStop</span>.<span style="color:#a6e22e">focus</span>();
+        }
+
+        <span style="color:#75715e">// TAB
+</span><span style="color:#75715e"></span>      } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">activeElement</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">lastTabStop</span>) {
+          <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+          <span style="color:#a6e22e">firstTabStop</span>.<span style="color:#a6e22e">focus</span>();
+        }
+      }
+    }
+
+    <span style="color:#75715e">// ESCAPE
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">27</span>) {
+      <span style="color:#a6e22e">closeModal</span>();
+    }
+  }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">closeModal</span>() {
+  <span style="color:#75715e">// Hide the modal and overlay
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
+  <span style="color:#a6e22e">modalOverlay</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
+  <span style="color:#75715e">// change aria-hidden state
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">modal</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;aria-hidden&#34;</span>, <span style="color:#e6db74">&#34;true&#34;</span>);
+
+  <span style="color:#75715e">// Set focus back to element that had it before the modal was opened
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">beforeModalOpenedFocus</span>.<span style="color:#a6e22e">focus</span>();
+}
+
 </code></pre></div>
 
 
@@ -9169,7 +9439,8 @@ p {
               Dev Resources
             </h1>
             <ul>
-<li><a href="https://a11yengineer.com/web/">Accessiblity Checklist</a> - Accessiblity checklist for those building websites and interfaces.</li>
+<li><a href="https://a11yengineer.com/web/">Accessibility Checklist</a> - Accessibility checklist for those building websites and interfaces</li>
+<li><a href="http://www.html5accessibility.com/">HTML5 Accessibility</a> - Get the current accessibility support status of HTML5 features across major browsers</li>
 </ul>
 
           </div>
