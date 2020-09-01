@@ -44,7 +44,7 @@ Best practice is to only have one alert message on the screen at a time. Make su
 
 
 
-## Demo - role alert and alertdialog
+## Demo
 
 {{< rawhtml >}}
 
