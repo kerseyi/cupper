@@ -192,6 +192,15 @@ Plugins  Accessiblity Checklist - Accessiblity checklist for those building webs
     </item>
     
     <item>
+      <title>Roles, states, and properties</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/aria/roles/rolesstatesproperties/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/aria/roles/rolesstatesproperties/</guid>
+      <description>Roles Widget Roles  button checkbox gridcell link menuitem menuitemcheckbox menuitemradio option progressbar radio scrollbar searchbox separator (when focusable) slider spinbutton switch tab tabpanel textbox treeitem  Composite Roles  combobox grid (including row, gridcell, rowheader, columnheader roles) listbox (including option role menu menubar radiogroup (see radio role) tablist (including tab and tabpanel roles) tree treegrid  </description>
+    </item>
+    
+    <item>
       <title>Screen Readers</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/reference/sr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
