@@ -23,6 +23,16 @@ toc = true
 
 ## SVG
 
+### Adding ALT text to SVGs
+
+#### Method 1: Using the IMG element
+
+By using the IMG element instead of the SVG element to insert SVGs, you can alternate text using the IMG element's ALT attribute.
+
+#### Method 2: The SVG DESC element
+
+The SVG [desc](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc) element allows 
+
 -	[Deque - creating Accessible SVGs](https://www.deque.com/blog/creating-accessible-svgs/) - Create Accessible SVGs 
 
 
