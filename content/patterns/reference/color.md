@@ -20,6 +20,7 @@ toc = true
 
 -	[Designing Accessible Data Visualizations](https://fossheim.io/writing/posts/accessible-dataviz-design/) - An intro to designing accessible data visualizations
 -	[Fizz Studio Software](https://fizz.studio/) - Create Accessible Data Visualizations 
+-	[Writing Alt Text for Data Visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) - Writing Alt Text for Data Visualization 
 
 ## SVG
 

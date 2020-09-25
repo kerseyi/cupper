@@ -19,7 +19,7 @@ ARIA is a way for websites and web apps to communicate with screen readers. You 
  - relationships
  - live announcements
 
- ## Accessible Name Calculation
+## Accessible Name Calculation
 
 {{< snippet file="aria/acc_name.md" >}}
 
