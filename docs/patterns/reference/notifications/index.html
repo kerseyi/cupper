@@ -277,6 +277,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/carousel/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Carousel</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/datepicker/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -504,8 +513,8 @@
 </ol>
 <h3 id="no-support">No support</h3>
 <ol>
-<li>role=&quot;marquee&rdquo;</li>
-<li>role=&quot;timer&rdquo;</li>
+<li>role=&ldquo;marquee&rdquo;</li>
+<li>role=&ldquo;timer&rdquo;</li>
 </ol>
 <h2 id="html-output">HTML <!-- raw HTML omitted --></h2>
 <ul>
@@ -514,7 +523,7 @@
 <h2 id="types-of-live-regions">Types of live regions</h2>
 <ol>
 <li>
-<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&quot;polite&rdquo;</p>
+<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&ldquo;polite&rdquo;</p>
 <ol>
 <li>Solution: create live region that reads off numer of results after user has stopped typing for a few seconds</li>
 </ol>
@@ -526,12 +535,12 @@
 </ol>
 </li>
 <li>
-<p>Feed and chat messages - role=&quot;log&rdquo; plus aria-live=&quot;assertive/polite&rdquo; aria-atomic=&quot;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
+<p>Feed and chat messages - role=&ldquo;log&rdquo; plus aria-live=&ldquo;assertive/polite&rdquo; aria-atomic=&ldquo;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
 </li>
 </ol>
 <h2 id="adding-live-region-to-page">Adding live region to page</h2>
 <ol>
-<li>Adding to DOM with role=&quot;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
+<li>Adding to DOM with role=&ldquo;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
 <li>If updating, have the empty element in page, and push the updates into the region</li>
 <li>Create a notification center where user can check notifications &ndash; apps mostly</li>
 </ol>

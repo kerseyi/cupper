@@ -5,11 +5,7 @@
     <link>https://kerseyi.github.io/cupper-2/tags/navigation-skip-link/</link>
     <description>Recent content in navigation, skip link on A11y Ref</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://kerseyi.github.io/cupper-2/tags/navigation-skip-link/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://kerseyi.github.io/cupper-2/tags/navigation-skip-link/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Skip Links</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/skiplink/</link>

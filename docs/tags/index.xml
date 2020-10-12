@@ -5,11 +5,7 @@
     <link>https://kerseyi.github.io/cupper-2/tags/</link>
     <description>Recent content in Tags on A11y Ref</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://kerseyi.github.io/cupper-2/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://kerseyi.github.io/cupper-2/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> menu, toggle, expand</title>
       <link>https://kerseyi.github.io/cupper-2/tags/menu-toggle-expand/</link>
@@ -52,6 +48,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/tags/navigation-skip-link/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>slider, carousel</title>
+      <link>https://kerseyi.github.io/cupper-2/tags/slider-carousel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/tags/slider-carousel/</guid>
       <description></description>
     </item>
     

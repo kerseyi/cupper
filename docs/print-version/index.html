@@ -278,6 +278,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#carousel" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Carousel</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#datepicker" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -4932,6 +4941,17 @@ function closeModal() {
           </div>
         
           <div class="pattern-section">
+            <h1 id="carousel" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Carousel
+            </h1>
+            <p>Accessible content slider / carousel, ported from <a href="https://inclusive-components.design/a-content-slider/">Inclusive Components</a>.</p>
+
+          </div>
+        
+          <div class="pattern-section">
             <h1 id="datepicker" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
@@ -9213,7 +9233,15 @@ p {
               Alternate Text, Text Descriptions, and Captions
             </h1>
             <ul>
-<li><a href="https://poet.diagramcenter.org/">Poet Training Tool</a> - Exhaustive training tool that details best practices for creating alternate text for images.</li>
+<li>
+<p><a href="https://poet.diagramcenter.org/">Poet Training Tool</a> - Exhaustive training tool that details best practices for creating alternate text for images.</p>
+</li>
+<li>
+<p><a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81">Writing Alt Text for Data Visualization</a> - Writing Alt Text for Data Visualization</p>
+</li>
+<li>
+<p><a href="https://www.w3.org/WAI/tutorials/images/complex/#long-descriptions">Writing alt text for complex images</a> - WAI tutorial for writing alt text for complex images</p>
+</li>
 </ul>
 <div class="expandable-section">
   
@@ -9673,8 +9701,14 @@ p {
 <ul>
 <li><a href="https://fossheim.io/writing/posts/accessible-dataviz-design/">Designing Accessible Data Visualizations</a> - An intro to designing accessible data visualizations</li>
 <li><a href="https://fizz.studio/">Fizz Studio Software</a> - Create Accessible Data Visualizations</li>
+<li><a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81">Writing Alt Text for Data Visualization</a> - Writing Alt Text for Data Visualization</li>
 </ul>
 <h2 id="svg">SVG</h2>
+<h3 id="adding-alt-text-to-svgs">Adding ALT text to SVGs</h3>
+<h4 id="method-1-using-the-img-element">Method 1: Using the IMG element</h4>
+<p>By using the IMG element instead of the SVG element to insert SVGs, you can alternate text using the IMG element&rsquo;s ALT attribute.</p>
+<h4 id="method-2-the-svg-desc-element">Method 2: The SVG DESC element</h4>
+<p>The SVG <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc">desc</a> element allows</p>
 <ul>
 <li><a href="https://www.deque.com/blog/creating-accessible-svgs/">Deque - creating Accessible SVGs</a> - Create Accessible SVGs</li>
 </ul>
@@ -9913,8 +9947,8 @@ p {
 </ol>
 <h3 id="no-support">No support</h3>
 <ol>
-<li>role=&quot;marquee&rdquo;</li>
-<li>role=&quot;timer&rdquo;</li>
+<li>role=&ldquo;marquee&rdquo;</li>
+<li>role=&ldquo;timer&rdquo;</li>
 </ol>
 <h2 id="html-output">HTML <!-- raw HTML omitted --></h2>
 <ul>
@@ -9923,7 +9957,7 @@ p {
 <h2 id="types-of-live-regions">Types of live regions</h2>
 <ol>
 <li>
-<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&quot;polite&rdquo;</p>
+<p>Dynamic search bar - Don&rsquo;t want it to update to frequently. Should be ARIA-LIVE=&ldquo;polite&rdquo;</p>
 <ol>
 <li>Solution: create live region that reads off numer of results after user has stopped typing for a few seconds</li>
 </ol>
@@ -9935,12 +9969,12 @@ p {
 </ol>
 </li>
 <li>
-<p>Feed and chat messages - role=&quot;log&rdquo; plus aria-live=&quot;assertive/polite&rdquo; aria-atomic=&quot;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
+<p>Feed and chat messages - role=&ldquo;log&rdquo; plus aria-live=&ldquo;assertive/polite&rdquo; aria-atomic=&ldquo;false&rdquo; &ndash; create seperate live region that updates with new messages. Wrapping whole region makes SR read out whole region instead of new messages.</p>
 </li>
 </ol>
 <h2 id="adding-live-region-to-page">Adding live region to page</h2>
 <ol>
-<li>Adding to DOM with role=&quot;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
+<li>Adding to DOM with role=&ldquo;alert&rdquo; is ok, doesn&rsquo;t work well with other roles</li>
 <li>If updating, have the empty element in page, and push the updates into the region</li>
 <li>Create a notification center where user can check notifications &ndash; apps mostly</li>
 </ol>

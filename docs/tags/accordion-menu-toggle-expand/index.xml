@@ -5,11 +5,7 @@
     <link>https://kerseyi.github.io/cupper-2/tags/accordion-menu-toggle-expand/</link>
     <description>Recent content in accordion, menu, toggle, expand on A11y Ref</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://kerseyi.github.io/cupper-2/tags/accordion-menu-toggle-expand/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://kerseyi.github.io/cupper-2/tags/accordion-menu-toggle-expand/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Expandable Sections</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/expandable-sections/</link>

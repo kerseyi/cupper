@@ -5,11 +5,7 @@
     <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/</link>
     <description>Recent content in Code Patterns on A11y Ref</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://kerseyi.github.io/cupper-2/patterns/code-patterns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Expandable Sections</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/expandable-sections/</link>
@@ -54,6 +50,15 @@ Demo Launch ↗Menu Buttonconst menuButton = demo.getElementById(&#39;menu-
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/alerts/</guid>
       <description>Alerts are an important type of ARIA live region which provide screen readers with ways to announce meaningful information to a user. These alerts are triggered programmatically, usually based on a user interaction or timer. They announce text to the use without moving keyboard focus. Since they are intended to stand out from other content on the page, they should be styled and positioned on the page close to the user&amp;rsquo;s mouse or element that has keyboard focus.</description>
+    </item>
+    
+    <item>
+      <title>Carousel</title>
+      <link>https://kerseyi.github.io/cupper-2/patterns/code-patterns/carousel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/carousel/</guid>
+      <description>Accessible content slider / carousel, ported from Inclusive Components.</description>
     </item>
     
     <item>

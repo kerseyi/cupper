@@ -5,11 +5,7 @@
     <link>https://kerseyi.github.io/cupper-2/patterns/w3c/</link>
     <description>Recent content in W3C Tools on A11y Ref</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://kerseyi.github.io/cupper-2/patterns/w3c/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://kerseyi.github.io/cupper-2/patterns/w3c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WCAG 2.1</title>
       <link>https://kerseyi.github.io/cupper-2/patterns/w3c/wcagquickref/</link>
