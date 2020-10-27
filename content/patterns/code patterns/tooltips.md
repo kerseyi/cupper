@@ -7,6 +7,12 @@ tags = ["tooltips"]
 
 ## Accessible Tooltips
 
+## Applicable WCAG 2.1 Success Criteria
+
+{{< wcag include="1.3.1, 2.1.1, 4.1.2" descriptions="true" >}}
+
+## Tooltips
+
 ### Demo
 
 {{<demo caption="Accessible Tooltip">}}
@@ -85,4 +91,8 @@ svg {
 {{< expandable label="CSS" level="2" >}}
 {{< snippet file="tooltips/tooltips_css.md" >}}
 {{< /expandable >}}
+
+## References
+- Adapted from: [Inclusive Components](https://inclusive-components.design/tooltips-toggletips/)
+- CSS Arrow generator: [CSS Arrow Please!](https://cssarrowplease.com/)
 
