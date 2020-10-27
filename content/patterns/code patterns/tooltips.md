@@ -10,7 +10,11 @@ tags = ["tooltips"]
 ### Demo
 
 {{<demo caption="Accessible Tooltip">}}
+
 <style>
+    .demo {
+        height: 200px;
+    }
     [role="tooltip"] {
   display: none;
   border: 2px solid black;
@@ -22,7 +26,7 @@ tags = ["tooltips"]
     position: relative;
     background: #fff;
     border: 2px solid #000;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;

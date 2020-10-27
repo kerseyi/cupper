@@ -10,7 +10,7 @@
     position: relative;
     background: #fff;
     border: 2px solid #000;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;
@@ -44,8 +44,8 @@ button {
     font-size: 1.25rem;
     border-radius: 0.33em;
     font-family: inherit;
-    width: 50px;
-    height: 50px;
+    width: 120px;
+    height: 120px;
     color: #fefefe;
     padding: 0.75rem;
     border: 0;

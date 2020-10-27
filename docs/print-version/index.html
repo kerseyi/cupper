@@ -1046,21 +1046,25 @@ details[open] summary {
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-ed8e0a5f0d92c4a5fcc174ee743e03d9">
+  <figure role="group" aria-labelledby="caption-d5fe2235dd55d977ec1c16f00aacc485">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-ed8e0a5f0d92c4a5fcc174ee743e03d9"></div>
-        <button data-launch="js-demo-ed8e0a5f0d92c4a5fcc174ee743e03d9">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-d5fe2235dd55d977ec1c16f00aacc485"></div>
+        <button data-launch="js-demo-d5fe2235dd55d977ec1c16f00aacc485">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-ed8e0a5f0d92c4a5fcc174ee743e03d9">Accessible Tooltip</figcaption>
+          <figcaption id="caption-d5fe2235dd55d977ec1c16f00aacc485">Accessible Tooltip</figcaption>
       
   
   </figure>
   
-  <template id="template-ed8e0a5f0d92c4a5fcc174ee743e03d9">
+  <template id="template-d5fe2235dd55d977ec1c16f00aacc485">
       
+
 <style>
+    .demo {
+        height: 200px;
+    }
     [role="tooltip"] {
   display: none;
   border: 2px solid black;
@@ -1072,7 +1076,7 @@ details[open] summary {
     position: relative;
     background: #fff;
     border: 2px solid #000;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;
@@ -1124,8 +1128,8 @@ svg {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-ed8e0a5f0d92c4a5fcc174ee743e03d9');
-      var template = document.getElementById('template-ed8e0a5f0d92c4a5fcc174ee743e03d9');
+      var root = document.getElementById('js-demo-d5fe2235dd55d977ec1c16f00aacc485');
+      var template = document.getElementById('template-d5fe2235dd55d977ec1c16f00aacc485');
 
       
       var demoDiv = document.createElement('div');
@@ -1138,7 +1142,7 @@ svg {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ed8e0a5f0d92c4a5fcc174ee743e03d9\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-d5fe2235dd55d977ec1c16f00aacc485\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -1147,7 +1151,7 @@ svg {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-ed8e0a5f0d92c4a5fcc174ee743e03d9"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-d5fe2235dd55d977ec1c16f00aacc485"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -1162,7 +1166,7 @@ svg {
         }
         
 
-        standalone.document.title = 'demo ' + "ed8e0a5f0d92c4a5fcc174ee743e03d9";
+        standalone.document.title = 'demo ' + "d5fe2235dd55d977ec1c16f00aacc485";
       });
     })();
   </script>
@@ -1173,7 +1177,7 @@ svg {
   
     <h1>
   
-    <button aria-expanded="false" data-expands="js-expandable-7d013b6d203a5f84caaf7984711d287d">
+    <button aria-expanded="false" data-expands="js-expandable-cd30acb86198a880b88c3e7be58a0480">
       <span class="expandable-label">HTML</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -1185,14 +1189,14 @@ svg {
   
     </h1>
   
-  <div id="js-expandable-7d013b6d203a5f84caaf7984711d287d" hidden>
+  <div id="js-expandable-cd30acb86198a880b88c3e7be58a0480" hidden>
     
 
 
 
 <!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;notifications&#34;</span> <span style="color:#a6e22e">aria-labelledby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tooltip-label&#34;</span>&gt;  
-  &lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#000000&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">xmlns:xlink</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/1999/xlink&#34;</span> <span style="color:#a6e22e">version</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0&#34;</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0px&#34;</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0px&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 24 24&#34;</span> <span style="color:#a6e22e">enable-background</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new 0 0 24 24&#34;</span> <span style="color:#a6e22e">xml:space</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preserve&#34;</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M13,17h-2v-2h2V17z&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M12,4c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S7.6,4,12,4 M12,2C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10s10-4.5,10-10   C22,6.5,17.5,2,12,2L12,2z&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M11,14c0-1.4,0.6-1.9,1.1-2.4c0.3-0.2,0.5-0.5,0.6-0.8c0.2-0.3,0.2-0.6,0.2-1c0-0.4-0.1-0.7-0.3-1   c-0.2-0.2-0.4-0.4-0.8-0.4c-0.3,0-1,0.1-1,1.5H9l0-0.4c0-0.9,0.3-1.5,0.8-2C10.4,7.2,11.1,7,11.9,7c1,0,1.7,0.2,2.2,0.8   s0.8,1.2,0.8,2c0,2.4-2,2.5-2,4.2H11z&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+  <span style="color:#75715e">&lt;!-- Your SVG, IMG, icon here! --&gt;</span>
 &lt;/<span style="color:#f92672">button</span>&gt;  
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;arrow_box&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tooltip&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tooltip-label&#34;</span>&gt;Hi, I&#39;m tooltip text! Hopefully, something useful and brief.&lt;/<span style="color:#f92672">div</span>&gt;```</code></pre></div>
 
@@ -1204,7 +1208,7 @@ svg {
   
     <h2>
   
-    <button aria-expanded="false" data-expands="js-expandable-49f3d548143fe27ccd54ef2d887e2f53">
+    <button aria-expanded="false" data-expands="js-expandable-ee4bf9428afb0f3151d4cb6c933f51e4">
       <span class="expandable-label">CSS</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -1216,7 +1220,7 @@ svg {
   
     </h2>
   
-  <div id="js-expandable-49f3d548143fe27ccd54ef2d887e2f53" hidden>
+  <div id="js-expandable-ee4bf9428afb0f3151d4cb6c933f51e4" hidden>
     
 
 
@@ -1233,7 +1237,7 @@ svg {
     <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
     <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#fff</span>;
     <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#000</span>;
-    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
 }
 .<span style="color:#a6e22e">arrow_box</span>:<span style="color:#a6e22e">after</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">arrow_box</span>:<span style="color:#a6e22e">before</span> {
     <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
@@ -1267,8 +1271,8 @@ svg {
     <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
     <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.33</span><span style="color:#66d9ef">em</span>;
     <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">inherit</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">120</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">120</span><span style="color:#66d9ef">px</span>;
     <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fefefe</span>;
     <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.75</span><span style="color:#66d9ef">rem</span>;
     <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span>;
