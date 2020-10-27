@@ -14,18 +14,19 @@ tags = ["tooltips"]
     [role="tooltip"] {
   display: none;
   border: 2px solid black;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
-  width: 50%;
+  width: 40%;
 }
 .arrow_box {
     position: relative;
     background: #fff;
     border: 2px solid #000;
+    margin-top: 10px;
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;
-    left: 50%;
+    left: 15%;
     border: solid transparent;
     content: "";
     height: 0;
@@ -37,14 +38,14 @@ tags = ["tooltips"]
 .arrow_box:after {
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: #fff;
-    border-width: 30px;
-    margin-left: -30px;
+    border-width: 20px;
+    margin-left: -20px;
 }
 .arrow_box:before {
     border-color: rgba(0, 0, 0, 0);
     border-bottom-color: #000;
-    border-width: 33px;
-    margin-left: -33px;
+    border-width: 23px;
+    margin-left: -23px;
 }
 
 button:hover + [role="tooltip"],  

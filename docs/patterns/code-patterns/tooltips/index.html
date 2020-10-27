@@ -478,36 +478,37 @@
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-57df217dd98edf6cd4e6fd02c85713dd">
+  <figure role="group" aria-labelledby="caption-0d58d1f2e28402008a59cd615fd065c7">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-57df217dd98edf6cd4e6fd02c85713dd"></div>
-        <button data-launch="js-demo-57df217dd98edf6cd4e6fd02c85713dd">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-0d58d1f2e28402008a59cd615fd065c7"></div>
+        <button data-launch="js-demo-0d58d1f2e28402008a59cd615fd065c7">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-57df217dd98edf6cd4e6fd02c85713dd">Accessible Tooltip</figcaption>
+          <figcaption id="caption-0d58d1f2e28402008a59cd615fd065c7">Accessible Tooltip</figcaption>
       
   
   </figure>
   
-  <template id="template-57df217dd98edf6cd4e6fd02c85713dd">
+  <template id="template-0d58d1f2e28402008a59cd615fd065c7">
       
 <style>
     [role="tooltip"] {
   display: none;
   border: 2px solid black;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
-  width: 50%;
+  width: 40%;
 }
 .arrow_box {
     position: relative;
     background: #fff;
     border: 2px solid #000;
+    margin-top: 10px;
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;
-    left: 50%;
+    left: 15%;
     border: solid transparent;
     content: "";
     height: 0;
@@ -519,14 +520,14 @@
 .arrow_box:after {
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: #fff;
-    border-width: 30px;
-    margin-left: -30px;
+    border-width: 20px;
+    margin-left: -20px;
 }
 .arrow_box:before {
     border-color: rgba(0, 0, 0, 0);
     border-bottom-color: #000;
-    border-width: 33px;
-    margin-left: -33px;
+    border-width: 23px;
+    margin-left: -23px;
 }
 
 button:hover + [role="tooltip"],  
@@ -556,8 +557,8 @@ svg {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-57df217dd98edf6cd4e6fd02c85713dd');
-      var template = document.getElementById('template-57df217dd98edf6cd4e6fd02c85713dd');
+      var root = document.getElementById('js-demo-0d58d1f2e28402008a59cd615fd065c7');
+      var template = document.getElementById('template-0d58d1f2e28402008a59cd615fd065c7');
 
       
       var demoDiv = document.createElement('div');
@@ -570,7 +571,7 @@ svg {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-57df217dd98edf6cd4e6fd02c85713dd\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-0d58d1f2e28402008a59cd615fd065c7\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -579,7 +580,7 @@ svg {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-57df217dd98edf6cd4e6fd02c85713dd"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-0d58d1f2e28402008a59cd615fd065c7"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -594,7 +595,7 @@ svg {
         }
         
 
-        standalone.document.title = 'demo ' + "57df217dd98edf6cd4e6fd02c85713dd";
+        standalone.document.title = 'demo ' + "0d58d1f2e28402008a59cd615fd065c7";
       });
     })();
   </script>
