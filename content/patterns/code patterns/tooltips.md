@@ -104,7 +104,7 @@ svg {
 {{< snippet file="tooltips/tooltips_css.md" >}}
 {{< /expandable >}}
 
-##Toggletips
+## Toggletips
 
 ### Demo
 
@@ -162,7 +162,7 @@ html {
 <script>
     (function() {
   // Get all the toggletip buttons
-  var toggletips = document.querySelectorAll('[data-toggletip-content]');
+  var toggletips = demo.querySelectorAll('[data-toggletip-content]');
 
   // Iterate over them
   Array.prototype.forEach.call(toggletips, function (toggletip) {
@@ -181,7 +181,7 @@ html {
     });
 
     // Close on outside click
-    document.addEventListener('click', function (e) {
+    demo.addEventListener('click', function (e) {
       if (toggletip !== e.target) {
         liveRegion.innerHTML = '';
       }                        

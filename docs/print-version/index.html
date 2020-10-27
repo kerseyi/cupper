@@ -1477,24 +1477,24 @@ svg {
   </div>
 </div>
 </p>
-<p>##Toggletips</p>
+<h2 id="toggletips">Toggletips</h2>
 <h3 id="demo-1">Demo</h3>
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-36e8c118ea8b4f95fbfa85f6c00df5d9">
+  <figure role="group" aria-labelledby="caption-ed53c7d4cb301dfb3618312f4c3a7d73">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9"></div>
-        <button data-launch="js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-ed53c7d4cb301dfb3618312f4c3a7d73"></div>
+        <button data-launch="js-demo-ed53c7d4cb301dfb3618312f4c3a7d73">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-36e8c118ea8b4f95fbfa85f6c00df5d9">Accessible Toggletip</figcaption>
+          <figcaption id="caption-ed53c7d4cb301dfb3618312f4c3a7d73">Accessible Toggletip</figcaption>
       
   
   </figure>
   
-  <template id="template-36e8c118ea8b4f95fbfa85f6c00df5d9">
+  <template id="template-ed53c7d4cb301dfb3618312f4c3a7d73">
       
 <style>
     .toggletip-container {
@@ -1549,7 +1549,7 @@ html {
 <script>
     (function() {
   // Get all the toggletip buttons
-  var toggletips = document.querySelectorAll('[data-toggletip-content]');
+  var toggletips = demo.querySelectorAll('[data-toggletip-content]');
 
   // Iterate over them
   Array.prototype.forEach.call(toggletips, function (toggletip) {
@@ -1568,7 +1568,7 @@ html {
     });
 
     // Close on outside click
-    document.addEventListener('click', function (e) {
+    demo.addEventListener('click', function (e) {
       if (toggletip !== e.target) {
         liveRegion.innerHTML = '';
       }                        
@@ -1592,8 +1592,8 @@ html {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9');
-      var template = document.getElementById('template-36e8c118ea8b4f95fbfa85f6c00df5d9');
+      var root = document.getElementById('js-demo-ed53c7d4cb301dfb3618312f4c3a7d73');
+      var template = document.getElementById('template-ed53c7d4cb301dfb3618312f4c3a7d73');
 
       
       var demoDiv = document.createElement('div');
@@ -1606,7 +1606,7 @@ html {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ed53c7d4cb301dfb3618312f4c3a7d73\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -1615,7 +1615,7 @@ html {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-ed53c7d4cb301dfb3618312f4c3a7d73"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -1630,7 +1630,7 @@ html {
         }
         
 
-        standalone.document.title = 'demo ' + "36e8c118ea8b4f95fbfa85f6c00df5d9";
+        standalone.document.title = 'demo ' + "ed53c7d4cb301dfb3618312f4c3a7d73";
       });
     })();
   </script>
