@@ -5,13 +5,21 @@ toc = true
 tags = ["tooltips"]
 +++
 
-## Accessible Tooltips
 
 ## Applicable WCAG 2.1 Success Criteria
 
-{{< wcag include="1.3.1, 2.1.1, 4.1.2" descriptions="false" >}}
+{{< wcag include="1.3.1, 2.1.1, 4.1.2" >}}
+
+## Functionality
+So, what functionality do we want from a tooltip?
+1. Tooltip should appear when a button is hovered over with mouse, or recieves keyboard focus.
+2. The tooltip text needs to be available to screen readers in some way. 
+3. The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!
+4. Tooltip contents / copy should be brief, to the point, and helpful. In other words, use them as a last resort!
 
 ## Tooltip As A Label
+
+
 
 ### Demo
 
