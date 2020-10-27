@@ -14,7 +14,7 @@
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;
-    left: 15%;
+    left: 11%;
     border: solid transparent;
     content: "";
     height: 0;

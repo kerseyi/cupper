@@ -478,19 +478,19 @@
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-740d7c873a7b6cbdbf51b114fe2e65f1">
+  <figure role="group" aria-labelledby="caption-7b92dec5f8202952ab060166f2bddefc">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-740d7c873a7b6cbdbf51b114fe2e65f1"></div>
-        <button data-launch="js-demo-740d7c873a7b6cbdbf51b114fe2e65f1">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-7b92dec5f8202952ab060166f2bddefc"></div>
+        <button data-launch="js-demo-7b92dec5f8202952ab060166f2bddefc">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-740d7c873a7b6cbdbf51b114fe2e65f1">Accessible Tooltip</figcaption>
+          <figcaption id="caption-7b92dec5f8202952ab060166f2bddefc">Accessible Tooltip</figcaption>
       
   
   </figure>
   
-  <template id="template-740d7c873a7b6cbdbf51b114fe2e65f1">
+  <template id="template-7b92dec5f8202952ab060166f2bddefc">
       
 
 <style>
@@ -512,7 +512,7 @@
 }
 .arrow_box:after, .arrow_box:before {
     bottom: 100%;
-    left: 15%;
+    left: 11%;
     border: solid transparent;
     content: "";
     height: 0;
@@ -560,8 +560,8 @@ svg {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-740d7c873a7b6cbdbf51b114fe2e65f1');
-      var template = document.getElementById('template-740d7c873a7b6cbdbf51b114fe2e65f1');
+      var root = document.getElementById('js-demo-7b92dec5f8202952ab060166f2bddefc');
+      var template = document.getElementById('template-7b92dec5f8202952ab060166f2bddefc');
 
       
       var demoDiv = document.createElement('div');
@@ -574,7 +574,7 @@ svg {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-740d7c873a7b6cbdbf51b114fe2e65f1\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-7b92dec5f8202952ab060166f2bddefc\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -583,7 +583,7 @@ svg {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-740d7c873a7b6cbdbf51b114fe2e65f1"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-7b92dec5f8202952ab060166f2bddefc"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -598,7 +598,7 @@ svg {
         }
         
 
-        standalone.document.title = 'demo ' + "740d7c873a7b6cbdbf51b114fe2e65f1";
+        standalone.document.title = 'demo ' + "7b92dec5f8202952ab060166f2bddefc";
       });
     })();
   </script>
@@ -641,7 +641,7 @@ svg {
   
     <h2>
   
-    <button aria-expanded="false" data-expands="js-expandable-ee4bf9428afb0f3151d4cb6c933f51e4">
+    <button aria-expanded="false" data-expands="js-expandable-3a52344332244b8ab2321126badc2c53">
       <span class="expandable-label">CSS</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -653,7 +653,7 @@ svg {
   
     </h2>
   
-  <div id="js-expandable-ee4bf9428afb0f3151d4cb6c933f51e4" hidden>
+  <div id="js-expandable-3a52344332244b8ab2321126badc2c53" hidden>
     
 
 
@@ -674,7 +674,7 @@ svg {
 }
 .<span style="color:#a6e22e">arrow_box</span>:<span style="color:#a6e22e">after</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">arrow_box</span>:<span style="color:#a6e22e">before</span> {
     <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">11</span><span style="color:#66d9ef">%</span>;
     <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">transparent</span>;
     <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>;
     <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span>;
