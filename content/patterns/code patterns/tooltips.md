@@ -12,14 +12,14 @@ tags = ["tooltips"]
 
 ## Functionality
 So, what functionality do we want from a tooltip?
-1. Tooltip should appear when a button is hovered over with mouse, or recieves keyboard focus.
-2. The tooltip text needs to be available to screen readers in some way. 
+1. Tooltip should appear when a button is hovered over with mouse, AND when it recieves keyboard focus.
+2. The tooltip text needs to be available to screen readers. 
 3. The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!
 4. Tooltip contents / copy should be brief, to the point, and helpful. In other words, use them as a last resort!
 
 ## Tooltip As A Label
 
-
+In this example, we're going to make our tooltip text available to assistive tech by using the tooltip text as a label. The tooltip trigger itself should be a `<button>`. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We'll use CSS to hide / show the tooltip on hover and focus, and the `aria-labelledby` attribute to link the tooltip text to the trigger button.
 
 ### Demo
 

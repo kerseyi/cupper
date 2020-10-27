@@ -13,7 +13,7 @@
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/tooltips/</guid>
       <description>Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A)2.1.1 Keyboard (level A)4.1.2 Name, Role, Value (level A)Functionality So, what functionality do we want from a tooltip?
- Tooltip should appear when a button is hovered over with mouse, or recieves keyboard focus. The tooltip text needs to be available to screen readers in some way.</description>
+ Tooltip should appear when a button is hovered over with mouse, AND when it recieves keyboard focus. The tooltip text needs to be available to screen readers.</description>
     </item>
     
   </channel>
