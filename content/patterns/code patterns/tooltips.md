@@ -73,5 +73,12 @@ svg {
 <div class="arrow_box" role="tooltip" id="tooltip-label">Hi, I'm tooltip text! Hopefully, something useful and brief.</div>
 {{</demo>}}
 
-### Code
+### Code Pattern
+    
+{{< expandable label="HTML" level="1" >}}
+{{< snippet file="tooltips/tooltips_html.md" >}}
+{{< /expandable >}}
+{{< expandable label="CSS" level="2" >}}
+{{< snippet file="tooltips/tooltips_css.md" >}}
+{{< /expandable >}}
 
