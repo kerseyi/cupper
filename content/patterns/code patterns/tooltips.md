@@ -19,7 +19,7 @@ So, what functionality do we want from a tooltip?
 
 ## Tooltip
 
-In this example, we're going to use the toolip text as an accessible label. The tooltip trigger itself should be a `<button>`. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We'll use CSS to hide / show the tooltip on hover and focus, and the `aria-labelledby` attribute to link the tooltip text to the trigger button.
+In this example, we're going to use the toolip text as an accessible label. The tooltip trigger itself will be a `<button>`. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We'll use CSS to hide / show the tooltip on hover and focus, and the `aria-labelledby` attribute to link the tooltip text to the trigger button.
 
 ### Demo
 
