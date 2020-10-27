@@ -56,8 +56,8 @@ button:focus + [role="tooltip"] {
             font-size: 1.25rem;
             border-radius: 0.33em;
             font-family: inherit;
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             color: #fefefe;
             padding: 0.75rem;
             border: 0;
