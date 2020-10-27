@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Tooltips | A11y Ref
+        Tooltips and Toggletips | A11y Ref
       
     </title>
     
@@ -245,7 +245,7 @@
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
-                                <span class="text">Tooltips</span>
+                                <span class="text">Tooltips and Toggletips</span>
                               </a>
                             </li>
                           
@@ -451,7 +451,7 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Tooltips
+      Tooltips and Toggletips
     </h1>
     
       <div class="tags">
@@ -488,8 +488,8 @@
         </li>
       
         <li>
-          <a href="#tooltip-as-a-label">
-            Tooltip As A Label
+          <a href="#tooltip">
+            Tooltip
           </a>
         </li>
       
@@ -687,7 +687,7 @@
 <li>The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!</li>
 <li>Tooltip contents / copy should be brief, to the point, and helpful. In other words, use them as a last resort!</li>
 </ol>
-<h2 id="tooltip-as-a-label">Tooltip As A Label</h2>
+<h2 id="tooltip">Tooltip</h2>
 <p>In this example, we&rsquo;re going to make our tooltip text available to assistive tech by using the tooltip text as a label. The tooltip trigger itself should be a <code>&lt;button&gt;</code>. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We&rsquo;ll use CSS to hide / show the tooltip on hover and focus, and the <code>aria-labelledby</code> attribute to link the tooltip text to the trigger button.</p>
 <h3 id="demo">Demo</h3>
 
@@ -940,6 +940,165 @@ svg {
   </div>
 </div>
 </p>
+<p>##Toggletips</p>
+<h3 id="demo-1">Demo</h3>
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-36e8c118ea8b4f95fbfa85f6c00df5d9">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9"></div>
+        <button data-launch="js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-36e8c118ea8b4f95fbfa85f6c00df5d9">Accessible Toggletip</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-36e8c118ea8b4f95fbfa85f6c00df5d9">
+      
+<style>
+    .toggletip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* the bubble element, added inside the toggletip live region */
+
+.toggletip-bubble {
+  display: inline-block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 10em;
+  padding: 0.5rem;
+  background: #000;
+  color: #fff;
+}
+
+button {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 0;
+  background: #000;
+  font-family: serif;
+  font-weight: bold;
+  color: #fff;
+} 
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem skyBlue;
+}
+
+/* boilerplate; nothing really to see here */
+
+html {
+  font-size: 150%;
+  font-family: sans-serif;
+}
+
+* {
+  font-size: inherit;
+}
+</style>
+<span class="toggletip-container">
+  <button type="button" aria-label="more info" data-toggletip-content="This clarifies whatever needs clarifying">i</button>
+  <span role="status"></span>
+</span>
+<script>
+    (function() {
+  // Get all the toggletip buttons
+  var toggletips = document.querySelectorAll('[data-toggletip-content]');
+
+  // Iterate over them
+  Array.prototype.forEach.call(toggletips, function (toggletip) {
+    // Get the message from the data-content element
+    var message = toggletip.getAttribute('data-toggletip-content');
+
+    // Get the live region element
+    var liveRegion = toggletip.nextElementSibling;
+
+    // Toggle the message
+    toggletip.addEventListener('click', function () {
+        liveRegion.innerHTML = '';
+        window.setTimeout(function() {
+          liveRegion.innerHTML = '<span class="toggletip-bubble">'+ message +'</span>';
+        }, 100);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (toggletip !== e.target) {
+        liveRegion.innerHTML = '';
+      }                        
+    });
+
+    // Remove toggletip on ESC
+    toggletip.addEventListener('keydown', function (e) {
+      if ((e.keyCode || e.which) === 27)
+      liveRegion.innerHTML = '';
+    });
+    
+    // Remove on blur
+    toggletip.addEventListener('blur', function (e) {
+      liveRegion.innerHTML = '';
+    });
+  });
+}());
+</script>
+
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9');
+      var template = document.getElementById('template-36e8c118ea8b4f95fbfa85f6c00df5d9');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-36e8c118ea8b4f95fbfa85f6c00df5d9"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "36e8c118ea8b4f95fbfa85f6c00df5d9";
+      });
+    })();
+  </script>
+</div>
+
 <h2 id="references">References</h2>
 <ul>
 <li>Adapted from: <a href="https://inclusive-components.design/tooltips-toggletips/">Inclusive Components</a></li>

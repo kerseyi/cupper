@@ -1,5 +1,5 @@
 +++
-title = "Tooltips"
+title = "Tooltips and Toggletips"
 weight = 1
 toc = true
 tags = ["tooltips"]
@@ -17,7 +17,7 @@ So, what functionality do we want from a tooltip?
 3. The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!
 4. Tooltip contents / copy should be brief, to the point, and helpful. In other words, use them as a last resort!
 
-## Tooltip As A Label
+## Tooltip
 
 In this example, we're going to make our tooltip text available to assistive tech by using the tooltip text as a label. The tooltip trigger itself should be a `<button>`. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We'll use CSS to hide / show the tooltip on hover and focus, and the `aria-labelledby` attribute to link the tooltip text to the trigger button.
 
@@ -104,7 +104,107 @@ svg {
 {{< snippet file="tooltips/tooltips_css.md" >}}
 {{< /expandable >}}
 
+##Toggletips
+
+### Demo
+
+{{<demo caption="Accessible Toggletip">}}
+<style>
+    .toggletip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* the bubble element, added inside the toggletip live region */
+
+.toggletip-bubble {
+  display: inline-block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 10em;
+  padding: 0.5rem;
+  background: #000;
+  color: #fff;
+}
+
+button {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 0;
+  background: #000;
+  font-family: serif;
+  font-weight: bold;
+  color: #fff;
+} 
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem skyBlue;
+}
+
+/* boilerplate; nothing really to see here */
+
+html {
+  font-size: 150%;
+  font-family: sans-serif;
+}
+
+* {
+  font-size: inherit;
+}
+</style>
+<span class="toggletip-container">
+  <button type="button" aria-label="more info" data-toggletip-content="This clarifies whatever needs clarifying">i</button>
+  <span role="status"></span>
+</span>
+<script>
+    (function() {
+  // Get all the toggletip buttons
+  var toggletips = document.querySelectorAll('[data-toggletip-content]');
+
+  // Iterate over them
+  Array.prototype.forEach.call(toggletips, function (toggletip) {
+    // Get the message from the data-content element
+    var message = toggletip.getAttribute('data-toggletip-content');
+
+    // Get the live region element
+    var liveRegion = toggletip.nextElementSibling;
+
+    // Toggle the message
+    toggletip.addEventListener('click', function () {
+        liveRegion.innerHTML = '';
+        window.setTimeout(function() {
+          liveRegion.innerHTML = '<span class="toggletip-bubble">'+ message +'</span>';
+        }, 100);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (toggletip !== e.target) {
+        liveRegion.innerHTML = '';
+      }                        
+    });
+
+    // Remove toggletip on ESC
+    toggletip.addEventListener('keydown', function (e) {
+      if ((e.keyCode || e.which) === 27)
+      liveRegion.innerHTML = '';
+    });
+    
+    // Remove on blur
+    toggletip.addEventListener('blur', function (e) {
+      liveRegion.innerHTML = '';
+    });
+  });
+}());
+</script>
+
+{{</demo>}}
 ## References
 - Adapted from: [Inclusive Components](https://inclusive-components.design/tooltips-toggletips/)
 - CSS Arrow generator: [CSS Arrow Please!](https://cssarrowplease.com/)
+
+
 
