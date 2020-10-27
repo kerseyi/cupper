@@ -21,7 +21,7 @@ tags = ["tooltips"]
 
 ### Code
 
-{{< expandable label="HTML" level="1" >}}
+<!-- {{< expandable label="HTML" level="1" >}}
 {{< snippet file="tooltip.md" >}}
 {{< /expandable >}}
 
@@ -31,4 +31,4 @@ tags = ["tooltips"]
 
 {{< expandable label="JavaScript" level="3" >}}
 {{< snippet file="tooltip_js.md" >}}
-{{< /expandable >}}
+{{< /expandable >}} -->
