@@ -478,19 +478,19 @@
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-d5fe2235dd55d977ec1c16f00aacc485">
+  <figure role="group" aria-labelledby="caption-740d7c873a7b6cbdbf51b114fe2e65f1">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-d5fe2235dd55d977ec1c16f00aacc485"></div>
-        <button data-launch="js-demo-d5fe2235dd55d977ec1c16f00aacc485">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-740d7c873a7b6cbdbf51b114fe2e65f1"></div>
+        <button data-launch="js-demo-740d7c873a7b6cbdbf51b114fe2e65f1">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-d5fe2235dd55d977ec1c16f00aacc485">Accessible Tooltip</figcaption>
+          <figcaption id="caption-740d7c873a7b6cbdbf51b114fe2e65f1">Accessible Tooltip</figcaption>
       
   
   </figure>
   
-  <template id="template-d5fe2235dd55d977ec1c16f00aacc485">
+  <template id="template-740d7c873a7b6cbdbf51b114fe2e65f1">
       
 
 <style>
@@ -542,8 +542,8 @@ button:focus + [role="tooltip"] {
             font-size: 1.25rem;
             border-radius: 0.33em;
             font-family: inherit;
-            width: 120px;
-            height: 120px;
+            width: 75px;
+            height: 75px;
             color: #fefefe;
             border: 0;
             background: #fff;
@@ -560,8 +560,8 @@ svg {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-d5fe2235dd55d977ec1c16f00aacc485');
-      var template = document.getElementById('template-d5fe2235dd55d977ec1c16f00aacc485');
+      var root = document.getElementById('js-demo-740d7c873a7b6cbdbf51b114fe2e65f1');
+      var template = document.getElementById('template-740d7c873a7b6cbdbf51b114fe2e65f1');
 
       
       var demoDiv = document.createElement('div');
@@ -574,7 +574,7 @@ svg {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-d5fe2235dd55d977ec1c16f00aacc485\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-740d7c873a7b6cbdbf51b114fe2e65f1\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -583,7 +583,7 @@ svg {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-d5fe2235dd55d977ec1c16f00aacc485"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-740d7c873a7b6cbdbf51b114fe2e65f1"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -598,7 +598,7 @@ svg {
         }
         
 
-        standalone.document.title = 'demo ' + "d5fe2235dd55d977ec1c16f00aacc485";
+        standalone.document.title = 'demo ' + "740d7c873a7b6cbdbf51b114fe2e65f1";
       });
     })();
   </script>
