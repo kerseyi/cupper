@@ -1219,30 +1219,30 @@ details[open] summary {
 <h2 id="functionality">Functionality</h2>
 <p>So, what functionality do we want from a tooltip?</p>
 <ol>
-<li>Tooltip should appear when a button is hovered over with mouse, AND when it recieves keyboard focus.</li>
+<li>Tooltip should appear when an interactive element is hovered over with mouse, AND when it recieves keyboard focus.</li>
 <li>The tooltip text needs to be available to screen readers.</li>
 <li>The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!</li>
-<li>Tooltip contents / copy should be brief, to the point, and helpful. In other words, use them as a last resort!</li>
+<li>Tooltips can be used as a primary label for interactive elemtns, or to provide an alternate desciption.</li>
 </ol>
 <h2 id="tooltip">Tooltip</h2>
-<p>In this example, we&rsquo;re going to make our tooltip text available to assistive tech by using the tooltip text as a label. The tooltip trigger itself should be a <code>&lt;button&gt;</code>. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We&rsquo;ll use CSS to hide / show the tooltip on hover and focus, and the <code>aria-labelledby</code> attribute to link the tooltip text to the trigger button.</p>
+<p>In this example, we&rsquo;re going to use the toolip text as an accessible label. The tooltip trigger itself should be a <code>&lt;button&gt;</code>. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We&rsquo;ll use CSS to hide / show the tooltip on hover and focus, and the <code>aria-labelledby</code> attribute to link the tooltip text to the trigger button.</p>
 <h3 id="demo">Demo</h3>
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-5088bda73b4610bc69813d3fb90dbad1">
+  <figure role="group" aria-labelledby="caption-7b579b9bd70a886f527b891be9290f63">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-5088bda73b4610bc69813d3fb90dbad1"></div>
-        <button data-launch="js-demo-5088bda73b4610bc69813d3fb90dbad1">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-7b579b9bd70a886f527b891be9290f63"></div>
+        <button data-launch="js-demo-7b579b9bd70a886f527b891be9290f63">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-5088bda73b4610bc69813d3fb90dbad1">Accessible Tooltip</figcaption>
+          <figcaption id="caption-7b579b9bd70a886f527b891be9290f63">Accessible Tooltip</figcaption>
       
   
   </figure>
   
-  <template id="template-5088bda73b4610bc69813d3fb90dbad1">
+  <template id="template-7b579b9bd70a886f527b891be9290f63">
       
 
 <style>
@@ -1311,14 +1311,14 @@ svg {
 <button class="notifications" aria-labelledby="tooltip-label">  
   <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><path d="M13,17h-2v-2h2V17z"></path><g><path d="M12,4c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S7.6,4,12,4 M12,2C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10s10-4.5,10-10   C22,6.5,17.5,2,12,2L12,2z"></path></g><g><path d="M11,14c0-1.4,0.6-1.9,1.1-2.4c0.3-0.2,0.5-0.5,0.6-0.8c0.2-0.3,0.2-0.6,0.2-1c0-0.4-0.1-0.7-0.3-1   c-0.2-0.2-0.4-0.4-0.8-0.4c-0.3,0-1,0.1-1,1.5H9l0-0.4c0-0.9,0.3-1.5,0.8-2C10.4,7.2,11.1,7,11.9,7c1,0,1.7,0.2,2.2,0.8   s0.8,1.2,0.8,2c0,2.4-2,2.5-2,4.2H11z"></path></g></svg>
 </button>  
-<div class="arrow_box" role="tooltip" id="tooltip-label">Hi, I'm tooltip text! Hopefully, something useful and brief.</div>
+<div class="arrow_box" role="tooltip" id="tooltip-label">View help and manage settings</div>
 </div>
 
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-5088bda73b4610bc69813d3fb90dbad1');
-      var template = document.getElementById('template-5088bda73b4610bc69813d3fb90dbad1');
+      var root = document.getElementById('js-demo-7b579b9bd70a886f527b891be9290f63');
+      var template = document.getElementById('template-7b579b9bd70a886f527b891be9290f63');
 
       
       var demoDiv = document.createElement('div');
@@ -1331,7 +1331,7 @@ svg {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-5088bda73b4610bc69813d3fb90dbad1\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-7b579b9bd70a886f527b891be9290f63\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -1340,7 +1340,7 @@ svg {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-5088bda73b4610bc69813d3fb90dbad1"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-7b579b9bd70a886f527b891be9290f63"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -1355,7 +1355,7 @@ svg {
         }
         
 
-        standalone.document.title = 'demo ' + "5088bda73b4610bc69813d3fb90dbad1";
+        standalone.document.title = 'demo ' + "7b579b9bd70a886f527b891be9290f63";
       });
     })();
   </script>
@@ -1482,19 +1482,19 @@ svg {
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-ed53c7d4cb301dfb3618312f4c3a7d73">
+  <figure role="group" aria-labelledby="caption-a4ae11825df7d04525f71aa0c5f8f851">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-ed53c7d4cb301dfb3618312f4c3a7d73"></div>
-        <button data-launch="js-demo-ed53c7d4cb301dfb3618312f4c3a7d73">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-a4ae11825df7d04525f71aa0c5f8f851"></div>
+        <button data-launch="js-demo-a4ae11825df7d04525f71aa0c5f8f851">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-ed53c7d4cb301dfb3618312f4c3a7d73">Accessible Toggletip</figcaption>
+          <figcaption id="caption-a4ae11825df7d04525f71aa0c5f8f851">Accessible Toggletip</figcaption>
       
   
   </figure>
   
-  <template id="template-ed53c7d4cb301dfb3618312f4c3a7d73">
+  <template id="template-a4ae11825df7d04525f71aa0c5f8f851">
       
 <style>
     .toggletip-container {
@@ -1543,7 +1543,7 @@ html {
 }
 </style>
 <span class="toggletip-container">
-  <button type="button" aria-label="more info" data-toggletip-content="This clarifies whatever needs clarifying">i</button>
+  <button type="button" aria-label="more info" data-toggletip-content="Here's that toggletip text!">i</button>
   <span role="status"></span>
 </span>
 <script>
@@ -1592,8 +1592,8 @@ html {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-ed53c7d4cb301dfb3618312f4c3a7d73');
-      var template = document.getElementById('template-ed53c7d4cb301dfb3618312f4c3a7d73');
+      var root = document.getElementById('js-demo-a4ae11825df7d04525f71aa0c5f8f851');
+      var template = document.getElementById('template-a4ae11825df7d04525f71aa0c5f8f851');
 
       
       var demoDiv = document.createElement('div');
@@ -1606,7 +1606,7 @@ html {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ed53c7d4cb301dfb3618312f4c3a7d73\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-a4ae11825df7d04525f71aa0c5f8f851\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -1615,7 +1615,7 @@ html {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-ed53c7d4cb301dfb3618312f4c3a7d73"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-a4ae11825df7d04525f71aa0c5f8f851"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -1630,12 +1630,186 @@ html {
         }
         
 
-        standalone.document.title = 'demo ' + "ed53c7d4cb301dfb3618312f4c3a7d73";
+        standalone.document.title = 'demo ' + "a4ae11825df7d04525f71aa0c5f8f851";
       });
     })();
   </script>
 </div>
 
+<h3 id="code-pattern-1">Code Pattern</h3>
+<p><div class="expandable-section">
+  
+    <h1>
+  
+    <button aria-expanded="false" data-expands="js-expandable-7b4a4dda0b4d7bab7d1047dc97b6db5d">
+      <span class="expandable-label">HTML</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h1>
+  
+  <div id="js-expandable-7b4a4dda0b4d7bab7d1047dc97b6db5d" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;toggletip-container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;more info&#34;</span> <span style="color:#a6e22e">data-toggletip-content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hi! I&#39;m the toggletip text.&#34;</span>&gt;i&lt;/<span style="color:#f92672">button</span>&gt;
+  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;status&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h2>
+  
+    <button aria-expanded="false" data-expands="js-expandable-c4b74be1a515127cd291380d172a6bb7">
+      <span class="expandable-label">CSS</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h2>
+  
+  <div id="js-expandable-c4b74be1a515127cd291380d172a6bb7" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSS" data-lang="CSS">.<span style="color:#a6e22e">toggletip-container</span> {
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+}
+
+<span style="color:#75715e">/* the bubble element, added inside the toggletip live region */</span>
+
+.<span style="color:#a6e22e">toggletip-bubble</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#000</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+}
+
+<span style="color:#f92672">button</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#000</span>;
+  <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">serif</span>;
+  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+} 
+
+<span style="color:#f92672">button</span>:<span style="color:#a6e22e">focus</span> {
+  <span style="color:#66d9ef">outline</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0.25</span><span style="color:#66d9ef">rem</span> skyBlue;
+}
+
+<span style="color:#75715e">/* boilerplate; nothing really to see here */</span>
+
+<span style="color:#f92672">html</span> {
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">sans-serif</span>;
+}
+
+<span style="color:#f92672">*</span> {
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#66d9ef">inherit</span>;
+}
+
+</code></pre></div>
+
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-a9d5541c30235be5268d9248c3b3a951">
+      <span class="expandable-label">JavaScript</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-a9d5541c30235be5268d9248c3b3a951" hidden>
+    
+
+
+
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">
+(<span style="color:#66d9ef">function</span>() {
+  <span style="color:#75715e">// Get all the toggletip buttons
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">toggletips</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">demo</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;[data-toggletip-content]&#39;</span>);
+
+  <span style="color:#75715e">// Iterate over them
+</span><span style="color:#75715e"></span>  Array.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">forEach</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">toggletips</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">toggletip</span>) {
+    <span style="color:#75715e">// Get the message from the data-content element
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">toggletip</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;data-toggletip-content&#39;</span>);
+
+    <span style="color:#75715e">// Get the live region element
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">liveRegion</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">toggletip</span>.<span style="color:#a6e22e">nextElementSibling</span>;
+
+    <span style="color:#75715e">// Toggle the message
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">toggletip</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">liveRegion</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+        window.<span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
+          <span style="color:#a6e22e">liveRegion</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span class=&#34;toggletip-bubble&#34;&gt;&#39;</span><span style="color:#f92672">+</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&lt;/span&gt;&#39;</span>;
+        }, <span style="color:#ae81ff">100</span>);
+    });
+
+    <span style="color:#75715e">// Close on outside click
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">demo</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">toggletip</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>) {
+        <span style="color:#a6e22e">liveRegion</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+      }                        
+    });
+
+    <span style="color:#75715e">// Remove toggletip on ESC
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">toggletip</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keydown&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+      <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">which</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">27</span>)
+      <span style="color:#a6e22e">liveRegion</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    });
+    
+    <span style="color:#75715e">// Remove on blur
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">toggletip</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;blur&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
+      <span style="color:#a6e22e">liveRegion</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    });
+  });
+}());
+</code></pre></div>
+
+
+  </div>
+</div>
+</p>
 <h2 id="references">References</h2>
 <ul>
 <li>Adapted from: <a href="https://inclusive-components.design/tooltips-toggletips/">Inclusive Components</a></li>
