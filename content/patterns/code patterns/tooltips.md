@@ -10,16 +10,20 @@ tags = ["tooltips"]
 
 {{< wcag include="1.3.1, 2.1.1, 4.1.2" >}}
 
-## Functionality
-So, what functionality do we want from a tooltip?
-1. Tooltip should appear when an interactive element is hovered over with mouse, AND when it recieves keyboard focus.
-2. The tooltip text needs to be available to screen readers. 
-3. The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!
-4. Tooltips can be used as a primary label for interactive elemtns, or to provide an alternate desciption.
-
 ## Tooltip
 
-In this example, we're going to use the toolip text as an accessible label. The tooltip trigger itself will be a `<button>`. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We'll use CSS to hide / show the tooltip on hover and focus, and the `aria-labelledby` attribute to link the tooltip text to the trigger button.
+A tooltip provides extra information about a form field, a link, a button, or other focusable element. It must be triggered by both focus and hover events and remains on the screen as long as the trigger has the focus. The focus does not move to the tooltip.
+
+### Functionality
+So, what functionality do we want from a tooltip?
+1. Tooltip should appear when an interactive element is hovered over with mouse, AND when it recieves keyboard focus.
+2. Screen readers will read the interactive element itself, then the tooltip text.
+3. The tooltip shoould be hidden and shown using JavaScript and CSS.
+4. Tooltips can be used as a primary label for interactive elemtns, or to provide an alternate desciption.
+
+In this example, we're going to use the tooltip text as an accessible label. The tooltip trigger itself will be a `<button>`. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We'll use CSS to hide / show the tooltip on hover and focus, and the `aria-labelledby` attribute to link the tooltip text to the trigger button.
+
+
 
 ### Demo
 
@@ -104,11 +108,11 @@ svg {
 {{< snippet file="tooltips/tooltips_css.md" >}}
 {{< /expandable >}}
 
-## Toggletips
+## Tooltip Dialog
 
 ### Demo
 
-{{<demo caption="Accessible Toggletip">}}
+{{<demo caption="Accessible tooltip dialog">}}
 <style>
     .toggletip-container {
   position: relative;
@@ -214,6 +218,8 @@ html {
 {{< expandable label="JavaScript" level="3" >}}
 {{< snippet file="toggletips_js.md" >}}
 {{< /expandable >}}
+
+{{< tested using="Firefox + NVDA, Chrome, Safari iOS + Voiceover, Edge" >}}
 
 ## References
 - Adapted from: [Inclusive Components](https://inclusive-components.design/tooltips-toggletips/)
