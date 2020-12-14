@@ -30,7 +30,7 @@ There are multiple approaches to creating skip links, but the main idea is to hi
 		
 		demo.getElementById('skipLink').addEventListener('click', function(e) {
   e.preventDefault();
-  var target = demo.getElementById('demoBtn');
+  var target = demo.getElementById('demoHead');
   target.focus();
 });
 	</script>
@@ -150,7 +150,8 @@ p {
 	</ul>
 </nav>
 	<div id="demomain">
-		<p>Boy, I sure would like to be able to skip to that button without tabbing through that nav menu...</p>
+		<h1 id="demoHead">Here's a heading and some content! It's important to focus on me.</h1>
+    <p>Content, content, content...lorem ipsum, etc.</p>
 		<button id="demoBtn">Push me</button>
 	</div>
 </div>
