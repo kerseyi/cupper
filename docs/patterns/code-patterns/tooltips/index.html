@@ -482,20 +482,14 @@
         </li>
       
         <li>
-          <a href="#functionality">
-            Functionality
-          </a>
-        </li>
-      
-        <li>
           <a href="#tooltip">
             Tooltip
           </a>
         </li>
       
         <li>
-          <a href="#toggletips">
-            Toggletips
+          <a href="#tooltip-dialog">
+            Tooltip Dialog
           </a>
         </li>
       
@@ -685,16 +679,17 @@
   
 </ul>
 
-<h2 id="functionality">Functionality</h2>
+<h2 id="tooltip">Tooltip</h2>
+<p>A tooltip provides extra information about a form field, a link, a button, or other focusable element. It must be triggered by both focus and hover events and remains on the screen as long as the trigger has the focus. The focus does not move to the tooltip.</p>
+<h3 id="functionality">Functionality</h3>
 <p>So, what functionality do we want from a tooltip?</p>
 <ol>
 <li>Tooltip should appear when an interactive element is hovered over with mouse, AND when it recieves keyboard focus.</li>
-<li>The tooltip text needs to be available to screen readers.</li>
-<li>The tooltip SHOULD NOT STEAL KEYBOARD FOCUS when it appears!</li>
+<li>Screen readers will read the interactive element itself, then the tooltip text.</li>
+<li>The tooltip shoould be hidden and shown using JavaScript and CSS.</li>
 <li>Tooltips can be used as a primary label for interactive elemtns, or to provide an alternate desciption.</li>
 </ol>
-<h2 id="tooltip">Tooltip</h2>
-<p>In this example, we&rsquo;re going to use the toolip text as an accessible label. The tooltip trigger itself will be a <code>&lt;button&gt;</code>. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We&rsquo;ll use CSS to hide / show the tooltip on hover and focus, and the <code>aria-labelledby</code> attribute to link the tooltip text to the trigger button.</p>
+<p>In this example, we&rsquo;re going to use the tooltip text as an accessible label. The tooltip trigger itself will be a <code>&lt;button&gt;</code>. When this button is hovered over with the mouse or tabbed to using the keyboard, the tooltip text will be read aloud to a screen reader. We&rsquo;ll use CSS to hide / show the tooltip on hover and focus, and the <code>aria-labelledby</code> attribute to link the tooltip text to the trigger button.</p>
 <h3 id="demo">Demo</h3>
 
 <div class="demo-container">
@@ -946,7 +941,7 @@ svg {
   </div>
 </div>
 </p>
-<h2 id="toggletips">Toggletips</h2>
+<h2 id="tooltip-dialog">Tooltip Dialog</h2>
 <h3 id="demo-1">Demo</h3>
 
 <div class="demo-container">
@@ -958,7 +953,7 @@ svg {
         <button data-launch="js-demo-a4ae11825df7d04525f71aa0c5f8f851">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-a4ae11825df7d04525f71aa0c5f8f851">Accessible Toggletip</figcaption>
+          <figcaption id="caption-a4ae11825df7d04525f71aa0c5f8f851">Accessible tooltip dialog</figcaption>
       
   
   </figure>
@@ -1279,6 +1274,69 @@ html {
   </div>
 </div>
 </p>
+
+
+
+<table class="tested">
+  <tr>
+    <th scope="row">
+      <svg viewBox="0 0 177.16535 177.16535" focusable="false" aria-hidden="true">
+        <use xlink:href="#tick"></use>
+      </svg>
+      Tested using
+    </th>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-firefox.svg" alt="">
+        <span><strong>Firefox </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>NVDA</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-chrome.svg" alt="">
+        <span><strong>Chrome </strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-safari-ios.svg" alt="">
+        <span><strong>Safari iOS </strong></span>
+        
+          
+          
+          <span class="additional">with <strong>Voiceover</strong></span>
+        
+      </td>
+    
+      <td>
+        
+        
+        
+        
+        <img src="https://kerseyi.github.io/cupper-2/images/browser-edge.svg" alt="">
+        <span><strong>Edge </strong></span>
+        
+      </td>
+    
+  </tr>
+</table>
+
 <h2 id="references">References</h2>
 <ul>
 <li>Adapted from: <a href="https://inclusive-components.design/tooltips-toggletips/">Inclusive Components</a></li>

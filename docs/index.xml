@@ -21,8 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kerseyi.github.io/cupper-2/patterns/code-patterns/tooltips/</guid>
-      <description>Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A)2.1.1 Keyboard (level A)4.1.2 Name, Role, Value (level A)Functionality So, what functionality do we want from a tooltip?
- Tooltip should appear when an interactive element is hovered over with mouse, AND when it recieves keyboard focus. The tooltip text needs to be available to screen readers.</description>
+      <description>Applicable WCAG 2.1 Success Criteria 1.3.1 Info and Relationships (level A)2.1.1 Keyboard (level A)4.1.2 Name, Role, Value (level A)Tooltip A tooltip provides extra information about a form field, a link, a button, or other focusable element. It must be triggered by both focus and hover events and remains on the screen as long as the trigger has the focus.</description>
     </item>
     
     <item>
