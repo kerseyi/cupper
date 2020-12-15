@@ -9429,19 +9429,19 @@ It is a common misconception that skip links are only for people who use screen 
 
 <div class="demo-container">
   
-  <figure role="group" aria-labelledby="caption-f5743f774cfe8d49c2f989ba3ae80193">
+  <figure role="group" aria-labelledby="caption-1cb02b0b4c4cd37d8c08e2a86a46e540">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-f5743f774cfe8d49c2f989ba3ae80193"></div>
-        <button data-launch="js-demo-f5743f774cfe8d49c2f989ba3ae80193">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-1cb02b0b4c4cd37d8c08e2a86a46e540"></div>
+        <button data-launch="js-demo-1cb02b0b4c4cd37d8c08e2a86a46e540">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
-          <figcaption id="caption-f5743f774cfe8d49c2f989ba3ae80193">Skip link using CSS transform to slide link onto page when focused.</figcaption>
+          <figcaption id="caption-1cb02b0b4c4cd37d8c08e2a86a46e540">Skip link using CSS transform to slide link onto page when focused.</figcaption>
       
   
   </figure>
   
-  <template id="template-f5743f774cfe8d49c2f989ba3ae80193">
+  <template id="template-1cb02b0b4c4cd37d8c08e2a86a46e540">
       
 	<script type="text/javascript">
 
@@ -9543,7 +9543,7 @@ a {
 }
 
 #content {
-	height: 400px;
+	height: 600px;
 	background-color: #009FD4;
 }
 #demomain {
@@ -9568,7 +9568,7 @@ p {
 	</ul>
 </nav>
 	<div id="demomain">
-		<h1 id="demoHead">Here's a heading and some content! It's important to focus on me.</h1>
+		<h1 tabindex="0" id="demoHead">Here's a heading and some content! It's important to focus on me.</h1>
     <p>Content, content, content...lorem ipsum, etc.</p>
 		<button id="demoBtn">Push me</button>
 	</div>
@@ -9577,8 +9577,8 @@ p {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-f5743f774cfe8d49c2f989ba3ae80193');
-      var template = document.getElementById('template-f5743f774cfe8d49c2f989ba3ae80193');
+      var root = document.getElementById('js-demo-1cb02b0b4c4cd37d8c08e2a86a46e540');
+      var template = document.getElementById('template-1cb02b0b4c4cd37d8c08e2a86a46e540');
 
       
       var demoDiv = document.createElement('div');
@@ -9591,7 +9591,7 @@ p {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-f5743f774cfe8d49c2f989ba3ae80193\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-1cb02b0b4c4cd37d8c08e2a86a46e540\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -9600,7 +9600,7 @@ p {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-f5743f774cfe8d49c2f989ba3ae80193"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-1cb02b0b4c4cd37d8c08e2a86a46e540"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -9615,7 +9615,7 @@ p {
         }
         
 
-        standalone.document.title = 'demo ' + "f5743f774cfe8d49c2f989ba3ae80193";
+        standalone.document.title = 'demo ' + "1cb02b0b4c4cd37d8c08e2a86a46e540";
       });
     })();
   </script>
@@ -9626,7 +9626,7 @@ p {
   
     <h1>
   
-    <button aria-expanded="false" data-expands="js-expandable-308e057a57e7633c2bdfb9a8d4b38a23">
+    <button aria-expanded="false" data-expands="js-expandable-a0bec122a64edff13fd62feec518e15e">
       <span class="expandable-label">HTML</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -9638,7 +9638,7 @@ p {
   
     </h1>
   
-  <div id="js-expandable-308e057a57e7633c2bdfb9a8d4b38a23" hidden>
+  <div id="js-expandable-a0bec122a64edff13fd62feec518e15e" hidden>
     
 
 
@@ -9655,7 +9655,7 @@ p {
 	&lt;/<span style="color:#f92672">ul</span>&gt;
 &lt;/<span style="color:#f92672">nav</span>&gt;
 	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demomain&#34;</span>&gt;
-		&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demoHead&#34;</span>&gt;Here&#39;s a heading and some content! It&#39;s important to focus on me.&lt;/<span style="color:#f92672">h1</span>&gt;
+		&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demoHead&#34;</span>&gt;Here&#39;s a heading and some content! It&#39;s important to focus on me.&lt;/<span style="color:#f92672">h1</span>&gt;
     	&lt;<span style="color:#f92672">p</span>&gt;Content, content, content...lorem ipsum, etc.&lt;/<span style="color:#f92672">p</span>&gt;
 		&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demoBtn&#34;</span>&gt;Push me&lt;/<span style="color:#f92672">button</span>&gt;
 	&lt;/<span style="color:#f92672">div</span>&gt;

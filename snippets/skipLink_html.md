@@ -10,7 +10,7 @@
 	</ul>
 </nav>
 	<div id="demomain">
-		<h1 id="demoHead">Here's a heading and some content! It's important to focus on me.</h1>
+		<h1 tabindex="0" id="demoHead">Here's a heading and some content! It's important to focus on me.</h1>
     	<p>Content, content, content...lorem ipsum, etc.</p>
 		<button id="demoBtn">Push me</button>
 	</div>
